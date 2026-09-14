@@ -1,0 +1,10 @@
+{
+	"name": "Hollow_knight",
+	"short_name": "Hollow_knight",
+	"description": "",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "landscape",
+	"background_color": "#000000",
+	"icons": []
+}

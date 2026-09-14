@@ -1,0 +1,1249 @@
+<!DOCTYPE html><!-- Last Published: Thu Sep 10 2026 10:43:44 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="prod-wf1.discord.com" data-wf-page="69ac58f4b4f565cb5256d709" data-wf-site="6257adef93867e50d84d30e2" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"/><title>Jobs and Career Opportunities at Discord</title><meta content="Apply for jobs at Discord and help build the best app to talk, play, and hang out with friends over voice, video, or text." name="description"/><meta content="Jobs and Career Opportunities at Discord" property="og:title"/><meta content="Apply for jobs at Discord and help build the best app to talk, play, and hang out with friends over voice, video, or text." property="og:description"/><meta content="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg" property="og:image"/><meta content="Jobs and Career Opportunities at Discord" name="twitter:title"/><meta content="Apply for jobs at Discord and help build the best app to talk, play, and hang out with friends over voice, video, or text." name="twitter:description"/><meta content="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg" name="twitter:image"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/css/discord-2022.shared.283a4e9ff.min.css" rel="stylesheet" type="text/css" integrity="sha384-KDpOn/0FC4fOaw8nk8omc62jJ3RQgzXqsw8a+OOHONp6ULhe0VJS7QltjETD8kmD" crossorigin="anonymous"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Poppins:200,300,400,500,600,700,800,900","Press Start 2P:400:cyrillic,latin"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62fddf0fde45a8baedcc7ee5_847541504914fd33810e70a0ea73177e%20(2)-1.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6266bc493fb42d4e27bb8393_847541504914fd33810e70a0ea73177e.ico" rel="apple-touch-icon"/><script src="https://cdn.localizeapi.com/localize.js"></script>
+<script src="https://discord.com/webflow-scripts/newLocalization.js" defer></script>
+<script src="https://discord.com/webflow-scripts/head.js"></script>
+
+<style>
+.language{
+    display:flex;
+    user-select: none;
+}
+.language .lang-container {
+    position: relative;
+}
+
+.language .lang-selector-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.language .locale-container{
+    display: flex;
+    align-items: center;
+}
+
+.language .flag {
+    width: 24px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.language .selector-language-name{
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.language .arrow-icon{
+    padding-left: 8px;
+}
+
+.language .lang-dropdown-container {
+    z-index: 10;
+    bottom: 100%;
+    margin-bottom: 8px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    overflow: hidden;
+    display: none;
+}
+
+.language .lang-dropdown {
+    max-height: 320px;
+    min-width: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.language .dropdown-item{
+    padding: 8px;
+}
+
+.language .dropdown-clickable{
+    cursor: pointer;
+}
+
+.language .dropdown-language-name{
+    color: #23272a;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.flag-ru{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f39e6ac4c46ce39566_ru.png");
+}
+
+.flag-bg{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6257c2a1e7544e303083b2b1_bolg.png");
+}
+.flag-cs{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1254305732a01676d_cs.png");
+}
+.flag-da{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f16128094022db6768_da.png");
+}
+.flag-de{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1c50496ce73c40d99_de.png");
+}
+.flag-en-GB {
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62d01c2078d11b68a1633276_Rectangle%201%20(3).svg");
+}
+.flag-el{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f17c26b5fe5a53876f_el.png");
+}
+.flag-en-US{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6257bf8b5ba300233705a542_en.png");
+}
+.flag-en{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6257bf8b5ba300233705a542_en.png");
+}
+.flag-es{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f14edab1b0029593fc_es-ES.png");
+}
+.flag-fi{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1921c0cf82fc59da7_fi.png");
+}
+.flag-fr{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1544a7ab7c66e9ccb_fr.png");
+}
+.flag-hi{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f13fcb6e76c05b504e_hi.png");
+}
+.flag-hr{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1aeebe9064763c90c_hr.png");
+}
+.flag-hu{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f19e6ac41dcce39561_hu.png");
+}
+.flag-it{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1bd099a25f8f77ea4_it.png");
+}
+.flag-ja{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f1e819841940bec47d_ja.png");
+}
+.flag-ko{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f125430509b9016776_ko.png");
+}
+.flag-lt{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f14edab152b8959405_lt.png");
+}
+.flag-nl{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f3e00ff80959abff2a_nl.png");
+}
+.flag-no{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f37c26b5e22453877d_no.png");
+}
+.flag-pl{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f3c504963019c40db7_pl.png");
+}
+.flag-pt-BR{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f3d809bc2503e62bec_pt-BR.png");
+}
+.flag-ro{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f36e94d725ce411ab6_ro.png");
+}
+.flag-sv{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f49e6ac47674e39567_sv-SE.png");
+}
+.flag-th{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f465c529bf26e211a1_th.png");
+}
+.flag-tr{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f4e819848178bec4d1_tr.png");
+}
+.flag-uk{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f37c26b54f6a53877f_uk.png");
+}
+.flag-vi{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f4e819840d89bec4d2_vi.png");
+}
+.flag-zh-Hans{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f49e6ac45f35e39568_zh-CN.png");
+}
+.flag-zh-TW{
+    content:url("https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/62cb46f33fcb6ea5c95b5069_zh-TW.png");
+}
+</style>
+
+
+<style>
+  
+  .nav-bar-hack {
+  	bottom: 0px !important;
+    height: auto !important;
+  }
+  
+  body a.w-webflow-badge {
+    display: none !important;
+  }
+  
+  body {
+  	text-rendering: optimizeLegibility;
+  }
+  
+  @media screen and (max-width: 476px) {
+    .hide-on-mobile {
+      display: none;
+    }
+  }
+  
+  .hr-style {
+  border: 0;
+  height: 8px;
+  background-color: #F0F0F0;
+  margin: 20px 0px;
+  }
+  
+  .BlogBodyQuote {
+  grid-column: 2/-1;
+  font-size: 24px;
+  line-height: 36px;
+  padding: 0px 0px 15px 40px;
+  font-style: italic;
+  margin: 40px 0px 50px 0px;
+}
+
+.quote-text {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.quote-icon {
+  position: relative;
+  top: 16px;
+}
+
+footer.quote-footer {
+  font-size: 16px;
+  margin-top: 20px;
+  font-style: normal;
+}
+  
+  
+</style>
+
+
+<style>
+@-moz-document url-prefix() {
+  .dropdown-language-list-wr .dropdown-list-container-wr {
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+  }
+  }
+
+  .dropdown-language-list-wr .dropdown-list-container-wr {
+    max-height: 240px !important;
+    overflow: auto !important;
+
+  }
+  .dropdown-language-list-wr .dropdown-list-container-wr::-webkit-scrollbar {
+    width: 6px;
+  }
+  .dropdown-language-list-wr .dropdown-list-container-wr::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 3px;
+    margin-right: 30px;
+  }
+
+  .dropdown-language-list-wr .dropdown-list-container-wr::-webkit-scrollbar-button {
+    display: none;
+  }
+</style>
+
+<style>
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+</style>
+
+
+
+<script src="/w/assets/2213ba75fb529dbbdd2112144a7beb3e793746db/styles.js" defer></script>
+<meta name="theme-color" content="#161cbb">
+
+<link  rel="swyperstylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<style>
+/* Hide scrollbar for webkit-based browsers */
+.block-scroll {
+	white-space: nowrap;
+	scrollbar-width: none; 
+}
+.block-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+html[lang="ja"] .heading--h1--download {
+  line-height: 1.1;
+}
+
+html[lang="ja"] .careers_h1 {
+  line-height: 1.1;
+}
+html[lang="ja"] .new-h1 {
+  line-height: 1.1;
+}
+html[lang="cs"] .new-h1 {
+  line-height: 1.1;
+}
+
+html[lang="vi"] .heading--h1--download {
+  line-height: 1.3;
+}
+html[lang="vi"] .careers_h1 {
+  line-height: 1.3;
+}
+html[lang="vi"] .new-h1 {
+  line-height: 1.3;
+}
+
+</style>
+
+<style>
+html[lang="ja"] .heading--h1--download {
+  line-height: 1.0;
+}
+
+html[lang="ja"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="ja"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.0;
+}
+html[lang="ja"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="es"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="es-LA"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="tr"] .heading--h1--download {
+  line-height: 1.0;
+}
+html[lang="tr"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="es-LA"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="hr"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="hr"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="lt"] .new-h1 {
+  line-height: 1.1;
+}
+html[lang="no"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="pl"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="pl"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="pt-BR"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="pt-BR"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="th"] .new-h1 {
+  line-height: 1.2;
+}
+html[lang="th"] .careers_h1 {
+  line-height: 1.2;
+}
+html[lang="vi"] .new-h1 {
+  line-height: 1.3;
+}
+html[lang="uk"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="vi"] .careers_h1 {
+  line-height: 1.3;
+}
+html[lang="tr"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.0;
+}
+html[lang="tr"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="fr"] .new-h1 {
+  line-height: 1.0;
+}
+
+html[lang="ro"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="hi"] .heading--h1--download {
+  line-height: 1.0;
+}
+html[lang="hi"] .careers_h1 {
+  line-height: 1.1;
+}
+html[lang="hi"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.1;
+}
+html[lang="hi"] .new-h1 {
+  line-height: 1.1;
+}
+
+html[lang="zh-Hans"] .heading--h1--download{
+  line-height: 1.0;
+}
+html[lang="zh-Hans"] .careers_h1{
+  line-height: 1.0;
+}
+html[lang="zh-Hans"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.0;
+}
+html[lang="zh-Hans"] .new-h1 {
+  line-height: 1.0;
+}
+
+html[lang="zh-TW"] .heading--h1--download {
+  line-height: 1.0;
+}
+html[lang="zh-TW"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="zh-TW"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.0;
+}
+html[lang="zh-TW"] .new-h1 {
+  line-height: 1.0;
+}
+
+html[lang="ko"] .heading--h1--download {
+  line-height: 1.0;
+}
+html[lang="ko"] .careers_h1 {
+  line-height: 1.0;
+}
+html[lang="ko"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.0;
+}
+html[lang="ko"] .new-h1 {
+  line-height: 1.0;
+}
+html[lang="uk"] .careers_h1 {
+  line-height: 1.1;
+}
+html[lang="uk"] .careers_h1.text-align-center.p-48px {
+  line-height: 1.1;
+}
+html[lang="uk"] .new-h1 {
+  line-height: 1.1;
+}
+
+@media screen and (max-width: 767px) {
+html[lang="tr"] .heading--h1--download,		html[lang="hu"] .heading--h1--download, html[lang="pl"] .heading--h1--download, html[lang="tl"] .heading--h1--download, html[lang="fi"] .heading--h1--download {
+    	font-size: clamp(14px, 10vw, 72px) !important;
+    }
+    	html[lang="tr"]     .new-h1.text-color-white.bottom-32,		html[lang="hu"]     .new-h1.text-color-white.bottom-32, html[lang="pl"]     .new-h1.text-color-white.bottom-32, html[lang="tl"]     .new-h1.text-color-white.bottom-32, html[lang="fi"]     .new-h1.text-color-white.bottom-32 , html[lang="de"]     .new-h1.text-color-white.bottom-32 {
+    	font-size: clamp(14px, 7vw, 56px) !important;
+    }
+ 	html[lang="tr"]     .careers_h1.text-align-center, h 	html[lang="hu"]     .careers_h1.text-align-center, html[lang="pl"]     .careers_h1.text-align-center, html[lang="tl"]     .careers_h1.text-align-center, html[lang="fi"]     .careers_h1.text-align-center {
+    	font-size: clamp(14px, 8vw, 56px) !important;
+    }
+}
+
+	html[lang="fi"]     .new-h1.text-color-white.bottom-32 {
+    	font-size: clamp(14px, 7vw, 40px) !important;
+    }
+
+</style>
+
+</head><body class="body"><div class="page-wrapper"><div class="main-wrapper download"><div class="logo_animation"><div data-w-id="5885c847-3b85-45d6-c7a4-9019df8f967a" class="menu-animation is_brand"></div><div class="hide"><div class="w-embed"><style>
+@media (max-width: 1279px) and (min-width: 992px) {  
+    .nav_brand_main-logo-2 {  
+        opacity: 1;  
+    }  
+      .nav_brand_main-black-icon {  
+       opacity: 0; 
+    }  
+      .nav_brand  {  
+       width: 9.1rem; 
+    }  
+        .nav_brand_main-black-logo {  
+      background-color: black; 
+    }  
+
+}  
+
+
+
+@media screen and (min-width: 1280px) {
+    .nav_brand_main-black-logo {
+        width: 9.1rem; }  
+
+}  
+
+.menu-animation.is_brand {
+  height: 870px;
+}
+
+/* Высота при разрешениях 1279px - 992px */
+@media (max-width: 1279px) and (min-width: 992px) {
+  .menu-animation.is_brand {
+    height: 700px;
+  }
+}
+
+/* Высота при разрешениях больше 1991px */
+@media (min-width: 1991px) {
+  .menu-animation.is_brand {
+    height: 8000px;
+  }
+}
+
+</style></div></div></div><div class="styles"><div class="global-styles w-embed"><style>
+
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 1 lines of text */
+.text-style-1line {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px), 
+  @media screen and (max-width: 767px), 
+  @media screen and (max-width: 479px){
+    .hide, .hide-tablet{
+      display: none !important;
+    }
+  }
+  @media screen and (max-width: 767px)
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+  }
+  @media screen and (max-width: 479px)
+    .hide-mobile{
+      display: none !important;
+    }
+  }
+ 
+.margin-0 {
+  margin: 0rem !important;
+}
+  
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+  
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+  
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+  
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+  
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+</style></div><div class="project-styles w-embed"><style>
+	.btn-2:hover .button-arrow {
+   transform: translateX(2px);
+  }
+  
+  .btn-2.is-back:hover .button-arrow-back {
+   transform: translateX(-2px);
+  }
+  
+  .btn_hover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease; 
+}
+
+ 	.btn_wr:hover .btn_hover-2 {
+  opacity: 1;
+}
+
+ 	.btn_wr:active .btn_hover-2 {
+  opacity: 1;
+}
+
+ 	.btn_wr:focus .btn_hover-2 {
+  opacity: 1;
+}
+
+	.featured_image {
+    transition: transform 0.3s ease;
+}
+
+	.featured_main-card:hover .featured_image {
+    transform: scale(1.15); 
+}
+
+
+	@media (max-width: 767px) {
+    .featured_main-card:hover .featured_image {
+        transform: scale(1.1); 
+    }
+}
+
+.bottom_search_trigger:hover .icon_dd_bg{
+  opacity:1;
+  top:4px;
+  left:4px;
+  bottom:4px;
+  right:4px;
+  border-radius:0.75rem;
+}
+
+.swiper_arrow:hover .icon_dd_bg {
+opacity:0.3;
+}
+
+.menu_arrow:hover .icon_dd_bg {
+opacity:0.3;
+}
+.swiper-notification{
+opacity:0;
+}
+
+ 
+  .all-faq {
+    width: 100% !important;
+  }
+
+
+</style></div></div><header class="nav"><div class="nav_styles w-embed"><style>
+
+	/*nav styles*/
+ .nav:has(.nav_dd_trigger.w--open) .nav_blur{
+ 	 display: block;
+   height:100%;
+   transition: opacity 0.4s;
+   opacity:1;
+   
+  }
+   /* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #fff;
+   outline-offset: 0.125rem;
+}
+ 
+  
+  .nav_blur {  
+    display: block;               
+    opacity: 0;                
+    visibility: hidden;        
+    transition: opacity 0.4s, visibility 0.4s; 
+}  
+
+.nav:has(.nav_dd_trigger.w--open) .nav_blur {  
+    opacity: 1;                 
+    visibility: visible;        
+}  
+
+  .nav:has(.nav_dd_trigger.w--open) .nav_dd_bg{
+  transform: scaleY(1);
+  }
+  
+.nav_burger_content .nav_link{
+	padding-top: 1.5rem;
+	padding-left:0;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid #ffffff10;
+	border-radius: 0px;
+	justify-content:left;
+}
+
+.nav_burger_content .nav_dd_trigger {
+	padding-top: 1.5rem;
+	padding-left:0;
+	padding-bottom: 1.5rem;
+	border-bottom: none;
+	justify-content:space-between;
+	flex-grow:1;
+}
+.nav_burger_content .nav_dd {
+	border-bottom: 1px solid #ffffff10;
+	border-radius: 0px;
+}
+.nav_menu.is-burger::-webkit-scrollbar {
+  width: 0px;
+  height: 10px;
+}
+.nav_dd_link-group:last-child {
+  border:0px;
+}
+
+.dd_nav-link:hover .nav_dd_link_arrow{
+	transform: translate(2px, -2px); 
+}
+@media screen and (max-width: 340px) and (min-width: 240px) {
+.nav_brand {
+   width: 7.45rem;
+}
+}
+
+
+
+ @media screen and (min-width: 1281px) and (max-width: 1500px)  {
+  html[lang="nl"] .nav_link, html[lang="nl"] .dd_nav-link, html[lang="nl"] .nav_dd_trigger,
+  html[lang="es"] .nav_link, html[lang="es"] .dd_nav-link, html[lang="es"] .nav_dd_trigger,
+  html[lang="ru"] .nav_link, html[lang="ru"] .dd_nav-link, html[lang="ru"] .nav_dd_trigger,
+  html[lang="el"] .nav_link, html[lang="el"] .dd_nav-link, html[lang="el"] .nav_dd_trigger,
+  html[lang="hu"] .nav_link, html[lang="hu"] .dd_nav-link, html[lang="hu"] .nav_dd_trigger,
+  html[lang="uk"] .nav_link, html[lang="uk"] .dd_nav-link, html[lang="uk"] .nav_dd_trigger {
+    font-size: 0.75rem !important;  
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+  html[lang="nl"] .nav_link, html[lang="nl"] .dd_nav-link, html[lang="nl"] .nav_dd_trigger,
+  html[lang="es"] .nav_link, html[lang="es"] .dd_nav-link, html[lang="es"] .nav_dd_trigger,
+  html[lang="da"] .nav_link, html[lang="da"] .dd_nav-link, html[lang="da"] .nav_dd_trigger,
+  html[lang="de"] .nav_link, html[lang="de"] .dd_nav-link, html[lang="de"] .nav_dd_trigger,   
+  html[lang="es-LA"] .nav_link, html[lang="es-LA"] .dd_nav-link, html[lang="es-LA"] .nav_dd_trigger, 
+  html[lang="fr"] .nav_link, html[lang="fr"] .dd_nav-link, html[lang="fr"] .nav_dd_trigger,  
+  html[lang="hr"] .nav_link, html[lang="hr"] .dd_nav-link, html[lang="hr"] .nav_dd_trigger,
+  html[lang="it"] .nav_link, html[lang="it"] .dd_nav-link, html[lang="it"] .nav_dd_trigger,
+  html[lang="lt"] .nav_link, html[lang="lt"] .dd_nav-link, html[lang="lt"] .nav_dd_trigger,
+  html[lang="no"] .nav_link, html[lang="no"] .dd_nav-link, html[lang="no"] .nav_dd_trigger,
+  html[lang="pl"] .nav_link, html[lang="pl"] .dd_nav-link, html[lang="pl"] .nav_dd_trigger,
+  html[lang="pt-BR"] .nav_link, html[lang="pt-BR"] .dd_nav-link, html[lang="pt-BR"] .nav_dd_trigger,
+  html[lang="ro"] .nav_link, html[lang="ro"] .dd_nav-link, html[lang="ro"] .nav_dd_trigger,
+  html[lang="sv"] .nav_link, html[lang="sv"] .dd_nav-link, html[lang="sv"] .nav_dd_trigger,
+  html[lang="vi"] .nav_link, html[lang="vi"] .dd_nav-link, html[lang="vi"] .nav_dd_trigger,
+  html[lang="th"] .nav_link, html[lang="th"] .dd_nav-link, html[lang="th"] .nav_dd_trigger,
+  html[lang="bg"] .nav_link, html[lang="bg"] .dd_nav-link, html[lang="bg"] .nav_dd_trigger,
+  html[lang="ja"] .nav_link, html[lang="ja"] .dd_nav-link, html[lang="ja"] .nav_dd_trigger,
+  html[lang="ru"] .nav_link, html[lang="ru"] .dd_nav-link, html[lang="ru"] .nav_dd_trigger,
+  html[lang="el"] .nav_link, html[lang="el"] .dd_nav-link, html[lang="el"] .nav_dd_trigger,
+  html[lang="hu"] .nav_link, html[lang="hu"] .dd_nav-link, html[lang="hu"] .nav_dd_trigger,
+  html[lang="uk"] .nav_link, html[lang="uk"] .dd_nav-link, html[lang="uk"] .nav_dd_trigger {
+    font-size: 0.65rem !important;  
+  }
+}
+
+
+@media screen and (max-width: 479px) {
+  
+    .nav_burger_list {
+        height: 100dvh;
+        max-height: 100dvh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+   
+    .nav_burger_bottom {
+        padding-bottom: calc(24px + env(safe-area-inset-bottom)) !important;
+        flex-shrink: 0;
+    }
+}
+
+  
+</style></div><div class="nav_padding"><div class="nav_wrapper"><a data-button-ally="skip" href="#main" class="skip-link w-inline-block"><div>Skip to main content</div></a><a href="/" class="nav_brand w-nav-brand"><img width="146" loading="lazy" alt="Home" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e90ab9506850e8a5dd48e3_Discrod_MainLogo.svg" class="nav_brand_main-logo"/><div class="nav_brand_main-black-logo"><img width="146" loading="lazy" alt="" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67ed8194f41d7d8eade32c90_Logo.svg" class="nav_brand_main-black-icon"/><img width="Auto" loading="lazy" alt="" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67ece93be2524af5cf14dc1c_Logo-black-bg.svg" class="nav_brand_main-logo-2"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67d00cf7266d2c75571aebde_Example.svg" alt="" class="nav_brand_main-logo-bg"/></div></a><div class="nav_menu_wr"><ul role="list" class="nav_menu"><li><a href="/download" class="nav_link">Download<span class="sr-only">1 of 9</span></a></li><li><a href="/nitro" class="nav_link">Nitro<span class="sr-only">2 of 9</span></a></li><li><div data-delay="0" data-hover="true" class="nav_dd is-relative w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div><span class="menu-title">Discover</span> <span class="sr-only">3 of 9</span></div><div class="nav_dd_arrow-wr-white"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="nav_dd_arrow-wr-black"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="black" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><a tabindex="0" href="https://discord.com/servers" class="nav_link_dropdown w-inline-block"></a></div><nav class="nav_dd_list is-safety w-dropdown-list"><div class="nav_dd_content-wr isnew"><div class="nav_dd_content_layout top-none _1-col"><div class="nav_dd_link-group"><div class="nav_dd_link_list"><div class="nav_dd_link_title">Resources</div><a href="https://discord.com/servers" class="dd_nav-link">Server Directory<span class="sr-only">1 of 2</span></a><a href="https://discord.com/trending-games" class="dd_nav-link">Trending Games<span class="sr-only">2 of 2</span></a></div></div></div><img loading="eager" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6a1fdab6dacb93b00f5ec24d_Discord_Objects_Newspaper.webp" alt="" class="nav-dd-decor is_discover"/></div></nav></div></li><li><div data-delay="0" data-hover="true" class="nav_dd is-relative w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div><span class="menu-title">Safety</span> <span class="sr-only">4 of 9</span></div><div class="nav_dd_arrow-wr-white"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="nav_dd_arrow-wr-black"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="black" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><a tabindex="0" href="/safety" class="nav_link_dropdown w-inline-block"></a></div><nav class="nav_dd_list is-safety w-dropdown-list"><div class="nav_dd_content-wr isnew"><div class="nav_dd_content_layout top-none _2-col is_n"><div class="nav_dd_link-group is_2025 is_n"><div class="nav_dd_link_list is-new"><div class="nav_dd_link_title">Resources</div><a href="/safety-family-center" class="dd_nav-link">Family Center <span class="sr-only">1 of 10</span></a><a href="/safety-library" class="dd_nav-link">Safety Library <span class="sr-only">2 of 10</span></a><a href="/safety-news" class="dd_nav-link">Safety News <span class="sr-only">3 of 10</span></a><a href="/safety-teen-charter" class="dd_nav-link w-inline-block"><div>Teen Charter <span class="sr-only">4 of 10</span></div></a><a href="/safety-players-guide" class="dd_nav-link is_new w-inline-block"><div>Discord Player&#x27;s Guide <span class="sr-only">5 of 10</span></div></a></div></div><div class="nav_dd_link-group is_hub"><div class="nav_dd_link_list is-new"><div class="nav_dd_link_title">Hubs</div><a href="/safety-parents" class="dd_nav-link w-inline-block"><div>Parent Hub <span class="sr-only">6 of 10</span></div></a><a href="/safety-policies" class="dd_nav-link w-inline-block"><div>Policy Hub <span class="sr-only">7 of 10</span></div></a><a href="/safety-privacy" class="dd_nav-link w-inline-block"><div>Privacy Hub <span class="sr-only">8 of 10</span></div></a><a href="/safety-transparency" class="dd_nav-link w-inline-block"><div>Transparency Hub <span class="sr-only">9 of 10</span></div></a><a href="/safety-wellbeing" class="dd_nav-link w-inline-block"><div>Wellbeing Hub <span class="sr-only">10 of 10</span></div></a></div></div></div><img loading="eager" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/678a4dee303240abdd278abf_Egg.webp" alt="" class="nav-dd-decor is-safety"/></div></nav></div></li><li><div data-delay="0" data-hover="true" class="nav_dd is-relative w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div><span class="menu-title">Quests</span> <span class="sr-only">5 of 9</span></div><div class="nav_dd_arrow-wr-white"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="nav_dd_arrow-wr-black"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="black" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><a tabindex="0" href="/ads/quests" class="nav_link_dropdown w-inline-block"></a></div><nav class="nav_dd_list is-safety w-dropdown-list"><div class="nav_dd_content-wr isnew"><div class="nav_dd_content_layout top-none _1-col"><div class="nav_dd_link-group"><div class="nav_dd_link_list"><div class="nav_dd_link_title">Resources</div><a href="/ads/quests" class="dd_nav-link">Advertising<span class="sr-only">1 of 3</span></a><a href="/ads/quests-success-stories" class="dd_nav-link">Success Stories<span class="sr-only">2 of 3</span></a><a href="/ads/quests-faq" class="dd_nav-link">Quests FAQ <span class="sr-only">3 of 3</span></a></div></div></div><img loading="eager" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/678a4e92695af76b1f7487a3_Set%201%2015.webp" alt="" class="nav-dd-decor"/></div></nav></div></li><li><div data-delay="0" data-hover="true" class="nav_dd is-relative w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div><span class="menu-title">Support</span> <span class="sr-only">6 of 9</span></div><div class="nav_dd_arrow-wr-white"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="nav_dd_arrow-wr-black"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="black" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><a tabindex="0" href="https://support.discord.com/hc/" class="nav_link_dropdown w-inline-block"></a></div><nav class="nav_dd_list is-safety w-dropdown-list"><div class="nav_dd_content-wr isnew"><div class="nav_dd_content_layout top-none _1-col"><div class="nav_dd_link-group"><div class="nav_dd_link_list"><div class="nav_dd_link_title">Resources</div><a href="https://support.discord.com/hc" class="dd_nav-link">Help Center<span class="sr-only">1 of 3</span></a><a href="https://support.discord.com/hc/requests/new?brand_id=96508&amp;ticket_form_id=34826052965399" class="dd_nav-link">Feedback<span class="sr-only">2 of 3</span></a><a href="https://support.discord.com/hc/en-us/requests/new" class="dd_nav-link">Submit a Request<span class="sr-only">3 of 3</span></a></div></div></div><img loading="eager" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/678a4b31695af76b1f713594_Discord_Nelly_Pose2_Flying%201.webp" alt="" class="nav-dd-decor is-support"/></div></nav></div></li><li><div data-delay="0" data-hover="true" class="nav_dd is-relative w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div><span class="menu-title">Blog </span><span class="sr-only">7 of 9</span> </div><div class="nav_dd_arrow-wr-white"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="nav_dd_arrow-wr-black"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="black" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><a tabindex="0" href="/blog" class="nav_link_dropdown w-inline-block"></a></div><nav class="nav_dd_list is-safety w-dropdown-list"><div class="nav_dd_content-wr isnew"><div class="nav_dd_content_layout top-none _1-col"><div class="nav_dd_link-group"><div class="nav_dd_link_list"><div class="nav_dd_link_title">Collections</div><a href="/blog" class="dd_nav-link">Featured<span class="sr-only">1 of 7</span></a><a href="/category/community" class="dd_nav-link">Community<span class="sr-only">2 of 7</span></a><a href="/category/company" class="dd_nav-link">Discord HQ<span class="sr-only">3 of 7</span></a><a href="/category/engineering" class="dd_nav-link">Engineering &amp; Developers<span class="sr-only">4 of 7</span></a><a href="/category/how-to-discord" class="dd_nav-link">How to Discord<span class="sr-only">5 of 7</span></a><a href="/category/safety" class="dd_nav-link">Policy &amp; Safety<span class="sr-only">6 of 7</span></a><a href="/category/product" class="dd_nav-link">Product &amp; Features<span class="sr-only">7 of 7</span></a></div></div></div><img loading="eager" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/678a4c12dbf6be5d792aa920_Clyde%20Cube.webp" alt="" class="nav-dd-decor is-blog"/></div></nav></div></li><li><div data-delay="0" data-hover="true" class="nav_dd is-relative w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div><span class="menu-title">Developers</span> <span class="sr-only">8 of 9</span>  </div><div class="nav_dd_arrow-wr-white"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><div class="nav_dd_arrow-wr-black"><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="black" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><a tabindex="0" href="/developers" class="nav_link_dropdown w-inline-block"></a></div><nav class="nav_dd_list is-safety w-dropdown-list"><div class="nav_dd_content-wr isnew"><div class="nav_dd_content_layout top-none _2-col"><div class="nav_dd_link-group"><div class="nav_dd_link_list"><div class="nav_dd_link_title">Learn</div><a href="https://discord.com/developers" class="dd_nav-link w-inline-block"><div>Discord for Game Developers <span class="sr-only">1 of 10</span></div></a><a href="https://discord.com/developers/social-sdk" class="dd_nav-link w-inline-block"><div>Integration <span class="sr-only">2 of 10</span></div></a><a href="https://discord.com/developers/social-commerce" class="dd_nav-link w-inline-block"><div>Social Commerce <span class="sr-only">3 of 10</span></div></a><a href="https://discord.com/developers/build" class="dd_nav-link w-inline-block"><div>Apps &amp; Activities <span class="sr-only">4 of 10</span></div></a><a href="https://discord.com/developers/developer-newsletter" class="dd_nav-link w-inline-block"><div>Developer Newsletter<span class="sr-only"> 5 of 10 </span></div></a><a href="https://discord.com/developers/success-stories" class="dd_nav-link w-inline-block"><div>Developer Case Studies <span class="sr-only">6 of 10</span></div></a></div><div class="nav_dd_link_line is-n"></div><div class="nav_dd_link_list"><div class="nav_dd_link_title">Build</div><a href="https://discord.com/community" class="dd_nav-link w-inline-block"><div>Official Game Communities <span class="sr-only">7 of 10</span></div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="https://discord.com/developers/home" class="dd_nav-link w-inline-block"><div>Developer Portal <span class="sr-only">8 of 10</span></div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="https://discord.com/developers/docs/intro" class="dd_nav-link w-inline-block"><div>Documentation <span class="sr-only">9 of 10</span></div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="https://support-dev.discord.com/hc/en-us" class="dd_nav-link w-inline-block"><div>Developer Help Center <span class="sr-only">10 of 10</span></div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div><img loading="eager" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/678a4aae3ee9f2e87506de82_Clyde%20(1).webp" alt="" class="nav-dd-decor is-build"/></div></nav></div></li><li><a href="/careers" aria-current="page" class="nav_link is_careers w--current">Careers<span class="sr-only">9 of 9</span></a></li></ul></div><div class="nav_buttons-wr_new"><a id="login" data-track="login" data-track-nav="login" href="https://discord.com/app" class="button-nav login-button-js new w-button">Log In</a><a data-track-nav="login" data-track="login" href="https://discord.com/app" class="menu-button-login login-button-js abc">Log in</a></div><div id="w-node-_67393616-e5e7-814a-4677-1dbdb5d2d583-b5d2d520" class="nav_burger_button"><button data-w-id="b93b50af-9631-6ca8-6e01-55118fad5ab8" aria-label="Menu" tabindex="0" role="button" class="nav_burger_trigger"><div class="close_icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6ZM4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12ZM5 17C4.44772 17 4 17.4477 4 18C4 18.5523 4.44772 19 5 19H12C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17H5Z" fill="white"/>
+</svg></div></button><a aria-label="Menu" tabindex="0" role="button" data-w-id="67393616-e5e7-814a-4677-1dbdb5d2d584" href="#" class="nav_burger_trigger is_hide w-inline-block"></a><div data-w-id="67393616-e5e7-814a-4677-1dbdb5d2d586" class="nav_burger_trigger-black"><div class="close_icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6C20 6.55228 19.5523 7 19 7H5C4.44772 7 4 6.55228 4 6ZM4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12ZM5 17C4.44772 17 4 17.4477 4 18C4 18.5523 4.44772 19 5 19H12C12.5523 19 13 18.5523 13 18C13 17.4477 12.5523 17 12 17H5Z" fill="currentColor"/>
+</svg></div></div><div class="nav_burger_list"><div class="nav_burger_content"><div class="nav_burger_top"><a href="https://discord.com/" class="nav_brand is-burger w-nav-brand"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e278299a53f5bf88615e90_Symbol.svg" alt="" class="nav-brand_logo-burger"/></a><a href="#" title="Close menu" data-w-id="67393616-e5e7-814a-4677-1dbdb5d2d58d" class="nav_burger_close w-nav-brand"><div class="close_icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+</svg></div></a></div><ul role="list" class="nav_menu is-burger"><li><a href="https://discord.com/download" class="nav_link">Download</a></li><li><a href="https://discord.com/nitro" class="nav_link">Nitro</a></li><li><div data-delay="0" data-hover="false" class="nav_dd w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div>Discover</div><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><nav class="nav_dd_list is-burger w-dropdown-list"><div class="nav_dd_content-wr"><div class="nav_dd_separator"></div><div class="nav_dd_content_layout"><div class="nav_dd_link-group"><a href="https://discord.com/servers" class="nav_dd_link-group_title is-new">Discover</a><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Resources</div><a href="https://discord.com/servers" class="dd_nav-link is-new w-inline-block"><div>Server Directory</div></a><a href="https://discord.com/trending-games" class="dd_nav-link is-new">Trending Games</a></div></div></div><div class="nav_dd_list_bg"></div></div></nav></div></li><li><div data-delay="0" data-hover="false" class="nav_dd w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div>Safety</div><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><nav class="nav_dd_list is-burger w-dropdown-list"><div class="nav_dd_content-wr"><div class="nav_dd_separator"></div><div class="nav_dd_content_layout"><div class="nav_dd_link-group"><a href="/safety" class="nav_dd_link-group_title is-new">Safety</a><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Resources</div><a href="/safety-family-center" class="dd_nav-link is-new w-inline-block"><div>Family Center</div></a><a href="/safety-library" class="dd_nav-link is-new">Safety Library</a><a href="/safety-news" class="dd_nav-link is-new">Safety News</a><a href="/safety-teen-charter" class="dd_nav-link is-new w-inline-block"><div>Teen Charter</div></a><a href="/safety-players-guide" class="dd_nav-link is-new w-inline-block"><div>Discord Player&#x27;s Guide</div></a></div></div><div class="nav_dd_link-group"><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Hubs</div><a href="/safety-parents" class="dd_nav-link is-new w-inline-block"><div>Parent Hub</div></a><a href="/safety-policies" class="dd_nav-link is-new w-inline-block"><div>Policy Hub</div></a><a href="/safety-privacy" class="dd_nav-link is-new w-inline-block"><div>Privacy Hub</div></a><a href="/safety-transparency" class="dd_nav-link is-new w-inline-block"><div>Transparency Hub</div></a><a href="/safety-wellbeing" class="dd_nav-link is-new w-inline-block"><div>Wellbeing Hub</div></a></div></div></div><div class="nav_dd_list_bg"></div></div></nav></div></li><li><div data-delay="0" data-hover="false" class="nav_dd w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div>Quests</div><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><nav class="nav_dd_list is-burger w-dropdown-list"><div class="nav_dd_content-wr"><div class="nav_dd_separator"></div><div class="nav_dd_content_layout"><div class="nav_dd_link-group"><a href="https://discord.com/ads/quests" class="nav_dd_link-group_title is-new">Quests</a><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Resources</div><a href="https://discord.com/ads/quests" class="dd_nav-link is-new">Advertising</a><a href="https://discord.com/ads/quests-success-stories" class="dd_nav-link is-new">Success Stories</a><a href="https://discord.com/ads/quests-faq" class="dd_nav-link is-new">Quests FAQ</a></div></div></div><div class="nav_dd_list_bg"></div></div></nav></div></li><li><div data-delay="0" data-hover="false" class="nav_dd w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div>Support</div><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><nav class="nav_dd_list is-burger w-dropdown-list"><div class="nav_dd_content-wr"><div class="nav_dd_separator"></div><div class="nav_dd_content_layout"><div class="nav_dd_link-group"><a href="https://support.discord.com/hc" class="nav_dd_link-group_title is-new">Support</a><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Resources</div><a href="https://support.discord.com/hc" class="dd_nav-link is-new">Help Center</a><a href="https://support.discord.com/hc/requests/new?brand_id=96508&amp;ticket_form_id=34826052965399" class="dd_nav-link is-new">Feedback</a><a href="https://support.discord.com/hc/en-us/requests/new" class="dd_nav-link is-new">Submit a Request</a></div></div></div></div></nav></div></li><li><div data-delay="0" data-hover="false" class="nav_dd w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div>Blog</div><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><nav class="nav_dd_list is-burger w-dropdown-list"><div class="nav_dd_content-wr"><div class="nav_dd_separator"></div><div class="nav_dd_content_layout"><div class="nav_dd_link-group"><a href="https://discord.com/blog" class="nav_dd_link-group_title is-new">Blog</a><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Collections</div><a href="https://discord.com/blog" class="dd_nav-link is-new">Featured</a><a href="https://discord.com/category/community" class="dd_nav-link is-new">Community</a><a href="https://discord.com/category/company" class="dd_nav-link is-new">Discord HQ</a><a href="https://discord.com/category/engineering" class="dd_nav-link is-new">Engineering &amp; Developers</a><a href="https://discord.com/category/how-to-discord" class="dd_nav-link is-new">How to Discord</a><a href="https://discord.com/category/safety" class="dd_nav-link is-new">Policy &amp; Safety</a><a href="https://discord.com/category/product" class="dd_nav-link">Product &amp; Features</a></div></div></div><div class="nav_dd_list_bg"></div></div></nav></div></li><li><div data-delay="0" data-hover="false" class="nav_dd w-dropdown"><div class="nav_dd_trigger w-dropdown-toggle"><div>Developers</div><div class="nav_dd_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6L8 10L4 6" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></div><nav class="nav_dd_list is-burger w-dropdown-list"><div class="nav_dd_content-wr"><div class="nav_dd_separator"></div><div class="nav_dd_content_layout"><div class="nav_dd_link-group"><a href="https://discord.com/developers" class="nav_dd_link-group_title is-new">Developers</a><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Learn</div><a href="https://discord.com/developers" class="dd_nav-link is-new w-inline-block"><div>Discord for Game Developers</div></a><a href="https://discord.com/developers/social-sdk" class="dd_nav-link is-new w-inline-block"><div>Integration</div></a><a href="https://discord.com/developers/social-commerce" class="dd_nav-link is-new w-inline-block"><div>Social Commerce</div></a><a href="https://discord.com/developers/build" class="dd_nav-link is-new w-inline-block"><div>Apps and Activities</div></a><a href="https://discord.com/developers/developer-newsletter" class="dd_nav-link is-new w-inline-block"><div>Developer Newsletter</div></a><a href="https://discord.com/developers/success-stories" class="dd_nav-link is-new w-inline-block"><div>Developer Case Studies</div></a></div><div class="nav_dd_link_line"></div><div class="nav_dd_link_list"><div class="nav_dd_link_title is-new">Documentation</div><a href="https://discord.com/community" class="dd_nav-link is-new w-inline-block"><div>Official Game Communities</div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="https://discord.com/developers/home" class="dd_nav-link is-new w-inline-block"><div>Developer Portal</div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="https://discord.com/developers/docs/intro" class="dd_nav-link is-new w-inline-block"><div>Documentation</div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a><a href="https://support-dev.discord.com/hc/en-us" class="dd_nav-link is-new w-inline-block"><div>Developer Help Center</div><div class="nav_dd_link_arrow w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 4H12M12 4V11M12 4L4 12" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div></a></div></div></div></div></nav></div></li><li><a href="https://discord.com/careers" class="nav_link">Careers</a></li></ul><div class="nav-sider"></div><div class="nav_burger_bottom"><a href="https://discord.com/app" data-track-nav="login" data-track="login" class="button-nav is-burger is-ghost login-button-js w-nav-brand"><div>Log In</div></a><a href="#" data-track-download="Download Page" class="button-nav is-burger download-button w-nav-brand"><div class="embed-center w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9 1C9 0.447715 8.55228 0 8 0C7.44772 0 7 0.447715 7 1V7.58579L4.70711 5.29289C4.31658 4.90237 3.68342 4.90237 3.29289 5.29289C2.90237 5.68342 2.90237 6.31658 3.29289 6.70711L7.29289 10.7071C7.68342 11.0976 8.31658 11.0976 8.70711 10.7071L12.7071 6.70711C13.0976 6.31658 13.0976 5.68342 12.7071 5.29289C12.3166 4.90237 11.6834 4.90237 11.2929 5.29289L9 7.58579V1ZM2 12C2 11.4477 1.55228 11 1 11C0.447715 11 0 11.4477 0 12V13C0 14.6569 1.34315 16 3 16H13C14.6569 16 16 14.6569 16 13V12C16 11.4477 15.5523 11 15 11C14.4477 11 14 11.4477 14 12V13C14 13.5523 13.5523 14 13 14H3C2.44772 14 2 13.5523 2 13V12Z" fill="black"/>
+</svg></div><div>App Store</div></a><div class="nav_burger_bottom_grad"></div></div></div></div><div class="nav_burger_bottom_grad"></div></div></div></div><div class="nav_blur"></div></header><div data-w-id="254768e8-f4cf-eb14-3d85-de36f19fbf51" class="careers_hero is-update is-bottom-shadow"><div data-w-id="533a2786-5333-58d8-d71b-e7a81015cee5" class="container-1320px"><div data-w-id="fe351764-aa25-12d2-8cc4-ed89c3778329" class="download_layout"><div class="max-width-624"><h1 class="heading--h1-new is-capitalize is_2026">Work at Discord</h1><div><p class="is-small-mob body-text-new--xll text-align-center">Our employees aren’t just the most talented folks in the industry (we may be a little biased), they’re also deeply passionate about gaming, fostering meaningful connections, and of course, Discord.</p></div><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e08826c7fe6dc138ae365_Crown.webp" loading="eager" sizes="(max-width: 933px) 100vw, 933px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e08826c7fe6dc138ae365_Crown-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e08826c7fe6dc138ae365_Crown-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e08826c7fe6dc138ae365_Crown.webp 933w" alt="" class="crown carrers"/><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e08988c237ba78d87458c_Set%202%204.webp" loading="eager" alt="" class="turnip is-update-job"/><div class="padding-40px is-40"></div><a data-w-id="a9e827a5-0f87-9747-ee54-57d9aa8df276" href="#all-jobs" class="relative-anim is_2026 w-inline-block"><div data-track="media-kit" class="new-dark-button download-new is_radius-new"><div class="z-index-3">See All Jobs</div></div><div style="opacity:0" class="circle-hover"></div></a></div></div></div><div class="gallery_slider_component is-update is_2026"><div class="gallery_slider_wr"><div class="swiper_component is-gallery"><div class="swiper is-gallery"><div class="swiper-wrapper is-gallery"><div class="swiper-slide is-gallery is-active"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca77dc02004de7d588e_Discord_Careers_09.webp" alt="The entrance to the Discord office, with two employees pictured walking out and conversing. The Discord logo is visible from the front glass pane, along with a large glass door and reception area." sizes="100vw" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca77dc02004de7d588e_Discord_Careers_09-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca77dc02004de7d588e_Discord_Careers_09-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca77dc02004de7d588e_Discord_Careers_09-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca77dc02004de7d588e_Discord_Careers_09.webp 1315w" class="careers_img"/></div><div class="swiper-slide is-gallery"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7b4d58d6a7f6a46db_Discord_Careers_02.webp" alt="Discord’s office — a comfortable arrangement of various seating options, computer equipment, individual desks, and Discord employees at work." sizes="(max-width: 1315px) 100vw, 1315px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7b4d58d6a7f6a46db_Discord_Careers_02-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7b4d58d6a7f6a46db_Discord_Careers_02-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7b4d58d6a7f6a46db_Discord_Careers_02-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7b4d58d6a7f6a46db_Discord_Careers_02.webp 1315w" class="careers_img"/></div><div class="swiper-slide is-gallery"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7341acd6e6668c985_Discord_Careers_03.webp" alt="A Discord employee sitting in a private work booth, visible behind a glass door that is shut. He is working on his laptop and sitting on a comfy, fabric bench." sizes="(max-width: 1315px) 100vw, 1315px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7341acd6e6668c985_Discord_Careers_03-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7341acd6e6668c985_Discord_Careers_03-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7341acd6e6668c985_Discord_Careers_03-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7341acd6e6668c985_Discord_Careers_03.webp 1315w" class="careers_img"/></div><div class="swiper-slide is-gallery"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca728940045960e2fff_Discord_Careers_05.webp" alt="One of the many collaborative spaces found in the Discord offices — two employees are sitting across from each other, smiling and conversing over a chess game. They are seated at a long wooden table, various chairs and couches are behind them, as well as a refrigerator and snack area." sizes="(max-width: 1315px) 100vw, 1315px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca728940045960e2fff_Discord_Careers_05-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca728940045960e2fff_Discord_Careers_05-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca728940045960e2fff_Discord_Careers_05-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca728940045960e2fff_Discord_Careers_05.webp 1315w" class="careers_img"/></div><div class="swiper-slide is-gallery"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca78de257870205deae_Discord_Careers_06.webp" alt="Two employees working beside each other on their laptops inside a spacious meeting room. They are seated at the corner of the table in the room, and two windows behind them show the skyline of San Francisco’s financial district and the Potrero Hill neighborhood." sizes="(max-width: 1315px) 100vw, 1315px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca78de257870205deae_Discord_Careers_06-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca78de257870205deae_Discord_Careers_06-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca78de257870205deae_Discord_Careers_06-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca78de257870205deae_Discord_Careers_06.webp 1315w" class="careers_img"/></div><div class="swiper-slide is-gallery"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7e538ed3e63d6e5c5_Discord_Careers_07.webp" alt="Three employees are working collaboratively inside a private workstation, the glass door is ajar. All three of them have their work laptops atop the desk in the middle. Beside one of them there is a cup of iced Coffee." sizes="(max-width: 1315px) 100vw, 1315px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7e538ed3e63d6e5c5_Discord_Careers_07-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7e538ed3e63d6e5c5_Discord_Careers_07-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7e538ed3e63d6e5c5_Discord_Careers_07-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7e538ed3e63d6e5c5_Discord_Careers_07.webp 1315w" class="careers_img"/></div><div class="swiper-slide is-gallery"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7c62c191c557b56db_Discord_Careers_08.webp" alt="Two employees sitting atop a fabric couch, game controllers in their hands, both are visibly laughing as they play against each other in a video game. Behind them are various plants separated by a glass pane." sizes="(max-width: 1315px) 100vw, 1315px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7c62c191c557b56db_Discord_Careers_08-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7c62c191c557b56db_Discord_Careers_08-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7c62c191c557b56db_Discord_Careers_08-p-1080.webp 1080w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67628ca7c62c191c557b56db_Discord_Careers_08.webp 1315w" class="careers_img"/></div></div></div><div class="swiper-arrows_wr is-large"><a aria-label="previous slide" href="#" class="swiper_arrow swiper-button-prev w-inline-block"><div class="swiper_arrow-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.5 18L8.5 12L14.5 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="icon_dd_bg"></div></a><a aria-label="next slide" href="#" class="swiper_arrow swiper-button-next w-inline-block"><div class="swiper_arrow-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5 18L15.5 12L9.5 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="icon_dd_bg"></div></a></div></div><div class="w-embed"><style>
+.swiper-slide.is-cases.is-active{
+      transform: scale(1) !important;
+}
+
+.swiper_bullet_progress {
+  width: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Progress animation */
+@keyframes swiperProgress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+/* Active bullet with running progress animation */
+.swiper_bullet.is-active .swiper_bullet_progress {
+  animation: swiperProgress 9s linear forwards; /* 9s to match autoplay delay */
+}
+
+/* Pause the animation when hovering */
+.swiper_component:hover .swiper_bullet.is-active .swiper_bullet_progress {
+  animation-play-state: paused;
+}\
+.swiper-slide.is-cases.is-active{
+    opacity:1;
+}
+  
+.swiper-slide.is-gallery.is-active .careers_img{
+    width:100%;
+    height:100%;
+}
+
+</style></div></div></div></div><div data-w-id="b82ff862-a8b3-9468-f31f-a26ba028151d" class="careers-section is-update"><div class="padding-global is_2026"><div class="container-944px is_1500"><div data-w-id="16fc354f-d1bd-81c0-c650-f998d4f441cc" class="max-w-697 is-center"><h2 class="heading--h2-new text-align-center is-capitalize is-letter b-small">Be a part of the future of gaming</h2><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e0d80cdd7ceb531a8a3f2_clyde_pose_02%201.webp" loading="eager" sizes="(max-width: 762px) 100vw, 762px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e0d80cdd7ceb531a8a3f2_clyde_pose_02%201-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e0d80cdd7ceb531a8a3f2_clyde_pose_02%201.webp 762w" alt="" class="clyde-image is-update"/><p class="body-text-new--xll text-align-center">We believe Discord is uniquely positioned to shape the future of gaming. We aren’t just imagining what it may look like, we’re building Discord to be the perfect place to talk while playing games on any platform, no matter what device you play on.</p></div><div class="padding-120px is-100"></div><div class="reverce-tablet"><div class="layout margin-bottom-small is-update"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6762905aa3a722f72e038838_Discord_Careers_10%201.webp" loading="lazy" sizes="(max-width: 648px) 100vw, 648px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6762905aa3a722f72e038838_Discord_Careers_10%201-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6762905aa3a722f72e038838_Discord_Careers_10%201.webp 648w" alt="Work with people who ARE PASSIONATE" class="careers-image is-update"/><div><h2 class="ad_heading3 is-game is_2026 is-game-new">Work with people just as passionate as you</h2><p class="body-text-new--xll">Much like the people on Discord, our employees can’t be put in a box (but maybe in a server). We come from all walks of life, and with our own unique perspectives, but we all care about the same thing: making Discord your home while gaming.</p></div></div><div class="layout margin-bottom-small is-update bottom-none"><div><h2 class="ad_heading3 is-game is_2026 is-game-new">Where every idea is heard and valued</h2><p class="body-text-new--xll">We don&#x27;t just build Discord, we use it too! All of us want to help make Discord the best place to play games with friends, and everyone&#x27;s input matters.</p></div><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67b5a21a4f30a6644094e917_Image.webp" loading="lazy" id="w-node-_0a7ea665-5462-c01b-f862-546750d88683-5256d709" sizes="(max-width: 972px) 100vw, 972px" alt="Join a culture that cares" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67b5a21a4f30a6644094e917_Image-p-500.webp 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67b5a21a4f30a6644094e917_Image-p-800.webp 800w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67b5a21a4f30a6644094e917_Image.webp 972w" class="careers-image is-update is_second"/></div></div></div></div></div><div id="all-jobs" data-w-id="1068dd49-d8f9-b8d4-ce01-660602046617" class="careers-section is-update"><div class="padding-global is_2026"><div class="container-944px is_1500"><div class="max-w-697 is-center"><div class="careers-eggsicon is-update"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/670e2a12426f63e7b781f9e2_Egg.webp" loading="eager" alt="" class="careers-img"/></div><h2 class="heading--h2-new text-align-center is-capitalize is-letter b-small">Don’t just imagine the future of gaming — build it with us. </h2><div class="is_careers-widht"><p class="body-text-new--xll text-align-center">Explore our careers page and see if any of our open jobs would be a great fit for you.</p></div><div class="dropdown-wrapper-job is-inline"><div data-hover="false" data-delay="0" aria-haspopup="listbox" role="combobox" data-w-id="ba8f4ef2-a24d-c8fe-fb6a-0ef794889ae1" class="dropdown-careers is-center w-dropdown"><div class="btn-download is_jobs w-dropdown-toggle"><div class="selected-job-category">Featured</div><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67f4f0cb486742a196787182_Chevron%20Down.svg" loading="lazy" alt="" class="arrow-drop is_2025"/></div><nav class="dropdown-list-dark is_jobs w-dropdown-list"><a href="#" class="dropdown-link-jobs w-dropdown-link">deb</a></nav></div><div class="w-embed"><style>
+/* width */
+.dropdown-list-dark::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.dropdown-list-dark::-webkit-scrollbar-track {
+  background: #292929;
+
+}
+
+/* Handle */
+.dropdown-list-dark::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 3px;
+ 
+    
+}
+
+/* Handle on hover */
+.dropdown-list-dark::-webkit-scrollbar-thumb:hover {
+  background: #FFFFFF6D;
+}
+
+</style></div></div></div><div class="padding-48px is-80 m-40"></div><div class="jobs-list"><a data-w-id="216877b5-23fb-6576-eadf-20610f240f9d" href="#" class="job-item hide is-clone w-inline-block"><div class="media-block-bg"></div><div class="tag-future">Engineering</div><h3 class="heading-28px">Engineering Manager Safety Platform</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50">San Francisco or Remote (U.S.)</p></a></div><div class="layout-center"><a href="#" class="outline-button careers load-more-jobs hide">Load More</a></div></div></div></div><div class="careers-section is-update"><div class="padding-global is_2026"><div class="container_1540"><div class="max-width-750px text-align-center"><h2 class="heading--h2-new text-align-center is-capitalize is-letter">Experience Life at Discord</h2></div><div class="padding-24px m-24"></div></div></div></div><div class="careers-section-card"><div class="padding-global is_2026"><div class="container-944px is_2026"><div class="w-dyn-list"><div role="list" class="jobs-wr-2 is_second top-none w-dyn-items"><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/67248052742817b029c42c38_Discord%20HQ.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Discord HQ</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">At Discord, we believe great work can happen anywhere, whether in person or virtually. Our flexible work model empowers our people to choose where they work best: at home, in one of our offices like our San Francisco HQ, or a mix of both.</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a50d64abab62eece7f46b_Frame%20312.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Grow together</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">Look forward to developing both professionally and personally alongside your colleagues at Discord. All of our managers go through a leadership program, and we offer enriching trainings for everyone. No matter what your interests or skills are, there&#x27;s a place on our platform for you to find and build belonging.</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a5167e8f7bf3f6ed62658_Frame%20313.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Money matters</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">Discord strives to offer fair and competitive compensation packages, including equity. You&#x27;ll have room to grow and be rewarded based on your contributions and impact at the company. Take advantage of our retirement offerings (including 401k matching in the U.S.) to meet your financial goals.</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a5191be51fce9f8a1e186_Frame%20314.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Health benefits</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">At Discord, we health-care about you! We offer medical, dental, vision, reproductive, gender-affirming, and mental healthcare to our employees.</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a51d0dfe584ef4d826e7d_Family%20support.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Family support</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">Spend some quality time with the next generation with 12+ weeks parental leave, as well as fertility, adoption, and surrogacy benefits.</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a51f8b1be13388246a0b3_R%26R.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">R&amp;R</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">Stay refreshed with four weeks of PTO, 16 paid holidays each year including a week off for the winter holidays, and flexible sick time (which includes mental health days).</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a52763b1fdf948ac9840a_Wellness%20on%20us.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Wellness on us</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">Take advantage of a $375 quarterly stipend for your gym membership or other activities to keep you feeling great.</p></div></button></div><div role="listitem" class="swiper-slide w-dyn-item"><button class="employee-link is-update"><img loading="eager" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/671a529fa2701c1b7694db15_Giving.svg" alt="" class="img-job"/><div class="employee-content-wr"><h3 class="text-24px-500-white is-new top-none text-align-left">Giving back</h3><div class="padding-8px"></div><p class="paragraph-white-opacity50 is-height">Whatever social cause you’re passionate about, take a day (or two) off to make an impact. While you&#x27;re at it, take advantage of $1,000/year in donation matching to charitable organizations!</p></div></button></div></div></div><div class="disclaimer-wrapper"><div class="body-text--xll disclaimer-text">Benefits listed apply to US-based, full time employees. Benefits for employees outside the US may vary by location.</div></div></div></div></div><div class="careers-section is-update"><div class="padding-global is_2026"><div class="container-944px"><div class="max-w-697 is-center is-868"><h2 class="heading--h2-new text-align-center is-capitalize is-letter b-small">When it’s time for fun, find your party here</h2><p class="body-text-new--xll text-align-center">Working at Discord is like hanging out on your favorite server; our employees hang out and play games together, talk about their favorite hobbies, and build inclusive spaces where employees can offer mentorship and guidance. </p></div><div class="padding-48px hide-landscape"></div></div></div><div class="jobs_slider_component"><div class="swiper_component is-jobs"><div class="swiper is-jobs w-dyn-list"><div role="list" class="swiper-wrapper is-jobs w-dyn-items"><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762c96545de6e92e5f8a99e_Clubs-ERGs%20(2).svg" loading="eager" alt="Anime Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Anime Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762ca43973fb410af069beb_Clubs-ERGs%20(3).svg" loading="eager" alt="Art Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Art Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cadbbf2e554b54cc37b4_Clubs-ERGs%20(4).svg" loading="eager" alt="Asian Friends &amp; Kinship (AFK)" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Asian Friends &amp; Kinship (AFK)</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cb559f86ad0f729aff40_Clubs-ERGs%20(5).svg" loading="eager" alt="Basketball Buds" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Basketball Buds</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/670e2deba92efe0818ebb340_Spot%20Illustration%20(2)%20(1).png" loading="eager" alt="Black &amp; African American Movement (BAAM)" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Black &amp; African American Movement (BAAM)</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cc9af252a2120ab4576a_Clubs-ERGs%20(6).svg" loading="eager" alt="Book Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Book Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cce92f03ea6fb88097a2_Clubs-ERGs%20(7).svg" loading="eager" alt="Brain &amp; Body Works" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Brain &amp; Body Works</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cd382227206e8b766c2d_Clubs-ERGs%20(8).svg" loading="eager" alt="Cat Cam Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Cat Cam Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cd71a8daba3bd98d10be_Clubs-ERGs%20(9).svg" loading="eager" alt="Climbtime" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Climbtime</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cdaec9e873c6a749bc5b_Clubs-ERGs%20(10).svg" loading="eager" alt="Deep Blurple Chess Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Deep Blurple Chess Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762cde9de5c2743ef19d746_Clubs-ERGs%20(11).svg" loading="eager" alt="Esports Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Esports Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762ce3e239ea970e988e9a0_Clubs-ERGs%20(12).svg" loading="eager" alt="Futbol Friends" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Futbol Friends</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762ce6fa24d4f98492bfac8_Clubs-ERGs%20(13).svg" loading="eager" alt="Hip Hop Enthusiasts" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Hip Hop Enthusiasts</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762ce993ed1e3b878915beb_Clubs-ERGs%20(14).svg" loading="eager" alt="Jew-ish" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Jew-ish</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/670e2f35e36775d55f644d6e_Spot%20Illustration%20(6).png" loading="eager" alt="La Cafetería" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">La Cafetería</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/670d3d0e6d8546cc50daeeb4_Spot%20Illustration%20(1).png" loading="eager" alt="Pride" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Pride</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d4425880a35991747cc0_Clubs-ERGs%20(15).svg" loading="eager" alt="Reali-tea TV Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Reali-tea TV Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d4da1e4ed49546adc1b6_Clubs-ERGs%20(16).svg" loading="eager" alt="Spin Society" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Spin Society</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d52fbf2e554b54d68123_Clubs-ERGs%20(17).svg" loading="eager" alt="Tabletop Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Tabletop Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d5904fa9c0461533de3f_Clubs-ERGs%20(19).svg" loading="eager" alt="Taskmaster Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Taskmaster Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d5e507c440b6f4a0bcab_Clubs-ERGs%20(20).svg" loading="eager" alt="The Parent Trap" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">The Parent Trap</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d623e2cc1bf97100660a_Clubs-ERGs%20(21).svg" loading="eager" alt="Theatre" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Theatre</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d65e4f49eee6adbf0ff2_Clubs-ERGs%20(22).svg" loading="eager" alt="Veterans: Fort Wumpus" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Veterans: Fort Wumpus</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d6833751c3b3ba4d12cd_Clubs-ERGs%20(23).svg" loading="eager" alt="Volleyball Club" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Volleyball Club</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/6762d6b7098e858a9e6e4e48_Clubs-ERGs%20(24).svg" loading="eager" alt="Whiskey and Spirits Society" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Whiskey and Spirits Society</h3></div></div></div></div><div role="listitem" class="swiper-slide is-jobs is-active w-dyn-item"><div class="jobs-slide_content-wr"><div class="jobs_content-wr"><div class="jobs_icon-wr"><img src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/670e2f6c6cc993427807dec9_Spot%20Illustration%20(7)%20(1).png" loading="eager" alt="Women in Tech" class="jobs_icon"/></div><div class="jobs_text-wr"><h3 class="heading-28px">Women in Tech</h3></div></div></div></div></div></div><div class="swiper_pagination"><div class="swiper_bullet"></div><div class="swiper_bullet is-active-prev-prev"></div><div class="swiper_bullet is-active-prev"></div><div class="swiper_bullet is-active"><div class="swiper_bullet_progress"></div></div><div class="swiper_bullet is-active-next"></div><div class="swiper_bullet is-active-next-next"></div></div><div class="swiper-arrows_wr is-large"><a aria-label="previous slide" href="#" class="swiper_arrow swiper-button-prev w-inline-block"><div class="swiper_arrow-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.5 18L8.5 12L14.5 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="icon_dd_bg"></div></a><a aria-label="next slide" href="#" class="swiper_arrow swiper-button-next w-inline-block"><div class="swiper_arrow-icon w-embed"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.5 18L15.5 12L9.5 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="icon_dd_bg"></div></a></div><div class="w-embed"><style>
+
+
+.swiper_bullet_progress {
+  width: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Progress animation */
+@keyframes swiperProgress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 2rem;
+  }
+}
+
+/* Active bullet with running progress animation */
+.swiper_bullet.is-active .swiper_bullet_progress {
+  animation: swiperProgress 9s linear forwards; /* 9s to match autoplay delay */
+}
+
+/* Pause the animation when hovering */
+.swiper_component:hover .swiper_bullet.is-active .swiper_bullet_progress {
+  animation-play-state: paused;
+}
+
+.swiper-slide.is-jobs.swiper-slide-next{
+     margin-right:-3rem;
+}
+
+.swiper-slide.is-jobs.swiper-slide-prev{
+     margin-left:-3rem;
+}
+/*ACTIVE SLIDE STYLES*/
+
+.swiper-slide.is-jobs.is-active{
+      transform: scale(1) !important;
+      opacity:1;
+}
+.swiper-slide.is-jobs.is-active .jobs-slide_content-wr{
+    width:100%;
+    height:100%;
+    transform: scale(1);
+}
+
+.swiper-slide.is-jobs.is-active .jobs_icon{
+  width:auto;
+  transform: scale(1);
+
+}
+.swiper-slide.is-jobs.is-active .jobs_title{
+  opacity:0;
+  height:0;
+}
+.swiper-slide.is-jobs.is-active .jobs_text{
+  opacity:0;
+  height:0;
+}
+.swiper-slide.is-jobs.is-active .jobs_text-2{
+  height:auto;
+  opacity:1;
+  transform: scale(1);
+}
+
+
+.swiper-slide.is-jobs.is-active .jobs_text-title{
+  transform: translateY(0);
+  height:auto;
+  opacity:1;
+  margin-bottom: 1rem;
+}
+.swiper-slide.is-jobs.is-active .jobs_text{
+  transform: translateY(0);
+  font-size: 1rem;
+  
+}
+
+@media (max-width:568px){
+
+.swiper-slide.is-jobs.swiper-slide-next{
+     margin-right:0rem;
+}
+
+.swiper-slide.is-jobs.swiper-slide-prev{
+     margin-left:0rem;
+}
+}
+
+</style></div></div></div></div><div class="testimonials-section is-faq is_new top-q"><div class="padding-global is_2026"><div class="container-944px is_2026-faq"><div class="max-w-514 is-center left-0"><h2 class="ad_heading2 is-medium is_2026 is-game bottom-small pc-left">Questions?</h2><p class="body-text-new--xll text-align-center pc-left">Questions about our hiring process? Check out our frequently asked questions.</p><div class="padding-48px mob-40"></div></div><div class="minus-40"><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>What states do you hire in? Do I have to live in San Francisco to work for Discord?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>While we have no requirement to work from the office, we’re hiring most roles in the SF Bay Area to foster a vibrant central hub in the region. For most roles, candidates will need to reside in or be willing to relocate to the San Francisco Bay Area (Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma counties). <br/><br/>Not every role requires candidates to be based in the SF Bay Area. In some cases, we continue to hire from across the U.S. Your recruiter can share more about location expectations for the role you’re interested in.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>Where are your offices located?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>We have one office in San Francisco and one in Amsterdam.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>What countries do you hire in?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>The majority of our roles are US-based. We are able to hire full-time employees in the US, Canada (only Ontario and British Columbia), and the Netherlands. Other roles are engaged in international locations through our hiring partner, Pebl, which serves as the Employer of Record. Each job posting will state the location requirement, so be sure to review all the details in the description.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>Does Discord sponsor employees?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>Discord’s immigration policy includes:</p><ul role="list"><li>Continued sponsorship for any candidate with a current O-1, TN, E-3, H-1B1, or H-1B visa, provided they are eligible</li><li>Sponsorship of new TN or E-3 visas for Mexican/Canadian or Australian candidates</li><li>Sponsorship of Green Card for employees after 6 months of employment</li><li>Continued sponsorship of the Green Card process after 3 months of employment for candidates who have already received their priority date</li></ul><p>If you have any questions about these policies, be sure to connect with your recruiter should you be selected to interview!</p></div><div class="padding-16px"></div></nav></div><div class="all-faq"><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>I submitted an application, when will I hear back from a recruiter?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>Thanks a ton for applying! We do our best to respond to each person who applies within two weeks. Given the incredibly high number of applicants to some roles, we cannot guarantee each candidate will get a response directly from a recruiter.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>I’m interested in a role at Discord, can I speak to a recruiter or hiring manager about it?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>We’re hyped you’re interested! Based on the volume of applications Discord receives, recruiters and hiring managers are unable to meet with everyone who’s interested. The best thing to do is apply for the role and the team will be sure to review your application.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>Can I apply to multiple positions at a time?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>You can! Although, we recommend that you apply only to the roles you are most interested in and qualified for. Please note that you may hear back at different times for each role you apply to, and you can expect a separate update for each role.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>I saw a job posting I was interested in, but I no longer see it on the careers page. What does this mean?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>This could mean a variety of things - ranging from high applicant volume that needs to be reviewed, to the role already being filled. Keep an eye on the jobs page for any similar roles, or the role being posted again!</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>What do I need to know before my interview?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>If you’re selected to interview, your recruiter will share all the details you need to know about the entire interview process - including how to prepare for each stage. Don’t hesitate to ask questions!</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>Do I have to write a Cover Letter?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>Double check the job description to see if one is required! It’s never a bad idea to write a cover letter, since it gives us a chance to get to know you better.</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>What if I get an error when trying to apply?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>Applicants sometimes run into one of these errors:</p><ul role="list"><li>500 Internal Server Error</li><li>“Well this is awkward. There was a problem submitting your application. Please try again or hit up our team at jobs@discordapp.com”</li></ul><p>If you see one of these, we recommend these solutions:</p><ul role="list"><li>Try accessing the application by using an alternate browser such as Chrome, Firefox, Safari, Edge, or Opera.</li><li>Use an incognito browser tab to see if that resolves the issue.</li></ul><p>If you run into an error regarding uploading an html or word doc, try uploading a PDF instead!</p></div><div class="padding-16px"></div></nav></div><div data-delay="0" data-hover="false" class="ad_faq top-none-line w-dropdown"><div class="ad_dropdown-toggle top-line-none is_2025 is-sdk-new w-dropdown-toggle"><div class="icons-absol is-update-new"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5881848816903d2494c1_Vector.svg" alt="" class="minus_faq"/><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/676d5821b15423be500e0b48_Vector.svg" alt="" class="plus"/></div><div>If I’ve been referred, do I also need to formally apply?</div></div><nav class="ad_dropdown-list w-dropdown-list"><div class="faq_rich is-sdk-2026 is_job w-richtext"><p>Nope! You do not need to apply if someone has already referred you. When someone refers you, your referrer submits your resume and any other application materials on your behalf. From there, we’ll be in touch if you are a good fit for the role.</p></div><div class="padding-16px"></div></nav></div></div><div class="btn-download-wr is-left_new"><a tabindex="0" data-w-id="242f8f04-7f2e-6ee2-40bf-6a711321da80" href="#" class="btn-download is_media is_2025">See All</a></div></div></div></div></div><div data-w-id="13313aff-cf22-e311-f9c0-2298e1f27501" class="download-banner bottom-small is-update"><div class="padding-global is_2026"><div class="container-944px"><div class="max-width-540 is-layout m-all"><h2 class="new-h1 text-color-white bottom-32-all is_mobile-24 is_2026 is-large bottom-small">Hungry for more?</h2><p class="body-text-new--xll">Check out our company principles to learn even more about what makes Discord a special place to work!</p><div class="padding-40px is-40 m-32"></div><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66f2d6111f59bc8ef97636cf_Pickaxe.png" loading="eager" sizes="(max-width: 640px) 100vw, 640px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66f2d6111f59bc8ef97636cf_Pickaxe-p-500.png 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66f2d6111f59bc8ef97636cf_Pickaxe.png 640w" alt="" class="careers-decor-1 is-job"/><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66f2d6045b91f77f7151d93f_Coin.png" loading="eager" sizes="(max-width: 640px) 100vw, 640px" srcset="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66f2d6045b91f77f7151d93f_Coin-p-500.png 500w, https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66f2d6045b91f77f7151d93f_Coin.png 640w" alt="" class="feeling-decor-2 is-job"/><a data-w-id="36410453-e798-d42b-86ed-ecf0472a9247" href="https://discord.com/blog/the-seven-principles-of-working-at-discord" class="relative-anim w-inline-block"><div data-track="media-kit" class="new-dark-button download-new"><div class="z-index-3">Learn More</div></div><div style="opacity:0" class="circle-hover"></div></a></div></div></div></div><div class="footer_new"><div class="footer-styles w-embed"><!--style>
+
+/* For Chrome and Safari */
+.dropdown-language-list-wr::-webkit-scrollbar {
+    width: 5px;
+}
+.dropdown-language-list-wr::-webkit-scrollbar-thumb {
+  background-color: white; 
+  border-radius: 3px;
+}
+.dropdown-language-list-wr::-webkit-scrollbar-track {
+  margin-top:1.75rem;
+  margin-bottom:1.75rem;
+}
+.dropdown-language-list-wr::-webkit-scrollbar-button { 
+     display:none;
+}
+
+</style-->
+
+<style>
+
+.p-footer {
+    color: #FFFFFFB3 !important;
+
+}
+</style></div><div class="container-1762"><div class="w-layout-grid grid-footer is-new-com"><div id="w-node-_7f02ccc2-4de0-9fe4-5350-2bcb84a209ed-42a4716b" class="vertical-flex mobile-left is_new"><a href="/" class="footer-logo-link w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e278299a53f5bf88615e90_Symbol.svg" alt="Discord Home"/></a><div class="p-footer is_2026">Language</div><div class="padding-16px"></div><div data-delay="0" data-hover="false" data-w-id="7f02ccc2-4de0-9fe4-5350-2bcb84a209f3" class="dropdown-language-wr w-dropdown"><div class="dropdown-language-btn w-dropdown-toggle"><div class="dropdown-language-name">English (US)</div><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e2c5a476e29535c2465b24_Chevron%20Down.svg" alt="" class="dropdown-language-arrow"/></div><nav class="dropdown-language-list-wr w-dropdown-list"><ul role="list" class="dropdown-list-container-wr"><li tabindex="0" data-locale="cs" class="dropdown-list-container"><div class="dropdown-language-item">Čeština</div></li><li tabindex="0" data-locale="da" class="dropdown-list-container"><div class="dropdown-language-item">Dansk</div></li><li tabindex="0" data-locale="de" class="dropdown-list-container"><div class="dropdown-language-item">Deutsch</div></li><li tabindex="0" data-locale="en" class="dropdown-list-container"><div class="dropdown-language-item">English</div></li><li tabindex="0" data-locale="en-GB" class="dropdown-list-container"><div class="dropdown-language-item">English (UK)</div></li><li tabindex="0" data-locale="es" class="dropdown-list-container"><div class="dropdown-language-item">Español</div></li><li tabindex="0" data-locale="es-LA" class="dropdown-list-container"><div class="dropdown-language-item">Español (América Latina)</div></li><li tabindex="0" data-locale="fr" class="dropdown-list-container"><div class="dropdown-language-item">Français</div></li><li tabindex="0" data-locale="hr" class="dropdown-list-container"><div class="dropdown-language-item">Hrvatski</div></li><li tabindex="0" data-locale="it" class="dropdown-list-container"><div class="dropdown-language-item">Italiano</div></li><li tabindex="0" data-locale="lt" class="dropdown-list-container"><div class="dropdown-language-item">lietuvių kalba</div></li><li tabindex="0" data-locale="hu" class="dropdown-list-container"><div class="dropdown-language-item">Magyar</div></li><li tabindex="0" data-locale="nl" class="dropdown-list-container"><div class="dropdown-language-item">Nederlands</div></li><li tabindex="0" data-locale="no" class="dropdown-list-container"><div class="dropdown-language-item">Norsk</div></li><li tabindex="0" data-locale="pl" class="dropdown-list-container"><div class="dropdown-language-item">Polski</div></li><li tabindex="0" data-locale="pt-BR" class="dropdown-list-container"><div class="dropdown-language-item">Português (Brasil)</div></li><li tabindex="0" data-locale="ro" class="dropdown-list-container"><div class="dropdown-language-item">Română</div></li><li tabindex="tabindex" data-locale="fi" class="dropdown-list-container"><div class="dropdown-language-item">Suomi</div></li><li tabindex="0" data-locale="sv" class="dropdown-list-container"><div class="dropdown-language-item">Svenska</div></li><li tabindex="0" data-locale="vi" class="dropdown-list-container"><div class="dropdown-language-item">Tiếng Việt</div></li><li tabindex="0" data-locale="tr" class="dropdown-list-container"><div class="dropdown-language-item">Türkçe</div></li><li tabindex="0" data-locale="el" class="dropdown-list-container"><div class="dropdown-language-item">Ελληνικά</div></li><li tabindex="0" data-locale="bg" class="dropdown-list-container"><div class="dropdown-language-item">български</div></li><li tabindex="0" data-locale="ru" class="dropdown-list-container"><div class="dropdown-language-item">Русский</div></li><li tabindex="0" data-locale="uk" class="dropdown-list-container"><div class="dropdown-language-item">Українська</div></li><li tabindex="0" data-locale="hi" class="dropdown-list-container"><div class="dropdown-language-item">हिंदी</div></li><li tabindex="0" data-locale="th" class="dropdown-list-container"><div class="dropdown-language-item">ไทย</div></li><li tabindex="0" data-locale="ko" class="dropdown-list-container"><div class="dropdown-language-item">한국어</div></li><li tabindex="0" data-locale="zh-Hans" class="dropdown-list-container"><div class="dropdown-language-item">中文</div></li><li tabindex="0" data-locale="zh-TW" class="dropdown-list-container"><div class="dropdown-language-item">中文(繁體)</div></li><li tabindex="0" data-locale="ja" class="dropdown-list-container"><div class="dropdown-language-item">日本語</div></li></ul></nav></div><div class="desctop-soc"><div class="p-footer hide-landscape">Social</div><div class="flex-horizontal top-soc-new"><a data-track="twitter" href="https://twitter.com/discord" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4237b6a1c4fa714f76_x.svg" alt="Twitter" class="image"/></a><a data-track="instagram" href="https://www.instagram.com/discord/" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe42d907d27f3dead7a0_instagram.svg" alt="Instagram" class="image"/></a><a data-track="facebook" href="https://www.facebook.com/discord/" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4173c1df8be608c8a2_facebook.svg" alt="Facebook" class="image"/></a><a data-track="youtube" href="https://www.youtube.com/discord" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe42d907d27f3dead7ad_youtube.svg" alt="Youtube" class="image"/></a><a data-track="Tiktok" href="https://www.tiktok.com/@discord" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4152ae5860036dadf1_tiktok.svg" alt="Tiktok" class="image"/></a></div></div></div><div id="w-node-_7f02ccc2-4de0-9fe4-5350-2bcb84a20a65-42a4716b"><div class="footer-h-link show-landscape">Menu</div><h3 class="desktop-only-footer-title">Product</h3><div data-delay="0" data-hover="false" data-w-id="7f02ccc2-4de0-9fe4-5350-2bcb84a20a6a" class="dropdown-footer w-dropdown"><div class="dropdown-toggle-footer is_2026 w-dropdown-toggle"><div>Product</div><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e15958db56b5a91218f5e9_Chevron%20Down.svg" alt="" class="arrow-drop show-landscape"/></div><nav class="dropdown-list-footer w-dropdown-list"><div class="padding-16px show-landscape"></div><a data-track="download" href="/download" class="link-footer top-new-link">Download</a><a data-track="nitro" href="/nitro" class="link-footer top-new-link">Nitro</a><a data-track="status" href="https://discordstatus.com/" class="link-footer top-new-link">Status</a><a data-track="app directory" href="/application-directory" class="link-footer top-new-link">App Directory</a><a data-track="gift cards" href="/gift-cards" class="link-footer top-new-link">Gift Cards</a></nav></div></div><div id="w-node-_7f02ccc2-4de0-9fe4-5350-2bcb84a20a79-42a4716b"><h3 class="desktop-only-footer-title">Company</h3><div data-delay="0" data-hover="false" data-w-id="7f02ccc2-4de0-9fe4-5350-2bcb84a20a7c" class="dropdown-footer w-dropdown"><div class="dropdown-toggle-footer is_2026 w-dropdown-toggle"><div>Company</div><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e15958db56b5a91218f5e9_Chevron%20Down.svg" alt="" class="arrow-drop show-landscape"/></div><nav class="dropdown-list-footer w-dropdown-list"><div class="padding-16px show-landscape"></div><a data-track="about" href="/company" class="link-footer top-new-link">About</a><a data-track="jobs" href="/careers" aria-current="page" class="link-footer top-new-link w--current">Jobs</a><a data-track="branding" href="/branding" class="link-footer top-new-link">Brand</a><a data-track="newsroom" href="/newsroom" class="link-footer top-new-link">Newsroom</a></nav></div></div><div id="w-node-_7f02ccc2-4de0-9fe4-5350-2bcb84a20a8b-42a4716b"><h3 class="desktop-only-footer-title">Resources</h3><div data-delay="0" data-hover="false" data-w-id="7f02ccc2-4de0-9fe4-5350-2bcb84a20a8e" class="dropdown-footer w-dropdown"><div class="dropdown-toggle-footer is_2026 w-dropdown-toggle"><div>Resources</div><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e15958db56b5a91218f5e9_Chevron%20Down.svg" alt="" class="arrow-drop show-landscape"/></div><nav class="dropdown-list-footer w-dropdown-list"><div class="padding-16px show-landscape"></div><a data-track="support" href="https://support.discord.com/hc" class="link-footer top-new-link">Support</a><a data-track="safety" href="/safety" class="link-footer top-new-link">Safety</a><a data-track="blog" href="/blog" class="link-footer top-new-link">Blog</a><a data-track="creators" href="/creators" class="link-footer top-new-link">Creators</a><a data-track="community" href="/community" class="link-footer top-new-link">Community</a><a data-track="Build" href="/developers" class="link-footer top-new-link">Developers</a><a data-track="Build" href="/ads/quests" class="link-footer top-new-link">Quests</a><a data-track="store" href="https://discordmerch.com/evergreenfooter" target="_blank" class="link-footer top-new-link">Official 3rd Party Merch</a><a data-track="feedback" href="https://support.discord.com/hc/requests/new?brand_id=96508&amp;ticket_form_id=34826052965399" class="link-footer top-new-link">Feedback</a></nav></div></div><div id="w-node-_7f02ccc2-4de0-9fe4-5350-2bcb84a20aa7-42a4716b"><h3 class="desktop-only-footer-title">Policies</h3><div data-delay="0" data-hover="false" data-w-id="7f02ccc2-4de0-9fe4-5350-2bcb84a20aaa" class="dropdown-footer line-none w-dropdown"><div class="dropdown-toggle-footer is_2026 w-dropdown-toggle"><div>Policies</div><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e15958db56b5a91218f5e9_Chevron%20Down.svg" alt="" class="arrow-drop show-landscape"/></div><nav class="dropdown-list-footer w-dropdown-list"><div class="padding-16px show-landscape"></div><a data-track="terms" href="/terms" class="link-footer top-new-link">Terms</a><a data-track="privacy" href="/privacy" class="link-footer top-new-link">Privacy</a><a data-open-cookie-settings="true" href="#" class="link-footer top-new-link">Cookie Settings</a><a data-track="guidelines" href="/guidelines" class="link-footer top-new-link">Guidelines</a><a data-track="acknowledgement" href="/acknowledgements" class="link-footer top-new-link">Acknowledgements</a><a data-track="licenses" href="/licenses" class="link-footer top-new-link">Licenses</a><a data-track="moderation" href="/company-information" class="link-footer top-new-link">Company Information</a></nav></div></div><div id="w-node-_7f02ccc2-4de0-9fe4-5350-2bcb84a20abf-42a4716b" class="show-soc"><div class="p-footer is_2026">Social</div><div class="flex-horizontal top-soc-new"><a data-track="twitter" href="https://x.com/discord" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4237b6a1c4fa714f76_x.svg" alt="Twitter" class="image"/></a><a data-track="instagram" href="https://www.instagram.com/discord/" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe42d907d27f3dead7a0_instagram.svg" alt="Instagram" class="image"/></a><a data-track="facebook" href="https://www.facebook.com/discord/" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4173c1df8be608c8a2_facebook.svg" alt="Facebook" class="image"/></a><a data-track="youtube" href="https://www.youtube.com/discord" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe42d907d27f3dead7ad_youtube.svg" alt="Youtube" class="image"/></a><a data-track="Tiktok" href="https://www.tiktok.com/@discord" target="_blank" class="link-s w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65a4fe4152ae5860036dadf1_tiktok.svg" alt="Tiktok" class="image"/></a></div></div></div></div><div class="container_word"><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67ac9b4644222140ae614b06_Wordmark.svg" loading="lazy" aria-label="Discord" alt="Discord" class="word"/></div></div></div></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6257adef93867e50d84d30e2" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/js/discord-2022.schunk.36b8fb49256177c8.js" type="text/javascript" integrity="sha384-4abIlA5/v7XaW1HMXKBgnUuhnjBYJ/Z9C1OSg4OhmVw9O3QeHJ/qJqFBERCDPv7G" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/js/discord-2022.schunk.7ec700b30ae45e7e.js" type="text/javascript" integrity="sha384-AhezHAhGaQQxe5iiLKa6ywBvg/XK6LDn64vlnKaJ2yalhKEmG85YWjbQCndscOYX" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/js/discord-2022.4637f30e.bb3112bb97d3d976.js" type="text/javascript" integrity="sha384-EtUfb25YLn4L2hQIKAMbrqVYUrsB6RSSCbbf8FC8q2g/TG89tG+1m+lJwwWvi6cD" crossorigin="anonymous"></script><script>
+$('.menu-button').on('click', function() {
+  $('body').toggleClass('modal-open');
+});
+</script>
+
+<!--<script src="https://discord.com/webflow-scripts/bodyEnd.js" defer></script>-->
+<!--script src="https://discord.com/webflow-scripts/bodyEnd2026.js" defer></scriptt-->
+<script src="https://discord.com/webflow-scripts/bodyEnd042026.js" defer></script>
+
+<script type="text/javascript" src="/w/assets/latest/loginOrDownload.js" defer></script>
+<!-- build:inlineScriptNonceTag -->
+  <!-- section:dataLayer -->
+  <script src="//discord.com/assets/oneTrust/v8/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="04da1d72-0626-4fff-b3c6-150c719cc115"></script>
+<script src="/assets/oneTrust/v8/consent/04da1d72-0626-4fff-b3c6-150c719cc115/OtAutoBlock.js" type="text/javascript" charset="UTF-8"
+    data-domain-script="04da1d72-0626-4fff-b3c6-150c719cc115"></script>
+  <!-- build:inlineScriptNonceTag -->
+  <script>
+    <!-- endbuild -->
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'allCookiesOK': false });
+  </script>
+  <!-- endsection -->
+  <!-- section:gtm -->
+  <!-- build:inlineScriptNonceTag -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=GI0g9O-54_SitcgmxQKxlA&gtm_preview=env-2&gtm_cookies_win=x'; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N7BVC2W');
+  </script>
+  <!-- endsection -->
+<script src="/w/assets/2213ba75fb529dbbdd2112144a7beb3e793746db/index-consolidated.js" defer></script><!--<script src="https://discord.com/webflow-scripts/download.js" defer></script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" data-ot-ignore></script>
+<script src="https://discord.com/webflow-scripts/careersNew2025.js" ></script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://discord.com/careers"
+  },
+  "headline": "Jobs and Career Opportunities at Discord",
+  "image": "https://assets-global.website-files.com/6257adef93867e50d84d30e2/64b63fb1cf2b8b7a17cd6c96_discord-hero2.webp",  
+  "author": {
+    "@type": "Organization",
+    "name": "Discord",
+    "url": "https://discord.com/"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "",
+    "logo": {
+      "@type": "ImageObject",
+      "url": ""
+    }
+  },
+  "datePublished": ""
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "Discord",
+    "item": "https://discord.com/"  
+  },{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "Jobs and Careers",
+    "item": "https://discord.com/careers"  
+  }]
+}
+</script><script src="https://hubspotonwebflow.com/assets/js/form-124.js" type="text/javascript" integrity="sha384-bjyNIOqAKScdeQ3THsDZLGagNN56B4X2Auu9YZIGu+tA/PlggMk4jbWruG/P6zYj" crossorigin="anonymous"></script><script nonce="MTcsMTI5LDE2LDIyLDcxLDYxLDY4LDg=">(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.nonce='MTcsMTI5LDE2LDIyLDcxLDYxLDY4LDg=';d.innerHTML="window.__CF$cv$params={r:'a3936490d830e591',t:'MTc4OTA5NTMxOQ=='};var a=document.createElement('script');a.nonce='MTcsMTI5LDE2LDIyLDcxLDYxLDY4LDg=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

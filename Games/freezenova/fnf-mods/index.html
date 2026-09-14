@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FNF Mods</title>
+
+
+<style type="text/css">
+	html, body, canvas {
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+</style>
+
+	<script>
+		window.addEventListener("keydown", function(e) {
+			if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+				e.preventDefault();
+			}
+		}, false);
+	</script>
+	
+
+	<link rel="canonical" href="https://unblocked-games.s3.amazonaws.com/fnf.html" />
+	
+	<script src="/assets/scripts/game.js"></script>
+
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GXS04HS5MX"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-GXS04HS5MX');
+	</script>
+	
+
+	<script src="/assets/promo/promo.js" async></script>
+	<script type="text/javascript" async>
+		!function(e, t) {
+			var a = e.createElement("script"),
+				m = e.getElementsByTagName("script")[0];
+
+			a.async = 1;
+			a.src = t;
+
+			a.onload = function() {
+				console.log("Dynamic script loaded wg");
+				if (typeof window.syncPromoManager === "function") window.syncPromoManager(false);
+				window.wgLoaded = 1;
+			};
+
+			a.onerror = function() {
+				console.error("Failed to load wg");
+				if (typeof window.syncPromoManager === "function") window.syncPromoManager(true);
+				window.wgLoaded = 2;
+			};
+
+			m.parentNode.insertBefore(a, m);
+		}(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
+	</script>
+	
+
+<style>
+:root {
+  --bg: #0f1115;
+  --card: #1b1f2a;
+  --accent: #4fc3f7;
+  --text: #eaeaea;
+  --muted: #9aa0a6;
+}
+
+* { box-sizing: border-box; }
+
+/* lock iframe scrolling */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, #0c0f14, #111);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* header */
+header {
+  padding: 30px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+header h1 {
+  margin: 0 0 12px;
+  font-size: 2.4rem;
+}
+
+.search {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.search input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #1b1f2a;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search input::placeholder {
+  color: var(--muted);
+}
+
+/* FULL-WIDTH scroll container */
+main {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* centered content */
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.mod {
+  background: linear-gradient(160deg, #1b1f2a, #141824);
+  border-radius: 16px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.mod::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    400px circle at var(--x, 50%) var(--y, 50%),
+    rgba(79,195,247,0.18),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.mod:hover::after { opacity: 1; }
+
+.mod:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0,0,0,.45);
+}
+
+.mod span {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* optional scrollbar styling */
+main::-webkit-scrollbar {
+  width: 10px;
+}
+main::-webkit-scrollbar-thumb {
+  background: #2a2f3d;
+  border-radius: 10px;
+}
+main::-webkit-scrollbar-thumb:hover {
+  background: #3a4155;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Friday Night Funkin' Mods</h1>
+  <div class="search">
+    <input type="text" placeholder="Search mods..." oninput="filterMods(this.value)">
+  </div>
+</header>
+
+<main>
+  <div class="content">
+    <div class="grid" id="mods">
+
+<!--<a class="mod" href="accelerant-hank/index.html"><span>Accelerant Hank</span></a>-->
+<!--<a class="mod" href="alternated/index.html"><span>Alternated</span></a>-->
+<!--<a class="mod" href="animation/index.html"><span>Animation</span></a>-->
+<!--<a class="mod" href="annie/index.html"><span>Annie</span></a>-->
+<!--<a class="mod" href="bob-v2/index.html"><span>Bob V2</span></a>-->
+<!--<a class="mod" href="bside/index.html"><span>B-Side</span></a>-->
+<a class="mod" href="camellia-rude-buster/index.html"><span>Camellia Rude Buster</span></a>
+<a class="mod" href="candy-carrier/index.html"><span>Candy Carrier</span></a>
+<a class="mod" href="carol-v2/index.html"><span>Carol V2</span></a>
+<a class="mod" href="cg5/index.html"><span>CG5</span></a>
+<!--<a class="mod" href="chara/index.html"><span>Chara</span></a>-->
+<!--<a class="mod" href="corrosion/index.html"><span>Corrosion</span></a>-->
+<!--<a class="mod" href="cory/index.html"><span>Cory</span></a>-->
+<!--<a class="mod" href="crunchin/index.html"><span>Crunchin</span></a>-->
+<!--<a class="mod" href="d-sides/index.html"><span>D-Sides</span></a>-->
+<a class="mod" href="dave-and-bambi-v3/index.html"><span>Dave & Bambi V3</span></a>
+<!--<a class="mod" href="deciever/index.html"><span>Deciever</span></a>-->
+<!--<a class="mod" href="desolation/index.html"><span>Desolation</span></a>-->
+<!--<a class="mod" href="doki-takeover-plus/index.html"><span>Doki Takeover Plus</span></a>-->
+<!--<a class="mod" href="drop-and-roll/index.html"><span>Drop and Roll</span></a>-->
+<!--<a class="mod" href="due-debts/index.html"><span>Due Debts</span></a>-->
+<!--<a class="mod" href="dustin/index.html"><span>Dustin</span></a>-->
+<a class="mod" href="fleetway/index.html"><span>Fleetway</span></a>
+<a class="mod" href="fnaf-3/index.html"><span>FNAF 3</span></a>
+<a class="mod" href="fnaf1/index.html"><span>FNAF 1</span></a>
+<a class="mod" href="fnaf2/index.html"><span>FNAF 2</span></a>
+<!--<a class="mod" href="gamebreaker-bundle/index.html"><span>Gamebreaker Bundle</span></a>-->
+<!--<a class="mod" href="glorkgloo/index.html"><span>Glorkgloo</span></a>-->
+<a class="mod" href="golden-apple/index.html"><span>Golden Apple</span></a>
+<a class="mod" href="herobrine/index.html"><span>Herobrine</span></a>
+<!--<a class="mod" href="hex/index.html"><span>Hex</span></a>-->
+<!--<a class="mod" href="holiday/index.html"><span>Holiday</span></a>-->
+<a class="mod" href="imposter-bside/index.html"><span>Imposter B-Side</span></a>
+<!--<a class="mod" href="imposter-v4-copy/index.html"><span>Imposter V4</span></a>-->
+<a class="mod" href="infernal-bout/index.html"><span>Infernal Bout</span></a>
+<!--<a class="mod" href="iron-lung/index.html"><span>Iron Lung</span></a>-->
+<!--<a class="mod" href="madness-0201A/index.html"><span>Madness 0201A</span></a>-->
+<!--<a class="mod" href="mario-port/index.html"><span>Mario Port</span></a>-->
+<a class="mod" href="matt-v2/index.html"><span>Matt V2</span></a>
+<!--<a class="mod" href="mcmadness/index.html"><span>MC Madness</span></a>-->
+<!--<a class="mod" href="mm-dside/index.html"><span>MM D-Side</span></a>-->
+<a class="mod" href="mobmod/index.html"><span>Mob Mod</span></a>
+<!--<a class="mod" href="neo/index.html"><span>Neo</span></a>-->
+<a class="mod" href="new-week6/index.html"><span>New Week 6</span></a>
+<!--<a class="mod" href="ourple-guy-v2/index.html"><span>Ourple Guy V2</span></a>-->
+<!--<a class="mod" href="piggyfield/index.html"><span>Piggyfield</span></a>-->
+<a class="mod" href="pluto/index.html"><span>Pluto</span></a>
+<!--<a class="mod" href="pokepasta-perdition/index.html"><span>Pokepasta Perdition</span></a>-->
+<a class="mod" href="rev-mixed/index.html"><span>Rev Mixed</span></a>
+<!--<a class="mod" href="rewrite/index.html"><span>Rewrite</span></a>-->
+<!--<a class="mod" href="sarventes/index.html"><span>Sarventes</span></a>-->
+<!--<a class="mod" href="self-paced/index.html"><span>Self Paced</span></a>-->
+<!--<a class="mod" href="shaggy-4key/index.html"><span>Shaggy 4Key</span></a>-->
+<!--<a class="mod" href="shaggyxmatt/index.html"><span>Shaggy x Matt</span></a>-->
+<!--<a class="mod" href="shucks-v2/index.html"><span>Shucks V2</span></a>-->
+<!--<a class="mod" href="sky/index.html"><span>Sky</span></a>-->
+<!--<a class="mod" href="smb-game-over/index.html"><span>SMB Game Over</span></a>-->
+<!--<a class="mod" href="spong/index.html"><span>Spong</span></a>-->
+<!--<a class="mod" href="sunday-hd/index.html"><span>Sunday HD</span></a>-->
+<!--<a class="mod" href="sunday-rookie/index.html"><span>Sunday Rookie</span></a>-->
+<a class="mod" href="tabi/index.html"><span>Tabi</span></a>
+<!--<a class="mod" href="tails-gets-trolledv2/index.html"><span>Tails Gets Trolled V2</span></a>-->
+<!--<a class="mod" href="tricky/index.html"><span>Tricky</span></a>-->
+<!--<a class="mod" href="ugh/index.html"><span>Ugh</span></a>-->
+<!--<a class="mod" href="undertale/index.html"><span>Undertale</span></a>-->
+<a class="mod" href="void/index.html"><span>Void</span></a>
+<!--<a class="mod" href="whitty/index.html"><span>Whitty</span></a>-->
+<!--<a class="mod" href="x-event/index.html"><span>X Event</span></a>-->
+<a class="mod" href="zardy/index.html"><span>Zardy</span></a>
+
+    </div>
+  </div>
+</main>
+
+<footer>FNF Mod Collection</footer>
+
+<script>
+function filterMods(value) {
+  value = value.toLowerCase();
+  document.querySelectorAll(".mod").forEach(mod => {
+    mod.style.display = mod.textContent.toLowerCase().includes(value)
+      ? "block"
+      : "none";
+  });
+}
+
+document.querySelectorAll(".mod").forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--x", e.clientX - r.left + "px");
+    card.style.setProperty("--y", e.clientY - r.top + "px");
+  });
+});
+</script>
+
+</body>
+</html>

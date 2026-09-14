@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <!-- v27921 -->
+
+
+  <title>Discord</title>
+
+  
+
+  <link rel="canonical" href="https://support.discord.com/hc/en-us">
+<link rel="alternate" hreflang="da" href="https://support.discord.com/hc/da">
+<link rel="alternate" hreflang="de" href="https://support.discord.com/hc/de">
+<link rel="alternate" hreflang="en-us" href="https://support.discord.com/hc/en-us">
+<link rel="alternate" hreflang="es" href="https://support.discord.com/hc/es">
+<link rel="alternate" hreflang="fr" href="https://support.discord.com/hc/fr">
+<link rel="alternate" hreflang="hi-in" href="https://support.discord.com/hc/hi-in">
+<link rel="alternate" hreflang="it" href="https://support.discord.com/hc/it">
+<link rel="alternate" hreflang="ja" href="https://support.discord.com/hc/ja">
+<link rel="alternate" hreflang="ko" href="https://support.discord.com/hc/ko">
+<link rel="alternate" hreflang="nl" href="https://support.discord.com/hc/nl">
+<link rel="alternate" hreflang="pl" href="https://support.discord.com/hc/pl">
+<link rel="alternate" hreflang="pt-br" href="https://support.discord.com/hc/pt-br">
+<link rel="alternate" hreflang="ru" href="https://support.discord.com/hc/ru">
+<link rel="alternate" hreflang="sv" href="https://support.discord.com/hc/sv">
+<link rel="alternate" hreflang="th" href="https://support.discord.com/hc/th">
+<link rel="alternate" hreflang="tr" href="https://support.discord.com/hc/tr">
+<link rel="alternate" hreflang="vi" href="https://support.discord.com/hc/vi">
+<link rel="alternate" hreflang="x-default" href="https://support.discord.com/hc/en-us">
+<link rel="alternate" hreflang="zh-tw" href="https://support.discord.com/hc/zh-tw">
+
+  <link rel="stylesheet" href="//static.zdassets.com/hc/assets/application-dfda240c40477db2e8cc0ad93adeb1eb.css" media="all" id="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/hc/theming_assets/678183/96508/style.css?digest=42965819114903">
+
+  <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01J18JAH0XZ9WSX8W5QJAMN2FM">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YL03HBJY7E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YL03HBJY7E');
+</script>
+
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  
+</head>
+<body class="community-enabled">
+  
+  
+  
+
+  <!-- OneTrust Cookies Consent Notice start for discord.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/04da1d72-0626-4fff-b3c6-150c719cc115/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="04da1d72-0626-4fff-b3c6-150c719cc115" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for discord.com -->
+
+<!--This should be added at the very top -->
+<!--Comment out <div class="alertbox"></div>-->
+<div class="alertbox"></div>
+<header class="header">
+  <div class="logo">
+    <a title="Home" href="/hc/en-us">
+      <img src="/hc/theming_assets/01JYJB58V9PVW92W0ZMXZ7WD5A" alt="Discord Help Center home page">
+    </a>
+  </div>
+  
+  <div class="nav-wrapper">
+    <!-- Logo -->
+    <button class="menu-button" aria-controls="user-nav" aria-expanded="false" aria-label="Toggle navigation menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
+      </svg>
+    </button>
+    <!-- Logo -->
+
+    <!-- User Nav -->
+    <nav class="user-nav" id="user-nav">
+      <!-- Feedback -->
+      <a href="//feedback.discord.com/">Feedback</a>
+      <!-- Feedback -->
+    
+      <!-- New Request Block -->
+      <a class="submit-a-request" href="/hc/en-us/requests/new">Submit a request</a>
+      <!-- New Request Block -->
+    </nav>
+    <!-- Signed in Block -->
+    
+      <a class="sign-in" rel="nofollow" data-auth-action="signin" title="Opens a dialog" role="button" href="/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.discord.com%2Fhc%2Fen-us">
+        Sign in
+      </a>
+    
+    <!-- Signed in Block -->
+  </div>
+  <!-- User Nav -->
+</header>
+<!-- Status Page -->
+<script type="text/javascript" id="statuspage-widget" statuspage="https://status.discord.com" 
+src="/hc/theming_assets/01J18JA9CH3061AE69HGVM9QH5"></script>
+
+
+
+  <main role="main">
+    
+
+
+<section id="main-content" class="section hero">
+  <div class="hero-inner">
+    <img class="shield-image-floating" src=/hc/theming_assets/01JXZJRQGTDHTRJVCB40TTEX73 alt="" />
+    <img class="clyde-image-floating" src=/hc/theming_assets/01JXZJRXD81XRPSZK0GWNZVCBN alt="" />
+    <h1>Help Center</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-iconb" aria-hidden="true">
+      <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+      <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+    </svg>
+    
+
+    <form role="search" class="search search-full search-kb-fix" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get"><input type="hidden" name="utf8" value="&#x2713;" autocomplete="off" /><input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search" /></form>
+    <script type="application/javascript">
+      (function() { 
+        var searchForm = document.querySelector('.search-kb-fix');
+        var hiddenInput = document.createElement('input');
+        hiddenInput.setAttribute("type", "hidden");
+        hiddenInput.setAttribute("name", "filter_by");
+        hiddenInput.setAttribute("value", "knowledge_base");
+        searchForm.appendChild(hiddenInput);
+      })()
+    </script>
+  </div>
+</section>
+
+
+
+
+<section class="intro">
+  <h1>Need help?<br> We've got your back.</h1>
+  <p>From account settings to permissions, find help for everything Discord
+  <br>If you're new to Discord and looking for tips, check out our <a href="//support.discord.com/hc/articles/360045138571">Beginner's Guide</a></p>
+</section>
+
+<section class="card-container">
+        <ul class="category-grid">
+    
+     <!-- Announcements -->
+       <a href="//support.discord.com/hc/en-us/categories/115000193752">
+        <li class="grid-item">
+          <div class="grid-item-image-container">
+            <div class="grid-item-image grid-item-image-announcements"></div>
+          </div>
+          <div class="grid-item-content">
+            <h2>Announcements</h2>
+            <h3>We've got our ear to the ground. Here's what you need to know.</h3>
+          </div>
+        </li>
+      </a>
+
+    <!-- Discord Basics -->
+    <a href="//support.discord.com/hc/en-us/categories/115000217151">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-basics"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Discord Basics</h2>
+          <h3>Start off on the right foot! Not the left one!</h3>
+        </div>
+      </li>
+    </a>
+
+    <!-- Account Settings -->
+    <a href="//support.discord.com/hc/en-us/categories/200404358">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-account-settings"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Account Settings</h2>
+          <h3>Personalize your profile, security, notifications, and more.</h3>
+        </div>
+        </li>
+    </a>
+
+    <!-- Server Settings -->
+    <a href="//support.discord.com/hc/en-us/categories/200404378">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-server-setup"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Server Settings</h2>
+          <h3>Almost as exciting as interior decorating.</h3>
+        </div>
+      </li>
+    </a>
+    
+     <!-- Nitro, Server Boosting, and Shop -->
+    <a href="//support.discord.com/hc/en-us/categories/360001025912">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-shop"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Nitro, Shop & Server Boosting</h2>
+          <h3>Please don't shop until you drop. Let us help.</h3>
+        </div>
+      </li>
+    </a>
+
+     <!-- Quests and Promotions -->
+    <a href="//support.discord.com/hc/en-us/categories/24429403651351">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-quests-promotions"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Quests & Promotions</h2>
+          <h3>Welcome, weary traveler! Would you like to see our quests?</h3>
+        </div>
+      </li>
+    </a>
+
+     <!-- Payments and Billing -->
+    <a href="//support.discord.com/hc/en-us/categories/360001029051">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-payments-billing"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Payments & Billing</h2>
+          <h3>That feel when you look at your bank account.</h3>
+        </div>
+      </li>
+    </a>
+
+    <!-- Safety, Privacy, and Policy -->
+    <a href="//support.discord.com/hc/en-us/categories/115000168351">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-safety-privacy"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Safety, Privacy & Policy</h2>
+          <h3>Keep things safe & sound for you and your buddies.</h3>
+        </div>
+      </li>
+    </a>
+
+    <!-- Known Issues, Bugs, and Troubleshooting -->
+    <a href="//support.discord.com/hc/en-us/categories/115000168371">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-bugs-troubleshooting"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Known Issues, Bugs & Troubleshooting</h2>
+          <h3>All you can eat self-serve problem solving.</h3>
+        </div>
+      </li>
+    </a>
+        </ul>
+</section>
+
+
+
+
+
+<section class="intro">
+  <h1>Other ways to find help</h1>
+</section>
+
+<section class="card-container">
+        <ul class="category-grid">
+     <!-- Support HC -->
+     <a href="//support-dev.discord.com/hc/en-us">
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-developer-support"></div>
+        </div>
+        <div class="grid-item-content">
+          <h2>Developer Support</h2>
+          <h3>Your home for support with developing bots, apps, & games using our API and SDK!</h3>
+        </div>
+      </li>
+    </a>
+
+    
+    <!-- Apps and Activities-->
+    <a href="//support-apps.discord.com/hc/en-us"> 
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-apps-center"></div>
+        </div>
+        <div class="grid-item-content">
+        <h2>Apps Center</h2>
+        <h3>Read all about how you can use, discover, and add Apps as a Discord user!</h3>
+        </div>
+      </li>
+    </a>
+
+     <!-- Twitter / X -->
+    <a href="https://x.com/discord_support"> 
+      <li class="grid-item">
+        <div class="grid-item-image-container">
+          <div class="grid-item-image grid-item-image-x"></div>
+        </div>
+        <div class="grid-item-content">
+        <h2>X</h2>
+        <h3>Have a quick question? Hit us up on X!</h3>
+        </div>
+      </li>
+    </a>
+  </ul>
+</section>
+
+
+
+  </main>
+
+  
+<footer id="end" class="section">
+
+  
+
+
+  <nav class="nav">
+    <div class="footer-row">
+      <div class="footer-column footer-branding">
+
+        <div class="branding">
+          <a href="//discord.com" itemprop="url">
+              <div class="footer-logo footer-logo-clyde"></div>
+          </a>
+        </div>
+
+        <div class="footer-dropdown-language">
+          
+            <div class="footer-dropdown language-selector">
+                <button class="dropdown-toggle" aria-haspopup="true">
+                  English (United States)
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+                  </svg>
+                </button>
+                <span class="dropdown-menu footer-dropdown-menu-end" role="menu">
+                  
+                    <a href="/hc/change_language/da?return_to=%2Fhc%2Fda" dir="ltr" rel="nofollow" role="menuitem">
+                      Dansk
+                    </a>
+                  
+                    <a href="/hc/change_language/de?return_to=%2Fhc%2Fde" dir="ltr" rel="nofollow" role="menuitem">
+                      Deutsch
+                    </a>
+                  
+                    <a href="/hc/change_language/es?return_to=%2Fhc%2Fes" dir="ltr" rel="nofollow" role="menuitem">
+                      Español
+                    </a>
+                  
+                    <a href="/hc/change_language/fr?return_to=%2Fhc%2Ffr" dir="ltr" rel="nofollow" role="menuitem">
+                      Français
+                    </a>
+                  
+                    <a href="/hc/change_language/hi-in?return_to=%2Fhc%2Fhi-in" dir="ltr" rel="nofollow" role="menuitem">
+                      हिन्दी (भारत)
+                    </a>
+                  
+                    <a href="/hc/change_language/it?return_to=%2Fhc%2Fit" dir="ltr" rel="nofollow" role="menuitem">
+                      Italiano
+                    </a>
+                  
+                    <a href="/hc/change_language/ja?return_to=%2Fhc%2Fja" dir="ltr" rel="nofollow" role="menuitem">
+                      日本語
+                    </a>
+                  
+                    <a href="/hc/change_language/ko?return_to=%2Fhc%2Fko" dir="ltr" rel="nofollow" role="menuitem">
+                      한국어
+                    </a>
+                  
+                    <a href="/hc/change_language/nl?return_to=%2Fhc%2Fnl" dir="ltr" rel="nofollow" role="menuitem">
+                      Nederlands
+                    </a>
+                  
+                    <a href="/hc/change_language/pl?return_to=%2Fhc%2Fpl" dir="ltr" rel="nofollow" role="menuitem">
+                      Polski
+                    </a>
+                  
+                    <a href="/hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br" dir="ltr" rel="nofollow" role="menuitem">
+                      Português do Brasil
+                    </a>
+                  
+                    <a href="/hc/change_language/ru?return_to=%2Fhc%2Fru" dir="ltr" rel="nofollow" role="menuitem">
+                      Русский
+                    </a>
+                  
+                    <a href="/hc/change_language/sv?return_to=%2Fhc%2Fsv" dir="ltr" rel="nofollow" role="menuitem">
+                      Svenska
+                    </a>
+                  
+                    <a href="/hc/change_language/th?return_to=%2Fhc%2Fth" dir="ltr" rel="nofollow" role="menuitem">
+                      ไทย
+                    </a>
+                  
+                    <a href="/hc/change_language/tr?return_to=%2Fhc%2Ftr" dir="ltr" rel="nofollow" role="menuitem">
+                      Türkçe
+                    </a>
+                  
+                    <a href="/hc/change_language/vi?return_to=%2Fhc%2Fvi" dir="ltr" rel="nofollow" role="menuitem">
+                      Tiếng Việt
+                    </a>
+                  
+                    <a href="/hc/change_language/zh-tw?return_to=%2Fhc%2Fzh-tw" dir="ltr" rel="nofollow" role="menuitem">
+                      繁體中文
+                    </a>
+                  
+                </span>
+            </div>
+          
+        </div>
+
+
+   
+
+        <div class="social">
+          <h3 class="footer-title">Social</h3>
+          <div class="social-links">
+            <a class="social-link" href="https://x.com/discord" target="_blank">
+                            <div class="social-icon social-icon-x"></div>
+            </a>
+            <a class="social-link" href="https://www.instagram.com/discord" target="_blank">
+              <div class="social-icon social-icon-instagram"></div>
+            </a>
+            <a class="social-link" href="https://www.facebook.com/discord" target="_blank">
+              <div class="social-icon social-icon-facebook"></div>
+            </a>
+            <a class="social-link" href="https://www.youtube.com/discord" target="_blank">
+              <div class="social-icon social-icon-youtube"></div>
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/discord" target="_blank">
+              <div class="social-icon social-icon-tiktok"></div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+
+
+        <div class="links-column-spacer"></div>
+        <div class="links-column">
+          <h3 class="column-title">Product</h3>
+          <ul class="links-list">
+            <li><a href="//discord.com/download" class="link-item">Download</a></li>
+            <li><a href="//discord.com/nitro" class="link-item">Nitro</a></li>
+            <li><a href="//status.discord.com" class="link-item">Status</a></li>
+            <li><a href="//discord.com/app-directory" class="link-item">App Directory</a></li>
+          </ul>
+        </div>
+
+
+        <div class="links-column">
+          <h3 class="column-title">Company</h3>
+          <ul class="links-list">
+            <li><a href="//discord.com/company" class="link-item">About</a></li>
+            <li><a href="//discord.com/careers" class="link-item">Jobs</a></li>
+            <li><a href="//discord.com/branding" class="link-item">Brand</a></li>
+            <li><a href="//discord.com/newsroom" class="link-item">Newsroom</a></li>
+          </ul>
+        </div>
+
+
+        <div class="links-column">
+          <h3 class="column-title">Resources</h3>
+          <ul class="links-list">
+            <li><a href="//support.discord.com" class="link-item">Support</a></li>
+            <li><a href="//discord.com/safety" class="link-item">Safety</a></li>
+            <li><a href="//discord.com/blog" class="link-item">Blog</a></li>
+            <li><a href="//feedback.discord.com" class="link-item">Feedback</a></li>
+            <li><a href="//discord.com/creators" class="link-item">Creators</a></li>
+            <li><a href="//discord.com/community" class="link-item">Community</a></li>
+            <li><a href="//discord.com/developers" class="link-item">Developers</a></li>
+            <li><a href="//discord.com/quests" class="link-item">Quests</a></li>
+            <li><a href="https://discordmerch.com/evergreenfooter" class="link-item">Official 3rd Party Merch</a></li>
+          </ul>
+        </div>
+
+
+        <div class="links-column">
+          <h3 class="column-title">Policies</h3>
+          <ul class="links-list">
+            <li><a href="//discord.com/tos" class="link-item">Terms</a></li>
+            <li><a href="//discord.com/privacy" class="link-item">Privacy</a></li>
+            <li><a href="#" class="link-item">Cookie Settings</a></li>
+            <li><a href="//discord.com/guidelines" class="link-item">Guidelines</a></li>
+            <li><a href="//discord.com/acknowledgements" class="link-item">Acknowledgements</a></li>
+            <li><a href="//discord.com/licenses" class="link-item">Licenses</a></li>
+            <li><a href="//discord.com/company-information" class="link-item">Company Information</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+
+  
+  <div class="footer-wordmark">
+    <img src='/hc/theming_assets/01JYJB54Q7NQKBMYN89G6P02NF' />
+  </div>
+</footer>
+
+
+  <!-- / -->
+
+  
+  <script src="//static.zdassets.com/hc/assets/en-us.40d9559b3308c0ac84df.js"></script>
+  
+
+  <script type="text/javascript">
+  /*
+
+    Greetings sourcecode lurker!
+
+    This is for internal Zendesk and legacy usage,
+    we don't support or guarantee any of these values
+    so please don't build stuff on top of them.
+
+  */
+
+  HelpCenter = {};
+  HelpCenter.account = {"subdomain":"hammerandchisel","environment":"production","name":"Discord"};
+  HelpCenter.user = {"identifier":"da39a3ee5e6b4b0d3255bfef95601890afd80709","email":null,"name":"","role":"anonymous","avatar_url":"https://assets.zendesk.com/hc/assets/default_avatar.png","is_admin":false,"external_id":null,"organizations":[],"groups":[]};
+  HelpCenter.internal = {"asset_url":"//static.zdassets.com/hc/assets/","web_widget_asset_composer_url":"https://static.zdassets.com/ekr/snippet.js","current_session":{"locale":"en-us","csrf_token":"hc:hcobject:server:kEvlcuaUCQKudgVgCXd3htuCXb5bSlQLh-ikxFh7N1LH8l28WSfSCVHuLClN98J7a5Abp_qfKHAfwRph3QP3aw","shared_csrf_token":null},"usage_tracking":{"event":"front_page_viewed","data":"BAh7BjoKX21ldGF7DDoPYWNjb3VudF9pZGkDJ1kKOhNoZWxwX2NlbnRlcl9pZGkEVLHsCzoNYnJhbmRfaWRpA/x4AToMdXNlcl9pZDA6E3VzZXJfcm9sZV9uYW1lSSIOQU5PTllNT1VTBjoGRVQ6C2xvY2FsZUkiCmVuLXVzBjsLVDoaYW5vbnltb3VzX3RyYWNraW5nX2lkMA==--7ad3d5fe0a58e93f43a0b7de27dfe5afc66de1eb","url":"https://support.discord.com/hc/activity"},"current_record_id":null,"current_record_url":null,"current_record_title":null,"current_text_direction":"ltr","current_brand_id":96508,"current_brand_name":"Discord Support","current_brand_url":"https://hammerandchisel.zendesk.com","current_brand_active":true,"current_path":null,"show_autocomplete_breadcrumbs":true,"user_info_changing_enabled":false,"has_user_profiles_enabled":true,"has_end_user_attachments":true,"user_aliases_enabled":true,"has_anonymous_kb_voting":true,"has_multi_language_help_center":true,"show_at_mentions":false,"embeddables_config":{"embeddables_web_widget":true,"embeddables_help_center_auth_enabled":false,"embeddables_connect_ipms":false},"answer_bot_subdomain":"static","gather_plan_state":"subscribed","has_article_verification":true,"has_gather":true,"has_ckeditor":true,"has_community_enabled":true,"has_community_badges":true,"has_community_post_content_tagging":false,"has_gather_content_tags":true,"has_guide_content_tags":true,"has_user_segments":true,"has_answer_bot_web_form_enabled":false,"has_garden_modals":false,"has_auth_email_less_sso":false,"theming_cookie_key":"hc-da39a3ee5e6b4b0d3255bfef95601890afd80709-2-preview","is_preview":false,"has_search_settings_in_plan":true,"theming_api_version":3,"theming_settings":{"brand_color":"rgba(88, 101, 242, 1)","brand_text_color":"#FFFFFF","text_color":"#333333","link_color":"rgba(0, 0, 0, 1)","background_color":"#E0E3FF","heading_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","text_font":"-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif","logo":"/hc/theming_assets/01JYJB58V9PVW92W0ZMXZ7WD5A","favicon":"/hc/theming_assets/01J18JAH0XZ9WSX8W5QJAMN2FM","community_background_image":"/hc/theming_assets/01J18JAJDWW6QD0SS43K813C7X","community_image":"/hc/theming_assets/01J18JAJDWW6QD0SS43K813C7X","instant_search":true,"scoped_kb_search":true,"scoped_community_search":false,"show_recent_activity":true,"show_articles_in_section":true,"show_article_author":true,"show_article_comments":false,"show_follow_article":true,"show_recently_viewed_articles":true,"show_related_articles":true,"show_article_sharing":true,"show_follow_section":true,"show_follow_post":true,"show_post_sharing":true,"show_follow_topic":true},"has_pci_credit_card_custom_field":true,"help_center_restricted":false,"is_assuming_someone_else":false,"flash_messages":[],"user_photo_editing_enabled":true,"user_preferred_locale":"en-us","base_locale":"en-us","login_url":"https://hammerandchisel.zendesk.com/access?locale=en-us\u0026brand_id=96508\u0026return_to=https%3A%2F%2Fsupport.discord.com%2Fhc%2Fen-us","has_alternate_templates":true,"has_custom_statuses_enabled":false,"has_hc_generative_answers_setting_enabled":true,"has_suggested_initial_questions_enabled":false,"has_contentful_eap":false,"has_contentful_eap_eligible":false,"has_pdf_ingestion_eap":true,"has_pdf_ingestion_eap_eligible":true,"has_guide_saas_management":false,"has_knowledge_category_translation_modal":false,"has_guide_service_catalog":true,"has_service_catalog_search_poc":true,"has_service_catalog_multibranding":true,"has_csat_reverse_2_scale_in_mobile":false,"has_unified_navigation":true,"has_unified_navigation_eap_access":true,"has_knowledge_locale_display_names":false,"has_csat_bet365_branding":false,"has_csat_flora":false,"has_csat_theming_integration_phase_1":false,"has_help_center_gen_search_follow_up_conversation":true,"chat_page_renderable":false,"version":"v27921","dev_mode":false};
+</script>
+
+  
+  
+  <script src="//static.zdassets.com/hc/assets/hc_enduser-f862b398e937b6ac61161d03eb55cadd.js"></script>
+  <script type="text/javascript" src="/hc/theming_assets/678183/96508/script.js?digest=42965819114903"></script>
+  
+</body>
+</html>
