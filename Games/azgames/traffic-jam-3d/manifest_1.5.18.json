@@ -1,0 +1,23 @@
+{
+  "short_name": "Traffic Jam 3D",
+  "name": "Traffic Jam 3D",
+  "icons": [
+    {
+      "src": "https://img.gamedistribution.com/337302b23b5943d8bcfc501d81d50cdb-512x512.jpeg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "https://img.gamedistribution.com/337302b23b5943d8bcfc501d81d50cdb-512x512.jpeg",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/337302b23b5943d8bcfc501d81d50cdb/index.html",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/337302b23b5943d8bcfc501d81d50cdb/",
+  "theme_color": "#3367D6"
+}
