@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprunki</title>
+	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+		<script type="module">
+		  // Import the functions you need from the SDKs you need
+		  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+		  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+		  import { getAuth  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+		  // TODO: Add SDKs for Firebase products that you want to use
+		  // https://firebase.google.com/docs/web/setup#available-libraries
+		
+		  // Your web app's Firebase configuration
+		  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBNo4dazBzRgMkZ3DAXfFu_adazT6ILphI",
+  authDomain: "sprunki-145e8.firebaseapp.com",
+  projectId: "sprunki-145e8",
+  storageBucket: "sprunki-145e8.firebasestorage.app",
+  messagingSenderId: "667734305417",
+  appId: "1:667734305417:web:d361b2e23d13e74ca77458",
+  measurementId: "G-CC9H74RD1M"
+};
+		
+		  const app = firebase.initializeApp(firebaseConfig);
+		  const auth = getAuth(app);
+		  
+		  const analystic = firebase.analytics();
+			analystic.logEvent('start-game');
+	  
+			console.log("log start game");
+		  
+		</script> 
+    <script type="text/javascript">	
+      window.errors = []
+      if (window.addEventListener) {
+        window.addEventListener(
+          'error',
+          function (e) {
+            if (e.message) {
+              if (e.error && e.error.stack) {
+                if (e.message.indexOf('Uncaught SyntaxError') === 0) {
+                  window.errors.push(
+                    e.message +
+                      ' at ' +
+                      e.filename +
+                      ':' +
+                      e.lineno +
+                      ':' +
+                      e.colno
+                  )
+                } else {
+                  window.errors.push(e.error.stack)
+                }
+                if (window.onNewError) window.onNewError()
+              }
+            } else {
+              window.errors.push(
+                'Problem loading ' + (e.target.src || e.target.href)
+              )
+              if (window.onNewError) window.onNewError()
+            }
+            window.onerror = null
+          },
+          true
+        ) // true so that errors bubble up to window
+        window.addEventListener(
+          'unhandledrejection',
+          function (e) {
+            window.errors.push(
+              e.reason && (e.reason.stack || e.reason.message || e.reason)
+            )
+            if (window.onNewError) window.onNewError()
+          },
+          false
+        )
+      }
+      window.onerror = function (message, source, lineno, colno, error) {
+        if (colno) {
+          lineno += ':' + colno
+        }
+        if (error && error.stack) {
+          window.errors.push(error.stack)
+        } else {
+          window.errors.push(message + ' at ' + source + ':' + lineno)
+        }
+        if (window.onNewError) window.onNewError()
+      }
+    </script>  
+    <link rel="shortcut icon" type="image/png" href="./favicon.png"> <style>
+html,
+body {
+  height: 100%;
+}
+body,
+::backdrop {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  font-size: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+#wrapper {
+  display: block;
+  position: relative;
+}
+.no-cursor #wrapper {
+  cursor: none;
+}
+.loading #wrapper {
+  visibility: hidden;
+}
+.stretch-stage #wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+/* CSS for proportional wrapper scaling is added dynamically by htmlifier.ts */
+#monitors {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#stage {
+  width: 100%;
+  height: 100%;
+}
+#loading-progress {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  border-radius: 20px;
+  --progress: 0%;
+  z-index: 100;
+}
+.show-loading-progress #loading-progress {
+  display: block;
+}
+#loading-progress::before {
+  content: attr(data-progress);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+#loading-progress::after {
+  content: '';
+  display: block;
+  height: 16px;
+  border-radius: 20px;
+  width: var(--progress);
+}
+#loading-image {
+  position: fixed;
+  max-width: 100%;
+  max-height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.stretch-loading-image #loading-image {
+  width: 100%;
+  height: 100%;
+}
+.buttons {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 12px;
+}
+.buttons .button,
+.buttons button {
+  display: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+}
+.buttons button:disabled,
+#add-sprite-file:disabled + #add-sprite-btn {
+  cursor: auto;
+  opacity: 0.5;
+}
+#start-btn {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"%3E%3Cpath d="M8 5v14l11-7z" fill="%23fff"/%3E%3C/svg%3E%0A');
+}
+.running #start-btn {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"%3E%3Cpath d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" fill="%23fff"/%3E%3C/svg%3E');
+}
+#stop-btn {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"%3E%3Cpath d="M6 6h12v12H6z" fill="%23fff"/%3E%3C/svg%3E%0A');
+}
+#fullscreen-btn {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"%3E%3Cpath d="M14 28h-4v10h10v-4h-6v-6zm-4-8h4v-6h6v-4H10v10zm24 14h-6v4h10V28h-4v6zm-6-24v4h6v6h4V10H28z" fill="%23fff"/%3E%3C/svg%3E');
+}
+.fullscreen #fullscreen-btn {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"%3E%3Cpath d="M10 32h6v6h4V28H10v4zm6-16h-6v4h10V10h-4v6zm12 22h4v-6h6v-4H28v10zm4-22v-6h-4v10h10v-4h-6z" fill="%23fff"/%3E%3C/svg%3E');
+}
+#download-btn {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M5,20h14v-2H5V20z M19,9h-4V3H9v6H5l7,7L19,9z'/%3E%3C/svg%3E");
+}
+#add-sprite-btn {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z'/%3E%3C/svg%3E");
+}
+#add-sprite-file {
+  display: none;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.show-start-stop-btns #start-btn,
+.show-start-stop-btns #stop-btn,
+.show-fullscreen-btn #fullscreen-btn,
+.show-download-btn #download-btn,
+.show-add-sprite-btn #add-sprite-btn,
+.show-add-sprite-btn #add-sprite-file {
+  display: inline-block;
+}
+.monitor {
+  position: absolute;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+  padding: 3px;
+  white-space: pre;
+}
+.show-monitor-box .monitor {
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.monitor-label {
+  margin: 0 5px;
+  font-weight: bold;
+}
+.monitor-value {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 34px;
+  text-align: center;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: text;
+  transform: translateZ(0);
+}
+.default .monitor-value,
+.slider .monitor-value {
+  margin: 0 5px;
+  padding: 1px 3px;
+}
+.show-monitor-box .default .monitor-value,
+.show-monitor-box .slider .monitor-value {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.large {
+  padding: 0.1rem 0.25rem;
+  min-width: 3rem;
+}
+.show-monitor-box .large {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.large .monitor-label {
+  display: none;
+}
+.large .monitor-value {
+  font-size: 1rem;
+  width: 100%;
+}
+.list {
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.list .monitor-label {
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+}
+.list .monitor-value {
+  display: block;
+}
+.row {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  height: 24px;
+  box-sizing: border-box;
+  transform: translateZ(0);
+}
+.index {
+  font-weight: bold;
+  margin: 0 3px;
+  flex: none;
+}
+.row-value {
+  flex: auto;
+  margin: 0 3px;
+  text-align: left;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  height: 22px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.show-monitor-box .row-value {
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.slider input {
+  display: block;
+  width: 100%;
+  transform: translateZ(0);
+}
+#asking-box {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(33, 33, 33, 0.7);
+}
+.asking #asking-box {
+  display: block;
+}
+#question {
+  display: block;
+  margin: 0 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: white;
+}
+#answer {
+  border: none;
+  background: none;
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#answer:focus {
+  outline: none;
+}
+#errors {
+  -webkit-appearance: none;
+  border: none;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+}
+
+</style> <style>
+#wrapper { width: 100vw; height: 75vw; }
+@media (min-aspect-ratio: 480/360) {
+#wrapper { height: 100vh; width: 133.33333333333331vh; }
+}
+#loading-progress {
+border: 1px solid #ffffff;
+}
+#loading-progress::before {
+color: #ffffff;
+}
+#loading-progress::after {
+background-color: #ffffff;
+}
+.monitor {
+color: #ffffff;
+}
+</style>
+  <script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>  
+  <body class="loading show-loading-progress show-fullscreen-btn show-monitor-box">
+    <div id="wrapper">
+      <canvas id="stage"></canvas>
+      <div id="monitors"></div>
+      <div id="asking-box">
+        <label id="question" for="answer">Question</label>
+        <input type="text" id="answer" />
+      </div>
+    </div>
+    <div id="loading-progress" data-progress="0%"></div>
+    <img src="./loading.png" id="loading-image"> 
+    <div class="buttons">
+      <!--
+        Only support sprite files (no images) for now. See
+        https://github.com/SheepTester/htmlifier/issues/67#issuecomment-894746718
+      -->
+      <input
+        type="file"
+        id="add-sprite-file"
+        accept=".sprite2, .sprite3"
+        aria-label="Select a Scratch sprite to add"
+        multiple
+      />
+      <label
+        class="button"
+        id="add-sprite-btn"
+        for="add-sprite-file"
+        title="Add Scratch sprite to project"
+      ></label>
+      <button id="download-btn" aria-label="Download Scratch project"></button>
+      <button id="start-btn" aria-label="Start"></button>
+      <button id="stop-btn" aria-label="Stop" disabled></button>
+      <button id="fullscreen-btn" aria-label="Enter/exit fullscreen"></button>
+    </div>
+    <textarea id="errors" readonly></textarea>	    
+    <script src="./vm.js"></script> <script>
+const noop = () => null
+
+window.Scratch = {
+  get vm () {
+    return window.vm
+  },
+  get renderer () {
+    return window.vm.runtime.renderer
+  },
+  get audioEngine () {
+    return window.vm.runtime.audioEngine
+  },
+  get bitmapAdapter () {
+    return window.vm.runtime.v2BitmapAdapter
+  },
+  get videoProvider () {
+    return window.vm.runtime.ioDevices.video.provider
+  }
+}
+
+const CLOUD_PREFIX = '\u2601 '
+window.setCloud = (name, value) => {
+  vm.postIOData('cloud', {
+    varUpdate: {
+      name: CLOUD_PREFIX + name,
+      value
+    }
+  })
+}
+function postError (err) {
+  setCloud('eval error', err.toString())
+}
+
+class CloudProvider {
+  constructor (options) {
+    this._serverUrl = options.cloud.serverUrl
+    this._specialBehaviours = options.cloud.specialBehaviours
+    this._options = options
+
+    this._ws = null
+
+    this.createVariable = noop
+    this.renameVariable = noop
+    this.deleteVariable = noop
+
+    this._handleMessage = event => {
+      event.data.split('\n').forEach(message => {
+        if (message) {
+          const { name, value } = JSON.parse(message)
+          vm.postIOData('cloud', {
+            varUpdate: { name, value }
+          })
+        }
+      })
+    }
+    this._handleOpen = () => {
+      this._sendData({ method: 'handshake' })
+    }
+    this._handleClose = () => {
+      setTimeout(() => this._openConnection(), 500)
+    }
+
+    this.handleUrlChange = () => {
+      setCloud('url', window.location.href)
+    }
+    if (this._specialBehaviours) {
+      window.addEventListener('hashchange', this.handleUrlChange)
+      window.addEventListener('popstate', this.handleUrlChange)
+      // Paste output
+      window.addEventListener('paste', event => {
+        setCloud(
+          'pasted',
+          (event.clipboardData || window.clipboardData).getData('text')
+        )
+      })
+    }
+
+    if (this._serverUrl) {
+      this._openConnection()
+    }
+  }
+
+  _openConnection () {
+    try {
+      this._ws = new WebSocket(this._serverUrl)
+    } catch (error) {
+      console.warn(error)
+      return
+    }
+    this._ws.onmessage = this._handleMessage
+    this._ws.onopen = this._handleOpen
+    this._ws.onclose = this._handleClose
+  }
+
+  _sendData (data) {
+    data.user = this._options.username
+    data.project_id = this._options.cloud.projectId
+    this._ws.send(JSON.stringify(data) + '\n')
+  }
+
+  updateVariable (name, value) {
+    if (this._specialBehaviours) {
+      let matched = true
+      if (name === CLOUD_PREFIX + 'eval') {
+        try {
+          Promise.resolve(eval(value))
+            .then(output => {
+              setCloud('eval output', output)
+            })
+            .catch(postError)
+        } catch (error) {
+          postError(error)
+        }
+      } else if (name === CLOUD_PREFIX + 'open link') {
+        try {
+          window.open(value, '_blank')
+        } catch (error) {
+          postError(error)
+        }
+      } else if (name === CLOUD_PREFIX + 'redirect') {
+        window.location = value
+      } else if (name === CLOUD_PREFIX + 'set clipboard') {
+        try {
+          navigator.clipboard.writeText(value).catch(postError)
+        } catch (error) {
+          postError(error)
+        }
+      } else if (name === CLOUD_PREFIX + 'set server ip') {
+        this._cloudHost = value
+        if (this._ws) {
+          this._ws.onclose = noop
+          this._ws.close()
+        }
+        this._openConnection()
+      } else if (name === CLOUD_PREFIX + 'username') {
+        this._options.username = value
+        vm.postIOData('userData', { username: value })
+      } else {
+        matched = false
+      }
+      if (matched) {
+        return
+      }
+    }
+    if (
+      !this._serverUrl ||
+      (this._specialBehaviours &&
+        name.startsWith(CLOUD_PREFIX + 'local storage'))
+    ) {
+      try {
+        localStorage.setItem('[s3] ' + name, value)
+      } catch (error) {
+        postError(error)
+      }
+    } else {
+      this._sendData({ method: 'set', name, value })
+    }
+  }
+
+  requestCloseConnection () {
+    if (
+      this._ws &&
+      this._ws.readyState !== WebSocket.CLOSING &&
+      this._ws.readyState !== WebSocket.CLOSED
+    ) {
+      this._ws.onclose = noop
+      this._ws.close()
+    }
+  }
+}
+
+// Based on
+// https://github.com/LLK/scratch-gui/blob/7b658c60c7c04055e575601a861195fe6c9933f3/src/lib/video/camera.js
+// https://github.com/LLK/scratch-gui/blob/7b658c60c7c04055e575601a861195fe6c9933f3/src/lib/video/video-provider.js
+class VideoProvider {
+  constructor (width, height) {
+    this._dimensions = [width, height]
+    this.mirror = true
+    this._frameCacheTimeout = 16
+    this._video = null
+    this._track = null
+    this._workspace = []
+  }
+
+  get video () {
+    return this._video
+  }
+
+  enableVideo () {
+    this.enabled = true
+    return this._setupVideo()
+  }
+
+  disableVideo () {
+    this.enabled = false
+    if (this._singleSetup) {
+      this._singleSetup
+        .then(this._teardown.bind(this))
+        .catch(err => this.onError(err))
+    }
+  }
+
+  _teardown () {
+    if (this.enabled === false) {
+      requestStack.pop()
+      const disableTrack = requestStack.length === 0
+      this._singleSetup = null
+      this._video = null
+      if (this._track && disableTrack) {
+        this._track.stop()
+      }
+      this._track = null
+    }
+  }
+
+  getFrame ({
+    dimensions = this._dimensions,
+    mirror = this.mirror,
+    format = 'image-data',
+    cacheTimeout = this._frameCacheTimeout
+  }) {
+    if (!this.videoReady) {
+      return null
+    }
+    const [width, height] = dimensions
+    const workspace = this._getWorkspace({
+      dimensions,
+      mirror: Boolean(mirror)
+    })
+    const { videoWidth, videoHeight } = this._video
+    const { canvas, context, lastUpdate, cacheData } = workspace
+    const now = Date.now()
+
+    if (lastUpdate + cacheTimeout < now) {
+      if (mirror) {
+        context.scale(-1, 1)
+        context.translate(width * -1, 0)
+      }
+
+      context.drawImage(
+        this._video,
+        0,
+        0,
+        videoWidth,
+        videoHeight,
+        0,
+        0,
+        width,
+        height
+      )
+
+      context.setTransform(1, 0, 0, 1, 0, 0)
+      workspace.lastUpdate = now
+    }
+
+    if (!cacheData[format]) {
+      cacheData[format] = { lastUpdate: 0 }
+    }
+    const formatCache = cacheData[format]
+
+    if (formatCache.lastUpdate + cacheTimeout < now) {
+      if (format === 'image-data') {
+        formatCache.lastData = context.getImageData(0, 0, width, height)
+      } else if (format === 'canvas') {
+        formatCache.lastUpdate = Infinity
+        formatCache.lastData = canvas
+      } else {
+        console.error(`video io error - unimplemented format ${format}`)
+        formatCache.lastUpdate = Infinity
+        formatCache.lastData = null
+      }
+
+      formatCache.lastUpdate = Math.max(
+        workspace.lastUpdate,
+        formatCache.lastUpdate
+      )
+    }
+
+    return formatCache.lastData
+  }
+
+  onError (error) {
+    console.error('Unhandled video io device error', error)
+  }
+
+  _setupVideo () {
+    if (this._singleSetup) {
+      return this._singleSetup
+    }
+
+    if (requestStack.length === 0) {
+      this._singleSetup = navigator.mediaDevices.getUserMedia({
+        audio: false,
+        video: {
+          width: { min: width, ideal: (480 * width) / height },
+          height: { min: height, ideal: 480 }
+        }
+      })
+      requestStack.push(streamPromise)
+    } else if (requestStack.length > 0) {
+      this._singleSetup = requestStack[0]
+      requestStack.push(true)
+    }
+    this._singleSetup
+      .then(stream => {
+        this._video = document.createElement('video')
+
+        try {
+          this._video.srcObject = stream
+        } catch (_error) {
+          this._video.src = window.URL.createObjectURL(stream)
+        }
+        this._video.play()
+        this._track = stream.getTracks()[0]
+        return this
+      })
+      .catch(error => {
+        this._singleSetup = null
+        this.onError(error)
+      })
+
+    return this._singleSetup
+  }
+
+  get videoReady () {
+    if (!this.enabled || !this._video || !this._track) {
+      return false
+    }
+    const { videoWidth, videoHeight } = this._video
+    return (
+      typeof videoWidth === 'number' &&
+      typeof videoHeight === 'number' &&
+      videoWidth > 0 &&
+      videoHeight > 0
+    )
+  }
+
+  _getWorkspace ({ dimensions, mirror }) {
+    let workspace = this._workspace.find(
+      space =>
+        space.dimensions.join('-') === dimensions.join('-') &&
+        space.mirror === mirror
+    )
+    if (!workspace) {
+      workspace = {
+        dimensions,
+        mirror,
+        canvas: document.createElement('canvas'),
+        lastUpdate: 0,
+        cacheData: {}
+      }
+      workspace.canvas.width = dimensions[0]
+      workspace.canvas.height = dimensions[1]
+      workspace.context = workspace.canvas.getContext('2d')
+      this._workspace.push(workspace)
+    }
+    return workspace
+  }
+}
+
+const fullscreenBtn = document.getElementById('fullscreen-btn')
+const exitFullscreen =
+  document.exitFullscreen ||
+  document.msExitFullscreen ||
+  document.mozCancelFullScreen ||
+  document.webkitExitFullscreen
+const requestFullscreen =
+  document.body.requestFullscreen ||
+  document.body.msRequestFullscreen ||
+  document.body.mozRequestFullScreen ||
+  document.body.webkitRequestFullscreen
+function isFullscreen () {
+  return (
+    document.fullscreenElement ||
+    document.mozFullScreenElement ||
+    document.webkitFullscreenElement ||
+    document.msFullscreenElement
+  )
+}
+function toggleFullscreen () {
+  if (isFullscreen()) {
+    exitFullscreen.call(document)
+  } else {
+    requestFullscreen.call(document.body)
+  }
+}
+fullscreenBtn.addEventListener('click', () => {
+  fullscreenBtn.blur()
+  toggleFullscreen()
+})
+function handleFullscreenChange () {
+  if (isFullscreen()) {
+    document.body.classList.add('fullscreen')
+  } else {
+    document.body.classList.remove('fullscreen')
+  }
+}
+document.addEventListener('fullscreenchange', handleFullscreenChange)
+document.addEventListener('mozfullscreenchange', handleFullscreenChange)
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange)
+document.addEventListener('msfullscreenchange', handleFullscreenChange)
+
+window.init = async ({ width, height, ...options }) => {
+  window.vm = new window.NotVirtualMachine(width, height)
+  vm.setCompatibilityMode(options.fps)
+  vm.setTurboMode(options.turbo)
+  vm.requireLimits(options.limits, { fencing: options.fencing })
+
+  const storage = new ScratchStorage()
+  const AssetType = storage.AssetType
+  if (options.assets.project) {
+    storage.addWebStore([AssetType.Project], () => options.assets.project)
+    storage.addWebStore(
+      [AssetType.ImageVector, AssetType.ImageBitmap, AssetType.Sound],
+      ({ assetId, dataFormat }) => options.assets[`${assetId}.${dataFormat}`]
+    )
+  }
+  const progress = document.getElementById('loading-progress')
+  if (options.loadingProgress) {
+    const _load = storage.webHelper.load
+    let total = 0,
+      complete = 0
+    storage.webHelper.load = function (...args) {
+      const result = _load.call(this, ...args)
+      total += 1
+      const percentage = (complete / total) * 100
+      progress.dataset.progress = percentage.toFixed(2) + '%'
+      progress.style.setProperty('--progress', percentage + '%')
+      result.then(() => {
+        complete += 1
+        const percentage = (complete / total) * 100
+        progress.dataset.progress = percentage.toFixed(2) + '%'
+        progress.style.setProperty('--progress', percentage + '%')
+      })
+      return result
+    }
+  }
+  vm.attachStorage(storage)
+
+  function resize () {
+    const rect = canvas.getBoundingClientRect()
+    renderer.resize(rect.width, rect.height)
+    if (options.stretchStage) {
+      monitorWrapper.style.transform = `scaleX(${rect.width /
+        width}) scaleY(${rect.height / height})`
+    } else {
+      monitorWrapper.style.transform = `scale(${rect.height / height})`
+    }
+  }
+  const monitorWrapper = document.getElementById('monitors')
+  const canvas = document.getElementById('stage')
+  const renderer = new window.ScratchRender(
+    canvas,
+    -width / 2,
+    width / 2,
+    -height / 2,
+    height / 2
+  )
+  resize()
+  vm.attachRenderer(renderer)
+
+  vm.attachAudioEngine(new window.AudioEngine())
+  vm.attachV2BitmapAdapter(
+    new ScratchSVGRenderer.BitmapAdapter(null, null, width, height)
+  )
+  vm.setVideoProvider(new VideoProvider(width, height))
+  vm.start()
+
+  if (options.extensionCount > 0) {
+    const OldWorker = window.Worker
+    window.Worker = class extends OldWorker {
+      // deno-lint-ignore constructor-super
+      constructor (...args) {
+        if (args[0].endsWith('extension-worker.js')) {
+          if (options.extensionWorker.url) {
+            super(options.extensionWorker.url, ...args.slice(1))
+          } else {
+            super(
+              URL.createObjectURL(
+                new Blob([options.extensionWorker.script], {
+                  type: 'text/javascript'
+                })
+              ),
+              ...args.slice(1)
+            )
+          }
+        } else {
+          super(...args)
+        }
+      }
+    }
+  }
+
+  /* https://github.com/LLK/scratch-gui/blob/develop/src/containers/stage.jsx#L176-L300 */
+  const getEventXY = e => {
+    if (e.touches && e.touches[0]) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY }
+    } else if (e.changedTouches && e.changedTouches[0]) {
+      return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY }
+    }
+    return { x: e.clientX, y: e.clientY }
+  }
+  let mouseDown = false
+  let mouseDownPosition = null
+  let mouseDownTimeoutId = null
+  let isDragging = false
+  let dragId = null
+  let dragOffset = null
+  function cancelMouseDownTimeout () {
+    if (mouseDownTimeoutId !== null) {
+      clearTimeout(mouseDownTimeoutId)
+    }
+    mouseDownTimeoutId = null
+  }
+  // https://github.com/LLK/scratch-gui/blob/develop/src/containers/stage.jsx#L337-L366
+  function handleStartDrag () {
+    if (dragId || !mouseDownPosition) return
+    const drawableId = renderer.pick(mouseDownPosition.x, mouseDownPosition.y)
+    if (drawableId === null) return
+    const targetId = vm.getTargetIdForDrawableId(drawableId)
+    if (targetId === null) return
+    const target = vm.runtime.getTargetById(targetId)
+    if (!target || !target.draggable) return
+    target.goToFront()
+    const drawableData = renderer.extractDrawable(
+      drawableId,
+      mouseDownPosition.x,
+      mouseDownPosition.y
+    )
+    vm.startDrag(targetId)
+    isDragging = true
+    dragId = targetId
+    dragOffset = drawableData.scratchOffset
+  }
+  const accumulative = { x: 0, y: 0 }
+  function postIfPointerLocked (e, isDown) {
+    if (
+      document.pointerLockElement === canvas ||
+      document.mozPointerLockElement === canvas
+    ) {
+      accumulative.x += e.movementX
+      accumulative.y += e.movementY
+      vm.postIOData('mouse', {
+        isDown,
+        x: accumulative.x + width / 2,
+        y: accumulative.y + height / 2,
+        canvasWidth: width,
+        canvasHeight: height
+      })
+      return true
+    } else {
+      return false
+    }
+  }
+  function postMouse (event, isDown) {
+    const { x, y } = getEventXY(event)
+    const rect = canvas.getBoundingClientRect()
+    const mousePosition = { x: x - rect.left, y: y - rect.top }
+    vm.postIOData('mouse', {
+      isDown,
+      ...mousePosition,
+      canvasWidth: rect.width,
+      canvasHeight: rect.height
+    })
+    return { mousePosition, rect }
+  }
+  function handleMouseMove (event) {
+    if (postIfPointerLocked(event)) return
+    const { mousePosition, rect } = postMouse(event)
+    if (mouseDown && !isDragging) {
+      const distanceFromMouseDown = Math.hypot(
+        mousePosition.x - mouseDownPosition.x,
+        mousePosition.y - mouseDownPosition.y
+      )
+      if (distanceFromMouseDown > 3) {
+        cancelMouseDownTimeout()
+        handleStartDrag()
+      }
+    }
+    if (mouseDown && isDragging) {
+      const nativeSize = renderer.getNativeSize()
+      vm.postSpriteInfo({
+        x:
+          (nativeSize[0] / rect.width) * (mousePosition.x - rect.width / 2) +
+          dragOffset[0],
+        y: -(
+          (nativeSize[1] / rect.height) * (mousePosition.y - rect.height / 2) +
+          dragOffset[1]
+        ),
+        force: true
+      })
+    }
+  }
+  function handleMouseDown (event) {
+    mouseDown = true
+    vm.postIOData('keyboard', {
+      key: 'Mouse' + event.which,
+      isDown: true
+    })
+    if (postIfPointerLocked(event, true)) return
+    mouseDownPosition = postMouse(event, true).mousePosition
+    mouseDownTimeoutId = setTimeout(handleStartDrag, 400)
+    event.preventDefault()
+    if (!document.body.classList.contains('asking')) {
+      window.focus()
+    }
+  }
+  function handleMouseUp (event) {
+    cancelMouseDownTimeout()
+    mouseDown = false
+    mouseDownPosition = null
+    if (isDragging) {
+      vm.stopDrag(dragId)
+      isDragging = false
+      dragOffset = null
+      dragId = null
+    }
+    vm.postIOData('keyboard', {
+      key: 'Mouse' + event.which,
+      isDown: false
+    })
+    if (postIfPointerLocked(event, false)) return
+    postMouse(event, false)
+  }
+  document.addEventListener('mousemove', handleMouseMove)
+  document.addEventListener('mouseup', handleMouseUp)
+  document.addEventListener('touchmove', handleMouseMove)
+  document.addEventListener('touchend', handleMouseUp, { passive: false })
+  canvas.addEventListener('wheel', event => {
+    vm.postIOData('mouseWheel', event)
+    event.preventDefault()
+  })
+  window.addEventListener('resize', resize)
+  canvas.addEventListener('contextmenu', event => {
+    event.preventDefault()
+  })
+  if (options.pointerLock) {
+    canvas.requestPointerLock =
+      canvas.requestPointerLock || canvas.mozRequestPointerLock
+    canvas.addEventListener('click', () => {
+      canvas.requestPointerLock()
+    })
+  }
+
+  /**
+   * Maps e.key to e.code. For example, Shift -> ShiftRight. This is because the
+   * keyup event doesn't fire when you let go of one shift if the other shift
+   * key is still held down.
+   */
+  const keyToCode = new Map()
+  function postKey (event, isDown) {
+    const key = !event.key || event.key === 'Dead' ? event.keyCode : event.key
+    vm.postIOData('keyboard', {
+      key: key,
+      isDown
+    })
+    vm.postIOData('keyboard', {
+      key: 'code_' + event.code,
+      isDown
+    })
+  }
+  document.addEventListener('keydown', event => {
+    if (event.target !== document && event.target !== document.body) return
+    const prevCode = keyToCode.get(event.key)
+    if (prevCode) {
+      if (prevCode !== event.code) {
+        vm.postIOData('keyboard', {
+          key: 'code_' + prevCode,
+          isDown: false
+        })
+      }
+    }
+    postKey(event, true)
+    keyToCode.set(event.key, event.code)
+    if (event.keyCode === 32 || (event.keyCode >= 37 && event.keyCode <= 40)) {
+      event.preventDefault()
+    }
+    if (
+      event.key === 'f' &&
+      (event.ctrlKey || event.metaKey) &&
+      !event.shiftKey &&
+      !event.altKey
+    ) {
+      toggleFullscreen()
+      event.preventDefault()
+    }
+  })
+  document.addEventListener('keyup', e => {
+    postKey(e, false)
+    keyToCode.delete(e.key)
+    if (e.target !== document && e.target !== document.body) {
+      e.preventDefault()
+    }
+  })
+  vm.postIOData('keyboard', {
+    key: 'HTMLifier',
+    isDown: true
+  })
+
+  const question = document.getElementById('question')
+  const askBox = document.getElementById('answer')
+  vm.runtime.addListener('QUESTION', questionData => {
+    // null means the question was interrupted by stop script block
+    if (questionData === null) {
+      document.body.classList.remove('asking')
+    } else {
+      document.body.classList.add('asking')
+      question.textContent = questionData
+      askBox.value = ''
+      askBox.focus()
+    }
+  })
+  askBox.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      // The asking class must be removed first because the VM may start the
+      // next question immediately inside the .emit call
+      document.body.classList.remove('asking')
+      vm.runtime.emit('ANSWER', askBox.value)
+    }
+  })
+
+  const getVariable = (targetId, variableId) => {
+    const target = targetId
+      ? vm.runtime.getTargetById(targetId)
+      : vm.runtime.getTargetForStage()
+    return target.variables[variableId]
+  }
+  const monitorStates = {}
+  vm.runtime.addListener('MONITORS_UPDATE', monitors => {
+    monitors.forEach((record, id) => {
+      const {
+        value,
+        visible,
+        mode,
+        x,
+        y,
+        width,
+        height,
+        params,
+        opcode,
+        spriteName,
+        sliderMin,
+        sliderMax,
+        isDiscrete,
+        targetId
+      } = record
+
+      if (!monitorStates[id]) {
+        const label = document.createElement('span')
+        label.className = 'monitor-label'
+        const name = params.VARIABLE || params.LIST || opcode
+        label.textContent = spriteName ? `${spriteName}: ${name}` : name
+
+        const value = document.createElement('span')
+        value.className = 'monitor-value'
+
+        const monitor = document.createElement('div')
+        monitor.className = 'monitor ' + mode
+        monitor.style.left = x + 'px'
+        monitor.style.top = y + 'px'
+        monitor.append(label, value)
+
+        monitorStates[id] = { monitor, valueElem: value, wasVisible: true }
+
+        if (mode === 'slider') {
+          const slider = document.createElement('input')
+          slider.type = 'range'
+          slider.min = sliderMin
+          slider.max = sliderMax
+          slider.step = isDiscrete ? 1 : 0.01
+          // Prevent tab focus, per #54, but it deviates from Scratch
+          slider.tabIndex = -1
+          slider.addEventListener('input', () => {
+            getVariable(targetId, id).value = slider.value
+          })
+          slider.addEventListener('change', () => {
+            getVariable(targetId, id).value = slider.value
+          })
+          monitorStates[id].slider = slider
+          monitor.append(slider)
+        } else if (mode === 'list') {
+          // If the list has never been resized, the width/height will be 0.
+          // Weird!
+          monitor.style.width = (width || 100) + 'px'
+          monitor.style.height = (height || 200) + 'px'
+
+          monitorStates[id].rowElems = []
+        }
+
+        monitorWrapper.append(monitor)
+      }
+
+      const {
+        monitor,
+        valueElem,
+        wasVisible,
+        lastValue = [],
+        slider,
+        rowElems
+      } = monitorStates[id]
+      if (visible) {
+        if (!wasVisible) {
+          monitor.style.display = null
+        }
+        const differed = Array.isArray(value)
+          ? JSON.stringify(lastValue) !== JSON.stringify(value)
+          : lastValue !== value
+        if (differed) {
+          if (Array.isArray(value)) {
+            if (lastValue.length !== rowElems.length) {
+              console.error(
+                "List monitor rowElems and lastValue lengths don't match."
+              )
+            }
+
+            value.forEach((val, i) => {
+              if (i >= lastValue.length) {
+                // Could also set width to (lastValue.length + '').length + 'ch'
+                const index = document.createElement('div')
+                index.className = 'index'
+                index.textContent = i + 1
+
+                const value = document.createElement('div')
+                value.className = 'row-value'
+
+                const row = document.createElement('div')
+                row.className = 'row'
+                row.append(index, value)
+
+                valueElem.append(row)
+                rowElems[i] = value
+              }
+
+              if (lastValue[i] !== val) {
+                rowElems[i].textContent = val
+              }
+            })
+
+            if (value.length < lastValue.length) {
+              for (const toRemove of rowElems.splice(
+                value.length,
+                lastValue.length - value.length
+              )) {
+                toRemove.parentNode.remove()
+              }
+            }
+          } else {
+            // The HTMLifier used to use Number(value.toFixed(6)) but I don't
+            // think Scratch does that for monitors
+            valueElem.textContent = value
+            if (slider) {
+              slider.value = value
+            }
+          }
+        }
+      } else if (wasVisible) {
+        monitor.style.display = 'none'
+      }
+      monitorStates[id].wasVisible = visible
+      // `value` is a live array
+      monitorStates[id].lastValue = Array.isArray(value) ? [...value] : value
+    })
+  })
+
+  vm.postIOData('userData', { username: options.username })
+
+  for (let i = 0; i < options.extensionCount; i++) {
+    await vm.extensionManager.loadExtensionURL(String(i))
+  }
+
+  await vm.loadProject(
+    options.assets.file
+      ? await fetch(options.assets.file).then(r => r.arrayBuffer())
+      : typeof options.assets.project === 'string'
+      ? await storage.load(storage.AssetType.Project).then(asset => asset.data)
+      : // project.json was included as parsed JSON
+        JSON.stringify(options.assets.project)
+  )
+
+  const cloudProvider = new CloudProvider(options)
+  vm.setCloudProvider(cloudProvider)
+  if (options.cloud.specialBehaviours || !options.cloud.serverUrl) {
+    const stageVariables = vm.runtime.getTargetForStage().variables
+    for (const { name, isCloud } of Object.values(stageVariables)) {
+      if (isCloud) {
+        if (
+          options.cloud.specialBehaviours &&
+          options.cloud.serverUrl &&
+          !name.startsWith(CLOUD_PREFIX + 'local storage')
+        ) {
+          continue
+        }
+        const value = localStorage.getItem('[s3] ' + name)
+        if (value !== null) {
+          vm.postIOData('cloud', { varUpdate: { name, value } })
+        }
+      }
+    }
+  }
+  if (options.cloud.specialBehaviours) {
+    cloudProvider.handleUrlChange()
+  }
+
+  progress.remove()
+  const loadingImage = document.getElementById('loading-image')
+  if (loadingImage) {
+    loadingImage.remove()
+  }
+  document.body.classList.remove('loading')
+
+  const greenFlag = document.getElementById('start-btn')
+  const stopSign = document.getElementById('stop-btn')
+  greenFlag.addEventListener('click', () => {
+    greenFlag.blur()
+    vm.greenFlag()
+  })
+  stopSign.addEventListener('click', () => {
+    stopSign.blur()
+    vm.stopAll()
+  })
+  vm.on('PROJECT_RUN_START', () => {
+    document.body.classList.add('running')
+    stopSign.disabled = false
+  })
+  vm.on('PROJECT_RUN_STOP', () => {
+    document.body.classList.remove('running')
+    stopSign.disabled = true
+  })
+  if (options.autoStart) {
+    vm.greenFlag()
+  }
+
+  document
+    .getElementById('download-btn')
+    .addEventListener('click', async () => {
+      download(await vm.saveProjectSb3(), document.title + '.sb3')
+    })
+  const addSpriteInput = document.getElementById('add-sprite-file')
+  addSpriteInput.addEventListener('change', async () => {
+    addSpriteInput.disabled = true
+    for (const file of addSpriteInput.files) {
+      // 1. Convert the File to an arrayBuffer. I care less about browser
+      // support, so I can use async/await + .arrayBuffer
+      // https://github.com/LLK/scratch-gui/blob/develop/src/lib/file-uploader.js#L25
+      const sprite = new Uint8Array(await file.arrayBuffer())
+
+      // 2. Convert a costume to a sprite (skipping for now)
+      // https://github.com/LLK/scratch-gui/blob/develop/src/lib/file-uploader.js#L208
+
+      // 3. Add to VM
+      await vm.addSprite(sprite)
+    }
+    addSpriteInput.disabled = false
+    addSpriteInput.value = null
+  })
+
+  canvas.addEventListener('mousedown', handleMouseDown)
+  canvas.addEventListener('touchstart', handleMouseDown, { passive: false })
+}
+
+const errorsTextarea = document.getElementById('errors')
+function handleHashChange () {
+  // #show-errors-<Han sheep>
+  if (window.location.hash === '#show-errors-%E7%BE%8A') {
+    if (!window.onNewError) {
+      window.onNewError = () => {
+        errorsTextarea.value = `${
+          window.errors.length
+        } error(s)\n${window.errors.join('\n')}`
+      }
+      window.onNewError()
+    }
+    errorsTextarea.style.display = 'block'
+  } else if (window.onNewError) {
+    window.onNewError = null
+    errorsTextarea.style.display = 'none'
+  }
+}
+window.addEventListener('hashchange', handleHashChange)
+handleHashChange()
+
+// Not used by the template, but might be convenient for un-HTMLifying if I
+// remember this function exists
+window.download = (blob, name = 'download') => {
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  link.download = name
+  document.body.append(link)
+  link.click()
+  link.remove()
+  URL.revokeObjectURL(url)
+}
+
+</script> <script>
+const GENERATED = 1732948432156
+const initOptions = {
+	"width": 480,
+	"height": 360,
+	"stretchStage": false,
+	"fps": 30,
+	"turbo": false,
+	"limits": true,
+	"fencing": true,
+	"pointerLock": false,
+	"autoStart": true,
+	"username": "ScratchCat",
+	"loadingProgress": true,
+	"cloud": {
+		"serverUrl": null,
+		"specialBehaviours": false,
+		"projectId": "276660763"
+	},
+	"extensionWorker": {
+		"url": "https://sheeptester.github.io/scratch-vm/16-9/extension-worker.js"
+	},
+	"extensionCount": 0,
+	"assets": {
+		"project": "./project.json",
+		"14d72105048d111457d80f1ce54658ff.svg": "./14d72105048d111457d80f1ce54658ff.svg",
+		"c8e4581feb9b27819170434d00d577aa.svg": "./c8e4581feb9b27819170434d00d577aa.svg",
+		"04d66044e45840faa6ff768cc8a7ce43.svg": "./04d66044e45840faa6ff768cc8a7ce43.svg",
+		"f5b5644cc3433984c6fc47147a65d338.png": "./f5b5644cc3433984c6fc47147a65d338.png",
+		"13466ba26c0381c2cbe8157755a1a04d.svg": "./13466ba26c0381c2cbe8157755a1a04d.svg",
+		"5f188f291a010091bd38162b7642e9f4.svg": "./5f188f291a010091bd38162b7642e9f4.svg",
+		"59fa7b8e5c0027b9462a2b70c57e5b90.svg": "./59fa7b8e5c0027b9462a2b70c57e5b90.svg",
+		"7b6ec8b2454b1aa6133d54579c44c54c.svg": "./7b6ec8b2454b1aa6133d54579c44c54c.svg",
+		"4bcb1beebb183ea2011fa08140e87636.svg": "./4bcb1beebb183ea2011fa08140e87636.svg",
+		"394b63197c3fe5b4954e7aa4e5d30c27.svg": "./394b63197c3fe5b4954e7aa4e5d30c27.svg",
+		"7392d7c090c806099c9140aaaaf89f5b.svg": "./7392d7c090c806099c9140aaaaf89f5b.svg",
+		"ce31253e12891ffaf177ed789c93f55b.svg": "./ce31253e12891ffaf177ed789c93f55b.svg",
+		"f46ec2e9eb122836aa733b7c4f989540.svg": "./f46ec2e9eb122836aa733b7c4f989540.svg",
+		"7129bb76569c49aaa2029f0b178a7c3a.svg": "./7129bb76569c49aaa2029f0b178a7c3a.svg",
+		"445e6bc3b3724ec8d16ce08faaf380dc.svg": "./445e6bc3b3724ec8d16ce08faaf380dc.svg",
+		"f21f1f3e3d68538438d17cdaaba25589.svg": "./f21f1f3e3d68538438d17cdaaba25589.svg",
+		"f214304407e8b76f7d5eb35bb3e45397.svg": "./f214304407e8b76f7d5eb35bb3e45397.svg",
+		"2ff9e556ae0b3cb4f9e4750dbe9b17d4.wav": "./2ff9e556ae0b3cb4f9e4750dbe9b17d4.wav",
+		"010667e9c7c5d755a22e2e04508088ed.wav": "./010667e9c7c5d755a22e2e04508088ed.wav",
+		"d7dc847b001632e8bdf1a390145f10ac.svg": "./d7dc847b001632e8bdf1a390145f10ac.svg",
+		"217147c1bdbfca856acbcbbeaab0436d.svg": "./217147c1bdbfca856acbcbbeaab0436d.svg",
+		"7a79a7bb6be5c36ba78dc5ea3e4076ee.svg": "./7a79a7bb6be5c36ba78dc5ea3e4076ee.svg",
+		"82f9ed328ac6adedbe0c71a05fe86ce1.svg": "./82f9ed328ac6adedbe0c71a05fe86ce1.svg",
+		"90825947579f9483a56b643ab2808742.svg": "./90825947579f9483a56b643ab2808742.svg",
+		"f496aca64564c8b04d91b2d492b7f1c5.svg": "./f496aca64564c8b04d91b2d492b7f1c5.svg",
+		"0e2fd1cfbb2945a3843a1733565a4b1f.svg": "./0e2fd1cfbb2945a3843a1733565a4b1f.svg",
+		"e06f929f494171aa6ba90bcf7986dca4.svg": "./e06f929f494171aa6ba90bcf7986dca4.svg",
+		"77b7ca46d5b9d15e73354a66e60bda3b.svg": "./77b7ca46d5b9d15e73354a66e60bda3b.svg",
+		"0d353a99139a9cccbe6d97973483242c.svg": "./0d353a99139a9cccbe6d97973483242c.svg",
+		"21dba1fb96be6f9de4b4456101954282.svg": "./21dba1fb96be6f9de4b4456101954282.svg",
+		"ae111f7b2abb4ffe113d49e85cadcf7c.wav": "./ae111f7b2abb4ffe113d49e85cadcf7c.wav",
+		"dfc4e0e27b844fefd14c04892a578aa0.wav": "./dfc4e0e27b844fefd14c04892a578aa0.wav",
+		"b015564e47af15b260825f7d6af8c643.svg": "./b015564e47af15b260825f7d6af8c643.svg",
+		"5694cedd411c36cac32017732135bb89.svg": "./5694cedd411c36cac32017732135bb89.svg",
+		"3657d74e1a294681a1f291dd1ee7bf10.svg": "./3657d74e1a294681a1f291dd1ee7bf10.svg",
+		"7b32656c3260f52dc911afb51b933a64.svg": "./7b32656c3260f52dc911afb51b933a64.svg",
+		"2a23ac405eef337b617b65e8c137962e.svg": "./2a23ac405eef337b617b65e8c137962e.svg",
+		"29c1e7f43bd068a4d2ed4383faacde27.svg": "./29c1e7f43bd068a4d2ed4383faacde27.svg",
+		"01524dedba0bdd20d962798f1e50a509.svg": "./01524dedba0bdd20d962798f1e50a509.svg",
+		"d4ea2bea28c620f990eac9c951b7dff1.svg": "./d4ea2bea28c620f990eac9c951b7dff1.svg",
+		"35566d525a3a9330a3e1666663185d58.svg": "./35566d525a3a9330a3e1666663185d58.svg",
+		"2cbff498b30ae93737a8af3c89b389b0.svg": "./2cbff498b30ae93737a8af3c89b389b0.svg",
+		"2c888b9c21e4b4af780bf1b8b6486d0f.svg": "./2c888b9c21e4b4af780bf1b8b6486d0f.svg",
+		"733ee5f4acce29617f0ca5736e85d406.svg": "./733ee5f4acce29617f0ca5736e85d406.svg",
+		"9ae3716557bd659f5dc4aac8f59e7f6e.svg": "./9ae3716557bd659f5dc4aac8f59e7f6e.svg",
+		"70a511bac6487b9dfb4b9420ad7e86f6.wav": "./70a511bac6487b9dfb4b9420ad7e86f6.wav",
+		"cfb7b02755c589d6a021459ccc2879a4.wav": "./cfb7b02755c589d6a021459ccc2879a4.wav",
+		"7168c28e0a595c468f461cedced06589.wav": "./7168c28e0a595c468f461cedced06589.wav",
+		"489ddfc8c7c57c3c4a914ef814e98472.wav": "./489ddfc8c7c57c3c4a914ef814e98472.wav",
+		"4539a15043d037f0b70f71553b30c9cd.svg": "./4539a15043d037f0b70f71553b30c9cd.svg",
+		"1a4f6f2468fd65af089e0556b19d940e.svg": "./1a4f6f2468fd65af089e0556b19d940e.svg",
+		"73c8c9982234c84b63766d64c80ed001.svg": "./73c8c9982234c84b63766d64c80ed001.svg",
+		"8e93dc84d8ea42fbfc692f29018e6012.svg": "./8e93dc84d8ea42fbfc692f29018e6012.svg",
+		"3c5a4d1100c71937a230472417dc6b84.svg": "./3c5a4d1100c71937a230472417dc6b84.svg",
+		"449c6cd7c7c61ab7db31b50055cdbc04.svg": "./449c6cd7c7c61ab7db31b50055cdbc04.svg",
+		"de33fde6697f49b635556e1badd202ba.svg": "./de33fde6697f49b635556e1badd202ba.svg",
+		"91b14d4893c68aea56a60513dcde3556.svg": "./91b14d4893c68aea56a60513dcde3556.svg",
+		"09c152f7c8c7cc1a36fad24e0f65193d.svg": "./09c152f7c8c7cc1a36fad24e0f65193d.svg",
+		"684acf758277367837a79fa3da98c7b2.svg": "./684acf758277367837a79fa3da98c7b2.svg",
+		"dc834ce27f202bb8084fd6129134cbc9.svg": "./dc834ce27f202bb8084fd6129134cbc9.svg",
+		"48ee2c4d530c8f75c299b6c2c390b3ed.svg": "./48ee2c4d530c8f75c299b6c2c390b3ed.svg",
+		"25c565ce6df1cd0f5545df9e815fcf12.svg": "./25c565ce6df1cd0f5545df9e815fcf12.svg",
+		"912b6279f95d7e87cfa5910132e569a1.svg": "./912b6279f95d7e87cfa5910132e569a1.svg",
+		"34280900364799dd4e57cc1806abb657.svg": "./34280900364799dd4e57cc1806abb657.svg",
+		"4faceb40d4001626c1b65812006fef5a.svg": "./4faceb40d4001626c1b65812006fef5a.svg",
+		"9a0c7455ae6803ca9563501163ccbbff.svg": "./9a0c7455ae6803ca9563501163ccbbff.svg",
+		"c2c0d2e9f10aa4d90eeb9086da040891.svg": "./c2c0d2e9f10aa4d90eeb9086da040891.svg",
+		"5af077595ce5ece3c73a7cb302394015.wav": "./5af077595ce5ece3c73a7cb302394015.wav",
+		"9f2b469fe298e16a125fa3c28167df47.wav": "./9f2b469fe298e16a125fa3c28167df47.wav",
+		"876921f082afc3d621d511481167abc4.svg": "./876921f082afc3d621d511481167abc4.svg",
+		"e6c8a300c38a43c2dbb90f64537e6cfd.svg": "./e6c8a300c38a43c2dbb90f64537e6cfd.svg",
+		"38add8d0e41a04b9a5d14e855acbdaaa.svg": "./38add8d0e41a04b9a5d14e855acbdaaa.svg",
+		"bf614aba859b37bfd7213f67f92ed8ba.svg": "./bf614aba859b37bfd7213f67f92ed8ba.svg",
+		"736c12fd29f778d567381c67a4c214ef.svg": "./736c12fd29f778d567381c67a4c214ef.svg",
+		"8ffd72fada67b9ebd8f10f95be6587b4.svg": "./8ffd72fada67b9ebd8f10f95be6587b4.svg",
+		"d84998fc888ff5404ea91bcab5bbc589.svg": "./d84998fc888ff5404ea91bcab5bbc589.svg",
+		"9f141b786d05d4c3b9c6f42e152dff7a.svg": "./9f141b786d05d4c3b9c6f42e152dff7a.svg",
+		"7a7506f1b2761f0d2e1bd07777ed1fe6.svg": "./7a7506f1b2761f0d2e1bd07777ed1fe6.svg",
+		"8da6a94cba1e18547efbd568e8398f6d.svg": "./8da6a94cba1e18547efbd568e8398f6d.svg",
+		"75410e9a167f71372a39d423de55e9fa.svg": "./75410e9a167f71372a39d423de55e9fa.svg",
+		"ecfd8e41101e0d559b9dfd0a912ad54e.svg": "./ecfd8e41101e0d559b9dfd0a912ad54e.svg",
+		"08df184dc591c9c67082d8871bbaa6a9.svg": "./08df184dc591c9c67082d8871bbaa6a9.svg",
+		"270a8e8be43360898bccd0985a3dcf78.svg": "./270a8e8be43360898bccd0985a3dcf78.svg",
+		"7f08e76918d14fdfa46c4c61728808fc.wav": "./7f08e76918d14fdfa46c4c61728808fc.wav",
+		"9a64e35275249dafad42b40a2aedf53d.wav": "./9a64e35275249dafad42b40a2aedf53d.wav",
+		"2b0d707dc5b6ea94ca34186218819915.svg": "./2b0d707dc5b6ea94ca34186218819915.svg",
+		"752ddb8b3986c55b8cfa8ff7e82d2c70.svg": "./752ddb8b3986c55b8cfa8ff7e82d2c70.svg",
+		"59eede4230ab01c5288e98a495703b94.svg": "./59eede4230ab01c5288e98a495703b94.svg",
+		"7b9e756d2390d80af8aea3b244ecbae9.svg": "./7b9e756d2390d80af8aea3b244ecbae9.svg",
+		"a674c20baa8bb65d46488bf3a84e3c37.svg": "./a674c20baa8bb65d46488bf3a84e3c37.svg",
+		"57a24fbd9ee00fd3731779d2c5173251.svg": "./57a24fbd9ee00fd3731779d2c5173251.svg",
+		"3bf9d6f64caf91d384e7e0cd8c234bc1.svg": "./3bf9d6f64caf91d384e7e0cd8c234bc1.svg",
+		"9e9584f86f881a3d7e72f53ce7dbd1e8.svg": "./9e9584f86f881a3d7e72f53ce7dbd1e8.svg",
+		"becac4f2710b8ccfb70f462d651dbd32.svg": "./becac4f2710b8ccfb70f462d651dbd32.svg",
+		"621c3795f5d151fad36e187924698527.svg": "./621c3795f5d151fad36e187924698527.svg",
+		"886f2379e69f33b29900d3a86d207ab0.svg": "./886f2379e69f33b29900d3a86d207ab0.svg",
+		"ba07e86822ad36c2d7235ce4879ef373.svg": "./ba07e86822ad36c2d7235ce4879ef373.svg",
+		"0c693f1924511dacc26e71007e40d4a2.svg": "./0c693f1924511dacc26e71007e40d4a2.svg",
+		"ad63e4009cbc362cba82b49d1079ad62.svg": "./ad63e4009cbc362cba82b49d1079ad62.svg",
+		"5744408fc830f15ba9cef82bb4cbcaf1.svg": "./5744408fc830f15ba9cef82bb4cbcaf1.svg",
+		"43ae651d1b91a272da095595c51f677d.svg": "./43ae651d1b91a272da095595c51f677d.svg",
+		"088c276a81910d3ed9b86ecd91c6d0e7.svg": "./088c276a81910d3ed9b86ecd91c6d0e7.svg",
+		"7e0d06d8168f72bb6a155c67cd56e700.svg": "./7e0d06d8168f72bb6a155c67cd56e700.svg",
+		"243f75b37dd2c5c087ec359f24673ad5.svg": "./243f75b37dd2c5c087ec359f24673ad5.svg",
+		"f5c63bb00c9e112c183f348053560813.svg": "./f5c63bb00c9e112c183f348053560813.svg",
+		"daabd3f2bb4822ad45e63afaaf966a47.svg": "./daabd3f2bb4822ad45e63afaaf966a47.svg",
+		"ac76a6a92f290e7fac145dd9cf8c2b32.wav": "./ac76a6a92f290e7fac145dd9cf8c2b32.wav",
+		"c2923c409173fa2ca34dc532a894f9f7.wav": "./c2923c409173fa2ca34dc532a894f9f7.wav",
+		"7ad41cc2db9d0d788120792fd804a8ba.wav": "./7ad41cc2db9d0d788120792fd804a8ba.wav",
+		"2644a35847318d88e0cc230566e53a40.wav": "./2644a35847318d88e0cc230566e53a40.wav",
+		"d8d68126b5adc22c77480dd7d6bef466.svg": "./d8d68126b5adc22c77480dd7d6bef466.svg",
+		"ea45f13a799706ddf7fb1b07422625a4.svg": "./ea45f13a799706ddf7fb1b07422625a4.svg",
+		"872792c52e3181209e0307c4b2a78897.svg": "./872792c52e3181209e0307c4b2a78897.svg",
+		"8d804f94ad4149c42ca0c4923b719b79.svg": "./8d804f94ad4149c42ca0c4923b719b79.svg",
+		"ec954a0be3126da2552799cf415a0485.svg": "./ec954a0be3126da2552799cf415a0485.svg",
+		"e4c8d359335490bf3c8c52010cbd09ff.svg": "./e4c8d359335490bf3c8c52010cbd09ff.svg",
+		"1548c6d9a5dc2e7bf1ec567ec8924e6c.svg": "./1548c6d9a5dc2e7bf1ec567ec8924e6c.svg",
+		"79accc0607a884099d08c57247bbe3d9.svg": "./79accc0607a884099d08c57247bbe3d9.svg",
+		"7fddf5dab621bb1cce90c2e25d2514d2.svg": "./7fddf5dab621bb1cce90c2e25d2514d2.svg",
+		"692065e87668aec7c87ee19b010351bc.svg": "./692065e87668aec7c87ee19b010351bc.svg",
+		"3759155fe0d195a7b9f885bdc34b14e1.svg": "./3759155fe0d195a7b9f885bdc34b14e1.svg",
+		"51e9e6032821c0756eca633500e03340.svg": "./51e9e6032821c0756eca633500e03340.svg",
+		"eb9bd9ec88dd4539baca146b5ee0daad.svg": "./eb9bd9ec88dd4539baca146b5ee0daad.svg",
+		"38bf140a375b3e686e6a5e72ba756bc5.svg": "./38bf140a375b3e686e6a5e72ba756bc5.svg",
+		"5f2508d7416b5eb2fd500ee2e18320e7.svg": "./5f2508d7416b5eb2fd500ee2e18320e7.svg",
+		"9e4cc824105eca0301becf0ce416c9aa.svg": "./9e4cc824105eca0301becf0ce416c9aa.svg",
+		"1201b0d196d10f73094c7610b7fc5989.svg": "./1201b0d196d10f73094c7610b7fc5989.svg",
+		"a5ff1eb07ea50bf7c26137616c7641b8.svg": "./a5ff1eb07ea50bf7c26137616c7641b8.svg",
+		"7e3afca1877d497b87badc248bf17a0c.svg": "./7e3afca1877d497b87badc248bf17a0c.svg",
+		"ef3c0e50f5c2ac26bfc5700fce42db63.wav": "./ef3c0e50f5c2ac26bfc5700fce42db63.wav",
+		"347dead247cb42851bb4f766ad2da762.wav": "./347dead247cb42851bb4f766ad2da762.wav",
+		"d7dff4e0ca2d49846587f42fe1ee1c8f.wav": "./d7dff4e0ca2d49846587f42fe1ee1c8f.wav",
+		"9601af13c89996f130ecc71a8eb0febc.svg": "./9601af13c89996f130ecc71a8eb0febc.svg",
+		"a93b7e7c76b2c868e94e7c2029c10fe9.svg": "./a93b7e7c76b2c868e94e7c2029c10fe9.svg",
+		"003f1bc693524d28a52895df3df3901b.svg": "./003f1bc693524d28a52895df3df3901b.svg",
+		"37cf1f670f15b8fc6884042a05a1dfc7.svg": "./37cf1f670f15b8fc6884042a05a1dfc7.svg",
+		"8189f00e2d8a96b89d89a18b3622e047.svg": "./8189f00e2d8a96b89d89a18b3622e047.svg",
+		"91e7ea54df834e4b8c1227c1a4816939.svg": "./91e7ea54df834e4b8c1227c1a4816939.svg",
+		"578f7de8fe63411a2c0276367597b008.svg": "./578f7de8fe63411a2c0276367597b008.svg",
+		"2ea9d6984444d7362c9c4f94a7966a97.svg": "./2ea9d6984444d7362c9c4f94a7966a97.svg",
+		"30df8d09e6d3e0224fc7ecc27165e1d0.svg": "./30df8d09e6d3e0224fc7ecc27165e1d0.svg",
+		"13c8822dc0688bb5ed2afa0de65baaf7.svg": "./13c8822dc0688bb5ed2afa0de65baaf7.svg",
+		"7b9ec2cb4b217eab8a7ec420635c5da6.svg": "./7b9ec2cb4b217eab8a7ec420635c5da6.svg",
+		"4d94b42f29dabd62a7b6ff474ad865e5.svg": "./4d94b42f29dabd62a7b6ff474ad865e5.svg",
+		"3048e8b348073c20e46c5f75fb37e0fa.svg": "./3048e8b348073c20e46c5f75fb37e0fa.svg",
+		"8cb55d3ecd664b7dcba0f977412d4f21.svg": "./8cb55d3ecd664b7dcba0f977412d4f21.svg",
+		"94e457f8cd7b42f8b2a17485f988e8a4.svg": "./94e457f8cd7b42f8b2a17485f988e8a4.svg",
+		"20dd7bff5b7f33e61e878d6e7b03e48c.wav": "./20dd7bff5b7f33e61e878d6e7b03e48c.wav",
+		"25db76755896bea9f2be69ba1ed2b862.wav": "./25db76755896bea9f2be69ba1ed2b862.wav",
+		"654ee2c380273f6f0a7e263a6d9b6b28.svg": "./654ee2c380273f6f0a7e263a6d9b6b28.svg",
+		"59d2bfa0836e768f07a72e753a489978.svg": "./59d2bfa0836e768f07a72e753a489978.svg",
+		"d0d629caf148a498747f9c111c4d4944.svg": "./d0d629caf148a498747f9c111c4d4944.svg",
+		"67e0a5672280be071ce3232adff8f56e.svg": "./67e0a5672280be071ce3232adff8f56e.svg",
+		"215b199309252035348e92dc8a8dcde5.svg": "./215b199309252035348e92dc8a8dcde5.svg",
+		"f7cad846ce2223ea710aaf5b0786de15.svg": "./f7cad846ce2223ea710aaf5b0786de15.svg",
+		"99b2d43eb5f5662458a38ddbf7563105.svg": "./99b2d43eb5f5662458a38ddbf7563105.svg",
+		"d8d3ffe82b44484e00439d54a92e36cd.svg": "./d8d3ffe82b44484e00439d54a92e36cd.svg",
+		"d3ad723e621bd55c4b7faa2a24478bf9.svg": "./d3ad723e621bd55c4b7faa2a24478bf9.svg",
+		"568b86e6c8c732571faa58d890ddd17e.svg": "./568b86e6c8c732571faa58d890ddd17e.svg",
+		"0e00bba784963c40cbe2323d4fa96e32.svg": "./0e00bba784963c40cbe2323d4fa96e32.svg",
+		"feff8ea97618df29495a578dcbe45dbd.svg": "./feff8ea97618df29495a578dcbe45dbd.svg",
+		"8c7574a48449189cd9a5420bb522fe1c.svg": "./8c7574a48449189cd9a5420bb522fe1c.svg",
+		"b35cd9f690c3c7f01bec48c0cbb3bd9a.svg": "./b35cd9f690c3c7f01bec48c0cbb3bd9a.svg",
+		"4f284d048e6ed5e1ec4ed73a1a525184.svg": "./4f284d048e6ed5e1ec4ed73a1a525184.svg",
+		"cb752b12ec08e207d7d42a04f1fcc107.svg": "./cb752b12ec08e207d7d42a04f1fcc107.svg",
+		"99aa0c15786c0a8d565fa020262d8135.svg": "./99aa0c15786c0a8d565fa020262d8135.svg",
+		"182bf7013d7a87b9e256b27408c75c3f.svg": "./182bf7013d7a87b9e256b27408c75c3f.svg",
+		"cdf62f63cc2fbeebb53f626ddc3fc268.svg": "./cdf62f63cc2fbeebb53f626ddc3fc268.svg",
+		"805aecc8ad0b574ec30a0de73fc8d364.svg": "./805aecc8ad0b574ec30a0de73fc8d364.svg",
+		"444a1874a134edce3b3745bda7bbd854.svg": "./444a1874a134edce3b3745bda7bbd854.svg",
+		"08d3a110669a16efd42240d4e447f45c.svg": "./08d3a110669a16efd42240d4e447f45c.svg",
+		"793e0dde46587175bc6817a4cfd37699.wav": "./793e0dde46587175bc6817a4cfd37699.wav",
+		"97d7c85d4f0acd1f12fa65afb27bb1a5.wav": "./97d7c85d4f0acd1f12fa65afb27bb1a5.wav",
+		"e7f583c38ef79d14bc048a333127e174.wav": "./e7f583c38ef79d14bc048a333127e174.wav",
+		"ec7d9db5e1818f1a797dee7578ca97d9.wav": "./ec7d9db5e1818f1a797dee7578ca97d9.wav",
+		"6ee7ba49eae48f5753deb07e0b32199b.svg": "./6ee7ba49eae48f5753deb07e0b32199b.svg",
+		"67965ffc73229ff7ce85c3d800308af6.svg": "./67965ffc73229ff7ce85c3d800308af6.svg",
+		"bc143e26b9501ce980e9e179024c55a9.svg": "./bc143e26b9501ce980e9e179024c55a9.svg",
+		"21f6e03c5e95820a13b2205de8359983.svg": "./21f6e03c5e95820a13b2205de8359983.svg",
+		"2df8b48f909b1a48e99f0a778e0edd0b.svg": "./2df8b48f909b1a48e99f0a778e0edd0b.svg",
+		"8ef502f30ed37f7ec5ffd587ea9ad7b5.svg": "./8ef502f30ed37f7ec5ffd587ea9ad7b5.svg",
+		"c8a1864e3de3eaf9becf2e9f596e9576.svg": "./c8a1864e3de3eaf9becf2e9f596e9576.svg",
+		"124459723b6396eaa9051840558eacca.svg": "./124459723b6396eaa9051840558eacca.svg",
+		"84d14527c6201ee7cce34c86f2e933e6.svg": "./84d14527c6201ee7cce34c86f2e933e6.svg",
+		"468f0128f519bb5cbc1e7f75b9239a76.svg": "./468f0128f519bb5cbc1e7f75b9239a76.svg",
+		"93e896b70ae273b6b43c8543c277b08f.svg": "./93e896b70ae273b6b43c8543c277b08f.svg",
+		"e59c9000c0bc2a4887d3c69f4dae342e.svg": "./e59c9000c0bc2a4887d3c69f4dae342e.svg",
+		"43f070e452aadea32b4ba3c6286b4bad.svg": "./43f070e452aadea32b4ba3c6286b4bad.svg",
+		"b58facab2a384164e566515e47e073a9.svg": "./b58facab2a384164e566515e47e073a9.svg",
+		"ed4ee917aa17ba3c8454888f82ad3386.svg": "./ed4ee917aa17ba3c8454888f82ad3386.svg",
+		"2d3d138a089f1075abe42e54df21a2a8.svg": "./2d3d138a089f1075abe42e54df21a2a8.svg",
+		"384f91727ed5e51fe8702361a0e8a25c.svg": "./384f91727ed5e51fe8702361a0e8a25c.svg",
+		"c39e54d80f08fd650cc23e04b733a83d.wav": "./c39e54d80f08fd650cc23e04b733a83d.wav",
+		"d56f8124c08bf51717a97780c4c77067.wav": "./d56f8124c08bf51717a97780c4c77067.wav",
+		"d85f0f3f1411b871e9d5d2b14c6184f0.wav": "./d85f0f3f1411b871e9d5d2b14c6184f0.wav",
+		"40c9fa416e1e31fe84ee723549d5426f.wav": "./40c9fa416e1e31fe84ee723549d5426f.wav",
+		"78203662c512913b3b4a16300cdf194a.svg": "./78203662c512913b3b4a16300cdf194a.svg",
+		"d12897519365d274bb1092123157dd74.svg": "./d12897519365d274bb1092123157dd74.svg",
+		"3e3a2a0021d43310ed74620bb233518b.svg": "./3e3a2a0021d43310ed74620bb233518b.svg",
+		"58851b01385779cd9eb2bcf5b726f298.svg": "./58851b01385779cd9eb2bcf5b726f298.svg",
+		"bb0cf81000d5d8e064c5e1231b1a04d2.svg": "./bb0cf81000d5d8e064c5e1231b1a04d2.svg",
+		"c446ea2dfccd26f508ee71efa9e93791.svg": "./c446ea2dfccd26f508ee71efa9e93791.svg",
+		"cbaa1fe043c1b3a2d07deac47715b178.svg": "./cbaa1fe043c1b3a2d07deac47715b178.svg",
+		"c079b7060d3ee57ab7ae836936af8300.svg": "./c079b7060d3ee57ab7ae836936af8300.svg",
+		"0c017c29fb4ea9bed1fe7f2f69921b3c.svg": "./0c017c29fb4ea9bed1fe7f2f69921b3c.svg",
+		"9b0e2b231abd6c1371ccc5b1349b92c1.svg": "./9b0e2b231abd6c1371ccc5b1349b92c1.svg",
+		"7d24a66b487cde7ad6189a26af58917f.svg": "./7d24a66b487cde7ad6189a26af58917f.svg",
+		"7154aa0c2ea808c4170321f66eb1eede.svg": "./7154aa0c2ea808c4170321f66eb1eede.svg",
+		"a6f4f5ae3a5193b1686520f3ca4e9c9d.svg": "./a6f4f5ae3a5193b1686520f3ca4e9c9d.svg",
+		"3044b6b567bc0b81d2183cb1e05a56f6.svg": "./3044b6b567bc0b81d2183cb1e05a56f6.svg",
+		"d4864d2ac4176cff6ecffa0064f6a9b8.wav": "./d4864d2ac4176cff6ecffa0064f6a9b8.wav",
+		"bfb682f97520199a8861aa95695d7a3f.wav": "./bfb682f97520199a8861aa95695d7a3f.wav",
+		"cff73bda43f2ad689913599323b8d402.wav": "./cff73bda43f2ad689913599323b8d402.wav",
+		"014ba584c04fb0655bfeb6727ffe8256.wav": "./014ba584c04fb0655bfeb6727ffe8256.wav",
+		"89536b13f86fa5415b0d51716634fa9e.svg": "./89536b13f86fa5415b0d51716634fa9e.svg",
+		"70a9972e0b69781017187642e8a2d7bd.svg": "./70a9972e0b69781017187642e8a2d7bd.svg",
+		"4767571f3fa108616d22fe1fe412864f.svg": "./4767571f3fa108616d22fe1fe412864f.svg",
+		"84d98778bf55399b6f308cfad1091784.svg": "./84d98778bf55399b6f308cfad1091784.svg",
+		"d3c7b8d629c4f4493a5e15872d2fdfb5.svg": "./d3c7b8d629c4f4493a5e15872d2fdfb5.svg",
+		"c05c276a4e105bf5e8e1c8fd6268b25a.svg": "./c05c276a4e105bf5e8e1c8fd6268b25a.svg",
+		"16e7e7c0fde7cce06ade37deec452b76.svg": "./16e7e7c0fde7cce06ade37deec452b76.svg",
+		"b4fa32afc5410c06088296fdb04a60fa.svg": "./b4fa32afc5410c06088296fdb04a60fa.svg",
+		"e6a52c52b2e7a452a74972d571d4ba77.svg": "./e6a52c52b2e7a452a74972d571d4ba77.svg",
+		"ef57346837f5252c4e7698aed067f02d.svg": "./ef57346837f5252c4e7698aed067f02d.svg",
+		"e6c513e1011a5af67d71840a9a5fde76.svg": "./e6c513e1011a5af67d71840a9a5fde76.svg",
+		"b5c3c94ae6d752f32cb87df1a335e4af.svg": "./b5c3c94ae6d752f32cb87df1a335e4af.svg",
+		"46594bafc86ab163fed27ba3bbaf29c1.svg": "./46594bafc86ab163fed27ba3bbaf29c1.svg",
+		"f4271aab34a695e26eb6f7adbfeb3565.svg": "./f4271aab34a695e26eb6f7adbfeb3565.svg",
+		"285c68a9b4d342ac86d21a19d48f61ac.svg": "./285c68a9b4d342ac86d21a19d48f61ac.svg",
+		"67239acc2199a21681763df4000a455d.svg": "./67239acc2199a21681763df4000a455d.svg",
+		"08ebc95124d4b19d5ca820af40bb0a5f.svg": "./08ebc95124d4b19d5ca820af40bb0a5f.svg",
+		"a420a8c6d770a3e964ae94e1e41bd55e.svg": "./a420a8c6d770a3e964ae94e1e41bd55e.svg",
+		"d7824f74368f27c3227b0749ae9e1af8.svg": "./d7824f74368f27c3227b0749ae9e1af8.svg",
+		"8ef0cc5d3a4523974b7b123e77b7abcc.svg": "./8ef0cc5d3a4523974b7b123e77b7abcc.svg",
+		"c6a62d64fc2e57a0976c1b981baee01a.svg": "./c6a62d64fc2e57a0976c1b981baee01a.svg",
+		"186f3c63ddecb201b77ecc86d8636d30.svg": "./186f3c63ddecb201b77ecc86d8636d30.svg",
+		"c452b267e2d79ddaa1e7902aa88d37e2.svg": "./c452b267e2d79ddaa1e7902aa88d37e2.svg",
+		"aa001dbb47f60177e758bab3522d471c.svg": "./aa001dbb47f60177e758bab3522d471c.svg",
+		"5fffcf256ba81c2f02e37921869894f7.svg": "./5fffcf256ba81c2f02e37921869894f7.svg",
+		"0f8bf1d675102e9a0a5d0ccc7f9eca79.svg": "./0f8bf1d675102e9a0a5d0ccc7f9eca79.svg",
+		"d1588d6ba97c41a278df2ce26a973e83.svg": "./d1588d6ba97c41a278df2ce26a973e83.svg",
+		"b087e8e87b5c61e845f567d0e3e2ed0f.svg": "./b087e8e87b5c61e845f567d0e3e2ed0f.svg",
+		"915c4a74e00e678094b1b706966e140f.svg": "./915c4a74e00e678094b1b706966e140f.svg",
+		"a61d4acb6949d64706ec7246eefc7e96.wav": "./a61d4acb6949d64706ec7246eefc7e96.wav",
+		"d10ff60c2885d6eb682e8ad375a08612.wav": "./d10ff60c2885d6eb682e8ad375a08612.wav",
+		"d4559705743f97dfb16350a2e199ac41.wav": "./d4559705743f97dfb16350a2e199ac41.wav",
+		"9898ece4ca9a389e15dab39b981757ce.wav": "./9898ece4ca9a389e15dab39b981757ce.wav",
+		"11c71cb1a330eb37ef0e620f5fbad195.wav": "./11c71cb1a330eb37ef0e620f5fbad195.wav",
+		"0217bdff028fdb9a21b92a172f36fbe8.wav": "./0217bdff028fdb9a21b92a172f36fbe8.wav",
+		"1ccf355435482ae38d24bd5b948ef417.svg": "./1ccf355435482ae38d24bd5b948ef417.svg",
+		"7b2e0217b2e1e623f5d0cec8230b492c.svg": "./7b2e0217b2e1e623f5d0cec8230b492c.svg",
+		"6de0edacbb5dfae68fcc8f4c18d52e31.svg": "./6de0edacbb5dfae68fcc8f4c18d52e31.svg",
+		"07e737b35d6a6d08abcdf03b578d82d8.svg": "./07e737b35d6a6d08abcdf03b578d82d8.svg",
+		"75dbe5dabdde8476aab2a8ffdde6af6f.svg": "./75dbe5dabdde8476aab2a8ffdde6af6f.svg",
+		"e510b837d2c1ac3b33039414f2edfb6e.svg": "./e510b837d2c1ac3b33039414f2edfb6e.svg",
+		"acea95dff466e691b961b547385ddc47.svg": "./acea95dff466e691b961b547385ddc47.svg",
+		"90f4afb1ff73ee4ed2fe5b1d3438ce75.svg": "./90f4afb1ff73ee4ed2fe5b1d3438ce75.svg",
+		"e38e614c6c148f99bcf3840ff698e623.svg": "./e38e614c6c148f99bcf3840ff698e623.svg",
+		"a6114f9bb59f2e20da26ff545073f816.svg": "./a6114f9bb59f2e20da26ff545073f816.svg",
+		"d690ea637972fe97870d672dca854c80.wav": "./d690ea637972fe97870d672dca854c80.wav",
+		"81c754a5cfcf08ac3f91019a98906574.wav": "./81c754a5cfcf08ac3f91019a98906574.wav",
+		"25657e6a259b97b2d0d4f9b24c1eba1e.wav": "./25657e6a259b97b2d0d4f9b24c1eba1e.wav",
+		"9c67f8a107d42ff01b38fb0b222c133c.wav": "./9c67f8a107d42ff01b38fb0b222c133c.wav",
+		"543119325edb49e5294dd252d196b479.svg": "./543119325edb49e5294dd252d196b479.svg",
+		"8c42261018dd75b744c8aaee4fb14aef.svg": "./8c42261018dd75b744c8aaee4fb14aef.svg",
+		"b9bcc18cb723e4ad40970c1555bdfa9e.svg": "./b9bcc18cb723e4ad40970c1555bdfa9e.svg",
+		"24ee553af60b7cdf5e9df7ff52a97712.svg": "./24ee553af60b7cdf5e9df7ff52a97712.svg",
+		"8c8d599b5c24e7ca6e59961afea99a97.svg": "./8c8d599b5c24e7ca6e59961afea99a97.svg",
+		"6ee8d9d2af684aab7278f8d5f518e08c.svg": "./6ee8d9d2af684aab7278f8d5f518e08c.svg",
+		"199a02b3cae70cfa3bec3fb95395c76d.svg": "./199a02b3cae70cfa3bec3fb95395c76d.svg",
+		"fce797298111f143fa9144c7f20c5f99.svg": "./fce797298111f143fa9144c7f20c5f99.svg",
+		"8f65ab6b31f90df8b168e73d89d7b866.svg": "./8f65ab6b31f90df8b168e73d89d7b866.svg",
+		"cc90653c7cfc2270d5ad59fbfc75b8b2.svg": "./cc90653c7cfc2270d5ad59fbfc75b8b2.svg",
+		"2b3f173449b5d1646d6eb17856e10721.svg": "./2b3f173449b5d1646d6eb17856e10721.svg",
+		"5a09fb11b6441a49fc732a93b3b86b00.wav": "./5a09fb11b6441a49fc732a93b3b86b00.wav",
+		"cd2290c8ad545070517a54f007060c68.wav": "./cd2290c8ad545070517a54f007060c68.wav",
+		"6f69ede8c2c180e12261d088adf4b8b2.wav": "./6f69ede8c2c180e12261d088adf4b8b2.wav",
+		"57f635c1d4fa2890299d33a8693f6629.wav": "./57f635c1d4fa2890299d33a8693f6629.wav",
+		"47b17dfa93445ecd1184cdfab4c0e09a.wav": "./47b17dfa93445ecd1184cdfab4c0e09a.wav",
+		"65b35bccccee72ec1afbcb69269e9d46.wav": "./65b35bccccee72ec1afbcb69269e9d46.wav",
+		"b8faa34280594a1de2cae550193055a1.svg": "./b8faa34280594a1de2cae550193055a1.svg",
+		"9a27d2bd973f23b8628c54f033c6f893.svg": "./9a27d2bd973f23b8628c54f033c6f893.svg",
+		"4cb8f40249341a13697e570b04f51dc8.svg": "./4cb8f40249341a13697e570b04f51dc8.svg",
+		"28ae30d93788b894dd420bde634ff952.svg": "./28ae30d93788b894dd420bde634ff952.svg",
+		"b4b733b796ee5fc5ab37fc9fc6de4c42.svg": "./b4b733b796ee5fc5ab37fc9fc6de4c42.svg",
+		"3d466e5d88fb3b2cd32c28b849515f00.svg": "./3d466e5d88fb3b2cd32c28b849515f00.svg",
+		"3066e6448e93951f914531d68e72f12e.svg": "./3066e6448e93951f914531d68e72f12e.svg",
+		"5e9d5d55a848e14b2e24cc43cf5390a9.svg": "./5e9d5d55a848e14b2e24cc43cf5390a9.svg",
+		"6735cd6c886b0667905b4af844216407.svg": "./6735cd6c886b0667905b4af844216407.svg",
+		"3add07bded4a334d7e094be901737931.svg": "./3add07bded4a334d7e094be901737931.svg",
+		"a9af48c76738454ff4bedfdb77905c80.svg": "./a9af48c76738454ff4bedfdb77905c80.svg",
+		"0586c6c6e098c39693d8b48d2ca59c40.svg": "./0586c6c6e098c39693d8b48d2ca59c40.svg",
+		"f44a7b1a0cf487c24a5f5f036ec730cc.svg": "./f44a7b1a0cf487c24a5f5f036ec730cc.svg",
+		"adc07dd62de276bd686c8e6bde36567a.svg": "./adc07dd62de276bd686c8e6bde36567a.svg",
+		"414b033546b579db4305365c5d613642.svg": "./414b033546b579db4305365c5d613642.svg",
+		"30b394f443a73b98a0cf5b3b5207eab4.svg": "./30b394f443a73b98a0cf5b3b5207eab4.svg",
+		"5ebc62754044a0058b1928881d40b5ac.svg": "./5ebc62754044a0058b1928881d40b5ac.svg",
+		"6369fe8c8ed038310382e536637d4e22.svg": "./6369fe8c8ed038310382e536637d4e22.svg",
+		"c4a02408ba60c5b4cab4ad878a4731c1.svg": "./c4a02408ba60c5b4cab4ad878a4731c1.svg",
+		"816211f7e8f3b1d30b062668be2e6cfd.svg": "./816211f7e8f3b1d30b062668be2e6cfd.svg",
+		"16b1e3c1df44413ae552c3a6c65d99a4.svg": "./16b1e3c1df44413ae552c3a6c65d99a4.svg",
+		"1f45be40d4f9ebd2a4d360982564eb29.svg": "./1f45be40d4f9ebd2a4d360982564eb29.svg",
+		"c5a3394bd6ca823bf57cfaa39a49a435.svg": "./c5a3394bd6ca823bf57cfaa39a49a435.svg",
+		"7d39ed670b83929f44f8db2d858b1946.svg": "./7d39ed670b83929f44f8db2d858b1946.svg",
+		"880de3c79cbd8ec5f57dc26a050e8d35.svg": "./880de3c79cbd8ec5f57dc26a050e8d35.svg",
+		"92ed28220e031b247f5bcce8d0436130.wav": "./92ed28220e031b247f5bcce8d0436130.wav",
+		"42132de97f842fb6725c7ce9ce35b3eb.wav": "./42132de97f842fb6725c7ce9ce35b3eb.wav",
+		"4eb9f3c28b6f5d78b1ea76a71df5cc43.wav": "./4eb9f3c28b6f5d78b1ea76a71df5cc43.wav",
+		"8c8b1362a6602d83b976d8faa8283555.wav": "./8c8b1362a6602d83b976d8faa8283555.wav",
+		"a08bbafe2167b837995fd8bf79f5a27f.svg": "./a08bbafe2167b837995fd8bf79f5a27f.svg",
+		"d895b92511c21488273c6dc18dca0b88.svg": "./d895b92511c21488273c6dc18dca0b88.svg",
+		"dd6b59aab59311141e9a9938877addf8.svg": "./dd6b59aab59311141e9a9938877addf8.svg",
+		"f20585176a9719fa4ba044b6079fab76.svg": "./f20585176a9719fa4ba044b6079fab76.svg",
+		"0863eb5004dbfacbfa626529e0b3e838.svg": "./0863eb5004dbfacbfa626529e0b3e838.svg",
+		"9eef684f2acd912398e57e2031bf6388.svg": "./9eef684f2acd912398e57e2031bf6388.svg",
+		"b6eeeb03c87641ec3be1d712e4c984a8.svg": "./b6eeeb03c87641ec3be1d712e4c984a8.svg",
+		"f1f3c9aac31868f74b9640fc9bb346d9.svg": "./f1f3c9aac31868f74b9640fc9bb346d9.svg",
+		"28683520d9ff0f4a242c2f2061e66a4a.svg": "./28683520d9ff0f4a242c2f2061e66a4a.svg",
+		"cfd04b1781039ddcdd7cb55e0fabd3e2.svg": "./cfd04b1781039ddcdd7cb55e0fabd3e2.svg",
+		"09206f9957c594dffb1b6c7df1067810.svg": "./09206f9957c594dffb1b6c7df1067810.svg",
+		"e990e63e58d889e59a82fdc423e84751.svg": "./e990e63e58d889e59a82fdc423e84751.svg",
+		"d3500c8ab9c8c0def51a9721cb46d958.svg": "./d3500c8ab9c8c0def51a9721cb46d958.svg",
+		"831675e3af683589cf4d68796f599fea.svg": "./831675e3af683589cf4d68796f599fea.svg",
+		"127a12f765b51f083b6dd1b077982221.svg": "./127a12f765b51f083b6dd1b077982221.svg",
+		"10666ce242c0b3c7f90201d6ace1bfa8.svg": "./10666ce242c0b3c7f90201d6ace1bfa8.svg",
+		"66acecc7501f809768bd287ed7d7b159.svg": "./66acecc7501f809768bd287ed7d7b159.svg",
+		"1891bf938bd5ef57963fb8cb6fcd346e.svg": "./1891bf938bd5ef57963fb8cb6fcd346e.svg",
+		"b8a9c5a07c883cc03157c3a5009793b6.svg": "./b8a9c5a07c883cc03157c3a5009793b6.svg",
+		"70e4b1792cf8667b8d56be623d9477d3.svg": "./70e4b1792cf8667b8d56be623d9477d3.svg",
+		"d33e0e88a6117d4793822c42d1331316.svg": "./d33e0e88a6117d4793822c42d1331316.svg",
+		"56837aae4a2edcce660dcff27a29db7b.svg": "./56837aae4a2edcce660dcff27a29db7b.svg",
+		"33d93d8ce60a15b7e048492f12915886.svg": "./33d93d8ce60a15b7e048492f12915886.svg",
+		"0496314a53c3bd9ebcded22e07bb90db.svg": "./0496314a53c3bd9ebcded22e07bb90db.svg",
+		"dc190d82e3b2c6e77dbbaef2b8a1322d.svg": "./dc190d82e3b2c6e77dbbaef2b8a1322d.svg",
+		"35f71e5e8d33026ace2e365a5560e056.svg": "./35f71e5e8d33026ace2e365a5560e056.svg",
+		"e0922cc823ec15335c47a2dec496c6d9.svg": "./e0922cc823ec15335c47a2dec496c6d9.svg",
+		"9515d4e8788f52d79af62d3e3ec87675.svg": "./9515d4e8788f52d79af62d3e3ec87675.svg",
+		"565e1dae8979df868c6fe69e60bc0041.svg": "./565e1dae8979df868c6fe69e60bc0041.svg",
+		"ff4d4220b46620be3e215bcd657c58b6.svg": "./ff4d4220b46620be3e215bcd657c58b6.svg",
+		"7d2dbb3d74b39bf487dcdca5fcd7bd90.svg": "./7d2dbb3d74b39bf487dcdca5fcd7bd90.svg",
+		"7e300e1ab98e8f2578afa0338f01fdc5.svg": "./7e300e1ab98e8f2578afa0338f01fdc5.svg",
+		"3a08547ba311662a9e09c9bf54f4da38.svg": "./3a08547ba311662a9e09c9bf54f4da38.svg",
+		"2198d86674637b5a460145d914aeee83.svg": "./2198d86674637b5a460145d914aeee83.svg",
+		"6b7549fc20107f5145089c735f051a66.svg": "./6b7549fc20107f5145089c735f051a66.svg",
+		"986a8547bf766d52a2c9698ab1a79d24.svg": "./986a8547bf766d52a2c9698ab1a79d24.svg",
+		"cc85f2be1b1764358cd1ab84455d00a0.wav": "./cc85f2be1b1764358cd1ab84455d00a0.wav",
+		"005fd69af635eeee88d2515b0ff1fd4d.wav": "./005fd69af635eeee88d2515b0ff1fd4d.wav",
+		"2cafd1592fa01924b13f3cbffb1bdada.wav": "./2cafd1592fa01924b13f3cbffb1bdada.wav",
+		"c8e1bfd11759410ffa43805419850dec.wav": "./c8e1bfd11759410ffa43805419850dec.wav",
+		"16d88ed40d2540e0196ad94687a163c3.svg": "./16d88ed40d2540e0196ad94687a163c3.svg",
+		"be8824af39117d9f76459b4fa1e0c49d.svg": "./be8824af39117d9f76459b4fa1e0c49d.svg",
+		"aeb8170a18b917b62af5860505618222.svg": "./aeb8170a18b917b62af5860505618222.svg",
+		"5fd356b60f9c19aec09c7ff72cf03be0.svg": "./5fd356b60f9c19aec09c7ff72cf03be0.svg",
+		"2d8a265f4b5c6091ea12ddd169553357.svg": "./2d8a265f4b5c6091ea12ddd169553357.svg",
+		"bf4fcd614db7eaa579ee89ded522a222.svg": "./bf4fcd614db7eaa579ee89ded522a222.svg",
+		"0a5d8dbec16488845cf0da1af4532ca1.svg": "./0a5d8dbec16488845cf0da1af4532ca1.svg",
+		"ca0629b2f3563b68c54bff6e533560dd.svg": "./ca0629b2f3563b68c54bff6e533560dd.svg",
+		"467efc68e2d632d2424ea494b615df50.svg": "./467efc68e2d632d2424ea494b615df50.svg",
+		"be7cc4c49866112fbcc16ed1450aa2ef.svg": "./be7cc4c49866112fbcc16ed1450aa2ef.svg",
+		"41ed6984d6f70856a4ca424d82faebef.svg": "./41ed6984d6f70856a4ca424d82faebef.svg",
+		"f53d071f4269443b137d1df3ecef84a4.svg": "./f53d071f4269443b137d1df3ecef84a4.svg",
+		"57d12023194adbc59125ebcbd79ab9a9.svg": "./57d12023194adbc59125ebcbd79ab9a9.svg",
+		"a79367eb6203e53c4c9c8cb2f1ae22b4.svg": "./a79367eb6203e53c4c9c8cb2f1ae22b4.svg",
+		"f07f62ac8d388b3942b2c62a3e86b4a4.svg": "./f07f62ac8d388b3942b2c62a3e86b4a4.svg",
+		"9eb11d7970a64af7e74f4b1f477f2a36.svg": "./9eb11d7970a64af7e74f4b1f477f2a36.svg",
+		"ad00d71395c1d8d41185dcb07fd76457.svg": "./ad00d71395c1d8d41185dcb07fd76457.svg",
+		"2e396ac2ae5076a9f7655ab854b3f904.svg": "./2e396ac2ae5076a9f7655ab854b3f904.svg",
+		"a1cda0870df1499c9d8ecccefba3d2c1.svg": "./a1cda0870df1499c9d8ecccefba3d2c1.svg",
+		"041051f118fe6eb3fe2c3d0e5b62dc8c.svg": "./041051f118fe6eb3fe2c3d0e5b62dc8c.svg",
+		"ad09a4b32d5db81bbe5890f9dfcef8c6.svg": "./ad09a4b32d5db81bbe5890f9dfcef8c6.svg",
+		"71d1bfb402ac3d80e442a82ad5a1cfe7.svg": "./71d1bfb402ac3d80e442a82ad5a1cfe7.svg",
+		"a6b64a080cbe2781b2f33a08e2c7628a.svg": "./a6b64a080cbe2781b2f33a08e2c7628a.svg",
+		"453e690627a45ac29678ad1afd006275.svg": "./453e690627a45ac29678ad1afd006275.svg",
+		"f6012d8b6c3ad2bac2658da5a18ef65c.svg": "./f6012d8b6c3ad2bac2658da5a18ef65c.svg",
+		"d3412e9a60ca1e4fb3db49587687ec28.wav": "./d3412e9a60ca1e4fb3db49587687ec28.wav",
+		"3ff567bc278b8e218f4e028911fb3b17.wav": "./3ff567bc278b8e218f4e028911fb3b17.wav",
+		"e5e938c53d6855c3e4d0ede6da8ec066.wav": "./e5e938c53d6855c3e4d0ede6da8ec066.wav",
+		"4cf8eac32e710942a8ebc364559b1a44.svg": "./4cf8eac32e710942a8ebc364559b1a44.svg",
+		"527da1721c0526eadb401943bc496820.svg": "./527da1721c0526eadb401943bc496820.svg",
+		"c452432337dc676558ae58b722890861.svg": "./c452432337dc676558ae58b722890861.svg",
+		"f8027d684c21b65d38c7c7fdd740a3c7.svg": "./f8027d684c21b65d38c7c7fdd740a3c7.svg",
+		"471267ab42bd48105127536c6c6611e0.svg": "./471267ab42bd48105127536c6c6611e0.svg",
+		"dfdf8a753a14ae4d24d813ba2c949aea.svg": "./dfdf8a753a14ae4d24d813ba2c949aea.svg",
+		"e7256d86f3d34c43d40941d38f04b494.svg": "./e7256d86f3d34c43d40941d38f04b494.svg",
+		"9683afeffd28c385e78f836d953a6bd4.svg": "./9683afeffd28c385e78f836d953a6bd4.svg",
+		"836b6351348f9b41f40493a3cd43d1ca.svg": "./836b6351348f9b41f40493a3cd43d1ca.svg",
+		"94495ce54052062f5b42ea5a52753134.svg": "./94495ce54052062f5b42ea5a52753134.svg",
+		"58f75423ee860871cf81127c9a670c6b.svg": "./58f75423ee860871cf81127c9a670c6b.svg",
+		"c55deaa4ba864bcae19a6f0aa8b09221.svg": "./c55deaa4ba864bcae19a6f0aa8b09221.svg",
+		"7a1fdd7b41a3ad85c84cbbcdc8b83fdc.svg": "./7a1fdd7b41a3ad85c84cbbcdc8b83fdc.svg",
+		"ed5e25feb629304465b1f0e60d1f2d19.svg": "./ed5e25feb629304465b1f0e60d1f2d19.svg",
+		"3af02223f608915e9103130353328b36.svg": "./3af02223f608915e9103130353328b36.svg",
+		"7b870bbbd999cd4fffdaaf8f71748ed9.svg": "./7b870bbbd999cd4fffdaaf8f71748ed9.svg",
+		"2cea618e7c7c9085a5011ffa81fb8f45.svg": "./2cea618e7c7c9085a5011ffa81fb8f45.svg",
+		"75d1d8aa387f31f192e37ebdf7403a96.svg": "./75d1d8aa387f31f192e37ebdf7403a96.svg",
+		"3fd5368ac0a2dca5723986f73ae385bb.svg": "./3fd5368ac0a2dca5723986f73ae385bb.svg",
+		"be1cb011ce50969caf9511048105f167.wav": "./be1cb011ce50969caf9511048105f167.wav",
+		"755b17efd1132952872dd572901b3566.wav": "./755b17efd1132952872dd572901b3566.wav",
+		"2d95f722bf4b21913f02cde2faeb792a.wav": "./2d95f722bf4b21913f02cde2faeb792a.wav",
+		"7a3fe5b0d779187cf5e7d51cbf58e7e1.wav": "./7a3fe5b0d779187cf5e7d51cbf58e7e1.wav",
+		"a43501db4b83e7684b7e6bbb0f735027.svg": "./a43501db4b83e7684b7e6bbb0f735027.svg",
+		"55da7779a61dee195eda9944cf299340.svg": "./55da7779a61dee195eda9944cf299340.svg",
+		"0d05728581b12314227f2b25166356be.svg": "./0d05728581b12314227f2b25166356be.svg",
+		"e11778dac605674d786d25e58fa45d63.svg": "./e11778dac605674d786d25e58fa45d63.svg",
+		"2b1dd1dd78e4136b0e8b4b1cd2266560.svg": "./2b1dd1dd78e4136b0e8b4b1cd2266560.svg",
+		"0378dc08fa7ad7240fe3703bf83ab4ad.svg": "./0378dc08fa7ad7240fe3703bf83ab4ad.svg",
+		"69bc5d3d54732f431ba36d2572cd1c04.svg": "./69bc5d3d54732f431ba36d2572cd1c04.svg",
+		"fa032860b13185f0abdb4e6baf8e9aa7.svg": "./fa032860b13185f0abdb4e6baf8e9aa7.svg",
+		"ac031947c90703b0fcaef6345f1fce84.svg": "./ac031947c90703b0fcaef6345f1fce84.svg",
+		"79a43de851d6489f50ca89328372fa50.svg": "./79a43de851d6489f50ca89328372fa50.svg",
+		"8d4d3aafbefe7afbcbe029c529ef1af6.svg": "./8d4d3aafbefe7afbcbe029c529ef1af6.svg",
+		"131e598e1a4c7d2e33ed13d92582dd66.svg": "./131e598e1a4c7d2e33ed13d92582dd66.svg",
+		"ade4ef3d783deb40f6eff3577c871a62.svg": "./ade4ef3d783deb40f6eff3577c871a62.svg",
+		"cb89e9098edf6dcca67c8381b8e5522f.svg": "./cb89e9098edf6dcca67c8381b8e5522f.svg",
+		"6039bdae58ce5cfb68483b64b9176f92.svg": "./6039bdae58ce5cfb68483b64b9176f92.svg",
+		"d4fe2304da2029b2a5438f9194aecc14.svg": "./d4fe2304da2029b2a5438f9194aecc14.svg",
+		"a241da320fdf120b146456732065baa6.wav": "./a241da320fdf120b146456732065baa6.wav",
+		"c05fb970b4d75f940ab7a6dc54d672a8.wav": "./c05fb970b4d75f940ab7a6dc54d672a8.wav",
+		"acaf6404c535865366f3ec3f5f4757a7.wav": "./acaf6404c535865366f3ec3f5f4757a7.wav",
+		"1259ba8412c42cdade7048ca04e35f4a.wav": "./1259ba8412c42cdade7048ca04e35f4a.wav",
+		"304cc4859cb39313ff0948047c5ff11e.wav": "./304cc4859cb39313ff0948047c5ff11e.wav",
+		"ee4e3c3c7d03f577a31e16d85f142b3e.wav": "./ee4e3c3c7d03f577a31e16d85f142b3e.wav",
+		"08bc20f75cb5b089296dc66c5418096c.svg": "./08bc20f75cb5b089296dc66c5418096c.svg",
+		"3b725f348a5b90f2190ff1c50709f1cd.wav": "./3b725f348a5b90f2190ff1c50709f1cd.wav",
+		"f064ef28df9cde45030240be85bb9c0d.wav": "./f064ef28df9cde45030240be85bb9c0d.wav",
+		"8e1de22dc40c057cd3f476a96b2ebb4c.svg": "./8e1de22dc40c057cd3f476a96b2ebb4c.svg",
+		"4b42a45fdecd42f49f4c085d43877830.svg": "./4b42a45fdecd42f49f4c085d43877830.svg",
+		"35e36ad40d1ab271d99387b00ff38eb8.svg": "./35e36ad40d1ab271d99387b00ff38eb8.svg",
+		"a1917db770731cba908ab216d6259735.svg": "./a1917db770731cba908ab216d6259735.svg",
+		"fa47a4689041f9ba00fc0b58ba6628f7.svg": "./fa47a4689041f9ba00fc0b58ba6628f7.svg",
+		"ed8d8ed35a3d83d6a92ea2e6eb32235a.svg": "./ed8d8ed35a3d83d6a92ea2e6eb32235a.svg",
+		"a8537c58fc79e45ce91c18966856999b.svg": "./a8537c58fc79e45ce91c18966856999b.svg",
+		"be776eec3eb735790c34bd3f004c8319.svg": "./be776eec3eb735790c34bd3f004c8319.svg",
+		"6d67648ab2de791bd741a5ab68e9b9fa.svg": "./6d67648ab2de791bd741a5ab68e9b9fa.svg",
+		"fa7cf4710ffce80070f7af4aa3f8d7f2.svg": "./fa7cf4710ffce80070f7af4aa3f8d7f2.svg",
+		"645ffd2bba0d95f635b2045545c30e0e.svg": "./645ffd2bba0d95f635b2045545c30e0e.svg",
+		"60a27d15faf05f1d5629eed89151b5d4.svg": "./60a27d15faf05f1d5629eed89151b5d4.svg",
+		"92073a5ef372001c4307846d50421869.svg": "./92073a5ef372001c4307846d50421869.svg",
+		"99a7d0e0d881e95b6e9f6414a84bcfe9.svg": "./99a7d0e0d881e95b6e9f6414a84bcfe9.svg",
+		"c23585a15963a45e79a0ea00b24e2a58.svg": "./c23585a15963a45e79a0ea00b24e2a58.svg",
+		"97e511eede080c86148eb3c5625970a9.svg": "./97e511eede080c86148eb3c5625970a9.svg",
+		"f082858db80403c23a4310424d206501.svg": "./f082858db80403c23a4310424d206501.svg",
+		"1a0fab1a41cf7a0e20caecff2287f22e.svg": "./1a0fab1a41cf7a0e20caecff2287f22e.svg",
+		"606dc674df311e351c86a7352f6583f8.svg": "./606dc674df311e351c86a7352f6583f8.svg",
+		"2b8b3911088c2f7e0aa516f1da1b6f1a.svg": "./2b8b3911088c2f7e0aa516f1da1b6f1a.svg",
+		"00959cc2612bfdd930fa03c883c6aeda.svg": "./00959cc2612bfdd930fa03c883c6aeda.svg",
+		"af137ea9150e67c6adf5282a646c2cfc.svg": "./af137ea9150e67c6adf5282a646c2cfc.svg",
+		"0a4e8ddb94d90bb6f18ee6acaf188963.svg": "./0a4e8ddb94d90bb6f18ee6acaf188963.svg",
+		"bafcea40784d4816670424ad15f6e41c.svg": "./bafcea40784d4816670424ad15f6e41c.svg",
+		"850dfe13898e7a0d88887936fba86e37.svg": "./850dfe13898e7a0d88887936fba86e37.svg",
+		"356b145ea37acb1a108821821c829463.svg": "./356b145ea37acb1a108821821c829463.svg",
+		"b230f8e43677270eef8b0be5cfbb1a87.svg": "./b230f8e43677270eef8b0be5cfbb1a87.svg",
+		"b7c5c3c038043c37427e1228d0d30386.svg": "./b7c5c3c038043c37427e1228d0d30386.svg",
+		"53fa332a91e43a0a43e8f30f2cbb47e7.svg": "./53fa332a91e43a0a43e8f30f2cbb47e7.svg",
+		"653b0cddac59eba8af02a844ed17bd8f.svg": "./653b0cddac59eba8af02a844ed17bd8f.svg",
+		"15ffc913f1c1f24ffb9a2f603dd0fa45.svg": "./15ffc913f1c1f24ffb9a2f603dd0fa45.svg",
+		"fdbf338e2221e6bb660dd1bdf1b3eaa3.svg": "./fdbf338e2221e6bb660dd1bdf1b3eaa3.svg",
+		"5e7c8ed0deded797dc9bbf11a540faef.svg": "./5e7c8ed0deded797dc9bbf11a540faef.svg",
+		"dbf8d1bae85b1feda0517f19fdc2bf3b.svg": "./dbf8d1bae85b1feda0517f19fdc2bf3b.svg",
+		"7a03767d3a794b28d44a17708f344fe8.svg": "./7a03767d3a794b28d44a17708f344fe8.svg",
+		"cd58b0c5395822dadb1df2f1bb17025d.svg": "./cd58b0c5395822dadb1df2f1bb17025d.svg",
+		"530bc5abcc88d6c508c217e5a1008ba5.svg": "./530bc5abcc88d6c508c217e5a1008ba5.svg",
+		"95eb75c066cb8ce319a82b1d9df6b9af.svg": "./95eb75c066cb8ce319a82b1d9df6b9af.svg",
+		"f596d50f4e95bcffbaa7f4e3b7949a46.svg": "./f596d50f4e95bcffbaa7f4e3b7949a46.svg",
+		"5d4a851aa3d53a2495e6c0662420b03b.svg": "./5d4a851aa3d53a2495e6c0662420b03b.svg",
+		"0fbf2a24952e002e8f02332b10a8be52.svg": "./0fbf2a24952e002e8f02332b10a8be52.svg",
+		"a0597b08926456e2542afd1ec635643b.svg": "./a0597b08926456e2542afd1ec635643b.svg",
+		"28d1d850739af5c1dd08b800c21fe8e6.svg": "./28d1d850739af5c1dd08b800c21fe8e6.svg",
+		"73787e99bf6ce435215db359bf4e68e7.svg": "./73787e99bf6ce435215db359bf4e68e7.svg",
+		"b85c7e752913a38c5e08783987a20863.svg": "./b85c7e752913a38c5e08783987a20863.svg",
+		"23010e2f2362f3708af491dc9140b61b.svg": "./23010e2f2362f3708af491dc9140b61b.svg",
+		"94178ef28745318a032bb290c888ec45.svg": "./94178ef28745318a032bb290c888ec45.svg",
+		"643bee791d3ecb46b1e241592e314076.svg": "./643bee791d3ecb46b1e241592e314076.svg",
+		"c816ab6533009d067e70920ef51b561a.svg": "./c816ab6533009d067e70920ef51b561a.svg",
+		"d98b4def352124d05a065fe8cc28c60d.svg": "./d98b4def352124d05a065fe8cc28c60d.svg",
+		"0ae0f666e090c73ac1dfce0ac8ba8a20.svg": "./0ae0f666e090c73ac1dfce0ac8ba8a20.svg",
+		"e8bf58b95094f72da3d257f9ad158c29.svg": "./e8bf58b95094f72da3d257f9ad158c29.svg",
+		"18b6791438082999c6bf4e1393cc5ca7.svg": "./18b6791438082999c6bf4e1393cc5ca7.svg",
+		"64912b79896a7ae4cc347cc82c00f741.svg": "./64912b79896a7ae4cc347cc82c00f741.svg",
+		"8ea7646ebccdf71a0dbdbc81c07453c9.svg": "./8ea7646ebccdf71a0dbdbc81c07453c9.svg",
+		"5ef8d7c2c90a94af1fcbff278f70e39b.svg": "./5ef8d7c2c90a94af1fcbff278f70e39b.svg",
+		"e308f9d71537eb7d8b61768a1e130792.svg": "./e308f9d71537eb7d8b61768a1e130792.svg",
+		"934e9ba469703552f17996c62f943206.svg": "./934e9ba469703552f17996c62f943206.svg",
+		"ae4953ed82e3e68da1d8b9662ccc3f6f.svg": "./ae4953ed82e3e68da1d8b9662ccc3f6f.svg",
+		"916ed101af8b7aecbbf1e926c4d9d487.svg": "./916ed101af8b7aecbbf1e926c4d9d487.svg",
+		"e8a72cb25f5eaf26d057dfa32b5f45c3.svg": "./e8a72cb25f5eaf26d057dfa32b5f45c3.svg",
+		"6d631ff079f6456cf7b4e021a8e0eab7.svg": "./6d631ff079f6456cf7b4e021a8e0eab7.svg",
+		"b652c6bc5926359924fa78da13bd0d0b.svg": "./b652c6bc5926359924fa78da13bd0d0b.svg",
+		"13452f3bc82613429b69a82727234660.svg": "./13452f3bc82613429b69a82727234660.svg",
+		"d0f8953fe7c5967315897dbfcccae394.svg": "./d0f8953fe7c5967315897dbfcccae394.svg",
+		"94214e184b8d162a31d7e5fdfa7e88ed.svg": "./94214e184b8d162a31d7e5fdfa7e88ed.svg",
+		"e1bc160474c77ce54d41f5e5df770add.svg": "./e1bc160474c77ce54d41f5e5df770add.svg",
+		"d9eea6588c581362fa226b4dbda901e9.svg": "./d9eea6588c581362fa226b4dbda901e9.svg",
+		"01513b5210eea10fabbebdb6f569415b.svg": "./01513b5210eea10fabbebdb6f569415b.svg",
+		"b88c5b3e8d1c043a7a27127c5f2004a3.svg": "./b88c5b3e8d1c043a7a27127c5f2004a3.svg",
+		"352914da1129e8b5ff07a2a6bd0b9f2f.svg": "./352914da1129e8b5ff07a2a6bd0b9f2f.svg",
+		"83a9787d4cb6f3b7632b4ddfebf74367.wav": "./83a9787d4cb6f3b7632b4ddfebf74367.wav",
+		"cedc954d4ec998ce819536e41b60fb25.svg": "./cedc954d4ec998ce819536e41b60fb25.svg",
+		"30cbd871d1cbd6f9cb8730d0f09967bd.svg": "./30cbd871d1cbd6f9cb8730d0f09967bd.svg",
+		"100671881e79d3933d4c0b88330f85db.svg": "./100671881e79d3933d4c0b88330f85db.svg",
+		"f52610f6746411e67b31233baf2566e1.svg": "./f52610f6746411e67b31233baf2566e1.svg",
+		"12811e28568c55cec895323313f4bc9b.svg": "./12811e28568c55cec895323313f4bc9b.svg",
+		"cd1d7bd5f59eaa0d4ad4dc85963b97f0.svg": "./cd1d7bd5f59eaa0d4ad4dc85963b97f0.svg",
+		"409dc8079f5d008a3ae1dacc86586fd5.svg": "./409dc8079f5d008a3ae1dacc86586fd5.svg",
+		"f671eb7a2468d7dcef9edb5c22ffd9a2.svg": "./f671eb7a2468d7dcef9edb5c22ffd9a2.svg",
+		"e7da3baad84135efbf1e4eb2ade171cf.svg": "./e7da3baad84135efbf1e4eb2ade171cf.svg",
+		"3c8f78a2ec739f8adfb519c41e3c23aa.svg": "./3c8f78a2ec739f8adfb519c41e3c23aa.svg",
+		"63ed1c35086401b0c47a7727576ee4a6.svg": "./63ed1c35086401b0c47a7727576ee4a6.svg",
+		"71edabad5750a468d50937a4266640d1.svg": "./71edabad5750a468d50937a4266640d1.svg",
+		"adf30ffde82a08eb5e8cccac7f60f045.svg": "./adf30ffde82a08eb5e8cccac7f60f045.svg",
+		"8e7b0e3dd3a5aa761754d53c5d634aaf.svg": "./8e7b0e3dd3a5aa761754d53c5d634aaf.svg",
+		"298f5a350403cfd5936d796e853c63d6.svg": "./298f5a350403cfd5936d796e853c63d6.svg",
+		"c063666430c15340b1cb66645488de08.svg": "./c063666430c15340b1cb66645488de08.svg",
+		"9805d00e4df1fa5b598c1a1acf2daf6a.svg": "./9805d00e4df1fa5b598c1a1acf2daf6a.svg",
+		"46c55793bad44eaa35d19e692fef6720.svg": "./46c55793bad44eaa35d19e692fef6720.svg",
+		"6646b6d552e6158ec53f7902cf052891.svg": "./6646b6d552e6158ec53f7902cf052891.svg",
+		"3a2c059360c788a843b64731c4b6c0a3.svg": "./3a2c059360c788a843b64731c4b6c0a3.svg",
+		"fc9a788555f77e5c7c2bbedba52e5dc7.svg": "./fc9a788555f77e5c7c2bbedba52e5dc7.svg",
+		"74edf7c79b8280da826241fcd45eed3a.svg": "./74edf7c79b8280da826241fcd45eed3a.svg",
+		"bbf753c391a601ca9af4e6946adf7b60.svg": "./bbf753c391a601ca9af4e6946adf7b60.svg",
+		"05ed8d6497be8eabfe2d31b8f7acef44.svg": "./05ed8d6497be8eabfe2d31b8f7acef44.svg",
+		"92ca2047e736764cbf26615913572024.svg": "./92ca2047e736764cbf26615913572024.svg",
+		"5af61d61e21e07ad6bd21d6028fd8374.svg": "./5af61d61e21e07ad6bd21d6028fd8374.svg",
+		"41e6619bfcae93ba11e1f2f4e71cb049.svg": "./41e6619bfcae93ba11e1f2f4e71cb049.svg",
+		"f8cda370a9f3cc10e2c08e8a0ff2dbe5.svg": "./f8cda370a9f3cc10e2c08e8a0ff2dbe5.svg",
+		"415bbfec1e3d615acace1fafee55c356.svg": "./415bbfec1e3d615acace1fafee55c356.svg",
+		"d1f208e45c216cfadf8d46e3ed308f64.svg": "./d1f208e45c216cfadf8d46e3ed308f64.svg",
+		"353fd3043180af4eab336fcf9d2e21d2.svg": "./353fd3043180af4eab336fcf9d2e21d2.svg",
+		"3d254339d044bfad8749e2492130ea3c.svg": "./3d254339d044bfad8749e2492130ea3c.svg",
+		"65c6f48ea19105ebd99a6b53e24842f3.svg": "./65c6f48ea19105ebd99a6b53e24842f3.svg",
+		"471fb2144ea4eb09ed179f5d952e6d15.svg": "./471fb2144ea4eb09ed179f5d952e6d15.svg",
+		"b70f2eda47dbb36089d969b5a542f0d1.svg": "./b70f2eda47dbb36089d969b5a542f0d1.svg",
+		"59da864ba6db9c7badaee7de4f373a6d.svg": "./59da864ba6db9c7badaee7de4f373a6d.svg",
+		"f8a9555047f7ed27da51095b3651a4b7.svg": "./f8a9555047f7ed27da51095b3651a4b7.svg",
+		"0b340e5f00e8cfc2de0cacf7865aab65.svg": "./0b340e5f00e8cfc2de0cacf7865aab65.svg",
+		"09d9c4a3de9216f6413451bbeb5bf59f.svg": "./09d9c4a3de9216f6413451bbeb5bf59f.svg",
+		"da3a312b010d497fa6290e633e9ca958.svg": "./da3a312b010d497fa6290e633e9ca958.svg",
+		"bebe63b5e444aa2d76b00019b2bc4370.svg": "./bebe63b5e444aa2d76b00019b2bc4370.svg",
+		"c9632afc9e355f8e169e28b1a6d1f62e.svg": "./c9632afc9e355f8e169e28b1a6d1f62e.svg",
+		"9863092e59e32e006e4492a2eff53259.svg": "./9863092e59e32e006e4492a2eff53259.svg",
+		"aa1872f3e5f2e117424627f42862601d.svg": "./aa1872f3e5f2e117424627f42862601d.svg",
+		"240eac2f26830675bc4bfd02486ec24e.svg": "./240eac2f26830675bc4bfd02486ec24e.svg",
+		"fb8fc8dd192b6ce54b53e2f69080fc1a.svg": "./fb8fc8dd192b6ce54b53e2f69080fc1a.svg",
+		"845259bde5a22366c5a6e0a9c734e980.svg": "./845259bde5a22366c5a6e0a9c734e980.svg",
+		"3873553b70f47cea890d109d94a8e50a.svg": "./3873553b70f47cea890d109d94a8e50a.svg",
+		"5a9092c0bdbe2a766d5a9f22f3d36905.svg": "./5a9092c0bdbe2a766d5a9f22f3d36905.svg",
+		"b45b35738e342369a5ba69cdca7f76c5.svg": "./b45b35738e342369a5ba69cdca7f76c5.svg",
+		"c267938c045bec325811570df74ad053.svg": "./c267938c045bec325811570df74ad053.svg",
+		"858397a103d47fd216c140a12d9181bf.svg": "./858397a103d47fd216c140a12d9181bf.svg",
+		"0528d7553448f4e53d5c7c951fbdeedd.svg": "./0528d7553448f4e53d5c7c951fbdeedd.svg",
+		"913a17931adb00dca17b79623eba1a83.svg": "./913a17931adb00dca17b79623eba1a83.svg",
+		"cfefc331a1f967f7f663a76f6d7f8a12.svg": "./cfefc331a1f967f7f663a76f6d7f8a12.svg",
+		"51dc80d6a9b02054db34a3861250da30.svg": "./51dc80d6a9b02054db34a3861250da30.svg",
+		"46f82e288b4419962b6567d7f2e45e64.svg": "./46f82e288b4419962b6567d7f2e45e64.svg",
+		"afc3bb479930e8560889b2fdd76d2101.svg": "./afc3bb479930e8560889b2fdd76d2101.svg",
+		"0509d9e5c0757ab879730986ba7a5c0e.svg": "./0509d9e5c0757ab879730986ba7a5c0e.svg",
+		"7a4f3010dd6ea014b3764bbc81c41394.svg": "./7a4f3010dd6ea014b3764bbc81c41394.svg",
+		"cdc3ed1695b167380a980bf769986331.svg": "./cdc3ed1695b167380a980bf769986331.svg",
+		"aa1cd2774fdabaf08225d3b3f99476a6.svg": "./aa1cd2774fdabaf08225d3b3f99476a6.svg",
+		"efeaaf6fb1abbe3b6ee9c974c2eda43e.svg": "./efeaaf6fb1abbe3b6ee9c974c2eda43e.svg",
+		"3db86288cf0374c914fe41f32c7d84a7.svg": "./3db86288cf0374c914fe41f32c7d84a7.svg",
+		"9803b5d3d73856f9961959093454b2b1.svg": "./9803b5d3d73856f9961959093454b2b1.svg",
+		"73903442b0f1ccf295e8d77861b01931.svg": "./73903442b0f1ccf295e8d77861b01931.svg",
+		"7a86c3b3e1fd3e3bef80bb5cd5cd1df2.svg": "./7a86c3b3e1fd3e3bef80bb5cd5cd1df2.svg",
+		"5d14b470589678ccbc9c5dd1e638aea9.svg": "./5d14b470589678ccbc9c5dd1e638aea9.svg",
+		"cd21514d0531fdffb22204e0ec5ed84a.svg": "./cd21514d0531fdffb22204e0ec5ed84a.svg",
+		"3339a2953a3bf62bb80e54ff575dbced.svg": "./3339a2953a3bf62bb80e54ff575dbced.svg",
+		"129016af8fb73d0eaef3bf90b004fad4.svg": "./129016af8fb73d0eaef3bf90b004fad4.svg",
+		"f518e1ce4b1a0cddc337c2471f544199.svg": "./f518e1ce4b1a0cddc337c2471f544199.svg",
+		"7bf5b38ed89225a0e5a377d3b1f72d40.jpg": "./7bf5b38ed89225a0e5a377d3b1f72d40.jpg",
+		"b424d031f724b12e9b301b94d0a5679f.svg": "./b424d031f724b12e9b301b94d0a5679f.svg",
+		"18c7cceb2a90f86340de6f4059fc9347.svg": "./18c7cceb2a90f86340de6f4059fc9347.svg",
+		"d48eb54dfc20e394c364dff3e66edc85.svg": "./d48eb54dfc20e394c364dff3e66edc85.svg",
+		"f4392f64fab80e622ecf9fc6ce1f94f4.svg": "./f4392f64fab80e622ecf9fc6ce1f94f4.svg",
+		"665d5085d35e533df83b3e2a7a4a1657.svg": "./665d5085d35e533df83b3e2a7a4a1657.svg",
+		"62a7a2bbdd9f8dc08b0fdb4593ea4da4.svg": "./62a7a2bbdd9f8dc08b0fdb4593ea4da4.svg",
+		"ac712de8b90e427387c18635a915e83d.svg": "./ac712de8b90e427387c18635a915e83d.svg",
+		"0307d946424564c44fffb4e8e674e86f.svg": "./0307d946424564c44fffb4e8e674e86f.svg",
+		"c18e378c743a9f50088f01f3934f2ed7.svg": "./c18e378c743a9f50088f01f3934f2ed7.svg",
+		"9df21913d03c5ef1fefc96a0972170cf.svg": "./9df21913d03c5ef1fefc96a0972170cf.svg",
+		"d10c7e9fab05a09f0fb9d60e0f17a282.png": "./d10c7e9fab05a09f0fb9d60e0f17a282.png",
+		"146ae618e9b3284708c6d4a8303cd599.jpg": "./146ae618e9b3284708c6d4a8303cd599.jpg",
+		"91510e1f6e84596471e6036b36cb431b.png": "./91510e1f6e84596471e6036b36cb431b.png",
+		"b5ce42feb95dc4eab88a16f3ee036712.svg": "./b5ce42feb95dc4eab88a16f3ee036712.svg",
+		"1561e4fdf028c10b79de42c884134b8f.png": "./1561e4fdf028c10b79de42c884134b8f.png",
+		"6ca00e31dbadd40afc1a63fe1ff9f6df.png": "./6ca00e31dbadd40afc1a63fe1ff9f6df.png",
+		"23d4b3d431a31284dd6701244afd4f40.svg": "./23d4b3d431a31284dd6701244afd4f40.svg",
+		"f41ff7c0bb64cd7579ffff1b4b0998ec.svg": "./f41ff7c0bb64cd7579ffff1b4b0998ec.svg",
+		"d8e043124d0c84a16ad97f98c13d2545.png": "./d8e043124d0c84a16ad97f98c13d2545.png",
+		"979c75612fa001e4c16e29d137569bda.jpg": "./979c75612fa001e4c16e29d137569bda.jpg",
+		"8e89a55f1acaee656feb243e8f8fa791.svg": "./8e89a55f1acaee656feb243e8f8fa791.svg",
+		"64d5a2524061d3e62bc8a81de4ba516f.svg": "./64d5a2524061d3e62bc8a81de4ba516f.svg",
+		"7b730ddddab1d5e978335bc65f0620b8.svg": "./7b730ddddab1d5e978335bc65f0620b8.svg",
+		"65431dfc74d35b79fb24579bd2612181.svg": "./65431dfc74d35b79fb24579bd2612181.svg",
+		"894921da1e51d05b160082d75f6fc36b.svg": "./894921da1e51d05b160082d75f6fc36b.svg",
+		"a2290577c59e139ab57af5d462df2faa.svg": "./a2290577c59e139ab57af5d462df2faa.svg"
+	}
+}
+init(initOptions)
+</script>
+
+ 
+  </body>
+</html>
