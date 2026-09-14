@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Subway Santa</title>
+  <link rel="shortcut icon" href="image/favicon.png">
+  <link rel="stylesheet" href="TemplateData/style.css">
+<script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>
+
+<body class="dark">
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="loading-cover" style="display:none;">
+    <div style="position: absolute; bottom: 10px; right: 10px; font-size: 18px; color: #ffffff; opacity: 0.5;">
+      2410283</div>
+    <div id="unity-loading-bar">
+      <img src="image/loading.png?v=1" id="bg" style="width: 100%; height: 100%;object-fit: cover;">
+      <canvas id="logo-canvas" style="position: absolute; background-color: transparent;">
+        <img src="image/barbg.png" id="barbg">
+        <img src="image/bar1.png" id="bar1">
+        <img src="image/bar2.png" id="bar2">
+        <img src="image/bar3.png" id="bar3">
+        <img src="image/logo.png" id="ld_logo">
+      </canvas>
+    </div>
+  </div>
+  <img id="azlogo" class="az" src="az_logo.png">
+
+  <script>
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/2410283.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/2410283.data.unityweb",
+      frameworkUrl: buildUrl + "/2410283.framework.js.unityweb",
+      codeUrl: buildUrl + "/2410283.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "azgames.io",
+      productName: "Subway Santa",
+      productVersion: "2410283",
+    };
+
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    }
+
+    loadingCover.style.display = "";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        drawCanvas(progress);
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        setTimeout(() => {
+          loadingCover.style.display = "none";
+          logo_loaded = true;
+          window.focus();
+        }, 2000);
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+
+    var logo_loaded = false;
+    var logo_loading_percent = 0;
+
+    window.onresize = () => {
+      drawCanvas(logo_loading_percent);
+    }
+    window.onload = () => {
+      drawCanvas(logo_loading_percent);
+    }
+
+    var logo_canvas = document.getElementById("logo-canvas");
+    function drawCanvas(_percent = 0) {
+      if (logo_loaded) {
+        return;
+      }
+      resizeLogoCanvas();
+      var ctx = logo_canvas.getContext("2d");
+      var barbg = document.getElementById("barbg");
+      var bar1 = document.getElementById("bar1");
+      var bar2 = document.getElementById("bar2");
+      var bar3 = document.getElementById("bar3");
+      var ld_logo = document.getElementById("ld_logo");
+      var _sw = logo_canvas.width / 1920;
+      var _sh = logo_canvas.height / 1080;
+
+      if (_percent > 1) {
+        _percent = 1;
+      }
+      ctx.drawImage(barbg, 629 * _sw, 960 * _sh, 662 * _sw, 54 * _sh);
+      if (662 * _percent > 36) {
+        ctx.drawImage(bar3, 658 * _sw, 960 * _sh, 600 * _sw * _percent, 54 * _sh);
+      }
+      ctx.drawImage(bar1, 629 * _sw, 960 * _sh, 34 * _sw, 54 * _sh);
+
+      let _bar2x = 628 * _percent;
+      if (_bar2x > 188) {
+        ctx.drawImage(bar2, (629 + _bar2x) * _sw, 960 * _sh, 34 * _sw, 54 * _sh);
+      }
+      else if (_bar2x > 34) {
+        ctx.drawImage(bar2, (635 + _bar2x) * _sw, 960 * _sh, 34 * _sw, 54 * _sh);
+      }
+      else {
+        ctx.drawImage(bar2, (629 + 32) * _sw, 960 * _sh, 34 * _sw, 54 * _sh);
+      }
+      ctx.drawImage(ld_logo, 1200 * _sw, logo_canvas.height - (1070 * _sh), 659 * _sw, 548 * _sh);
+      var _fontSize = 28 * _sw;
+      ctx.font = _fontSize.toString() + "px BRLNSDB";
+      ctx.fillStyle = "#ffffff";
+      ctx.textAligh = "center";
+      ctx.lineWidth = 6;
+      ctx.strokeStyle = '#483733';
+      let _txt = (Math.floor(_percent * 100)).toString() + '%';
+      let _tx = (logo_canvas.width * 0.5 - ctx.measureText(_txt).width * 0.5 * _sw - 20 * _sw) + 15;
+      let _ty = logo_canvas.height * 0.5 + 452 * _sh;
+      ctx.strokeText(_txt, _tx, _ty);
+      ctx.fillText(_txt, _tx, _ty);
+    }
+    function resizeLogoCanvas() {
+      var _w = window.innerWidth;
+      var _h = window.innerHeight;
+      var _nw = _h * 16 / 9;
+      if (_nw <= _w) {
+        logo_canvas.width = _nw;
+        logo_canvas.height = _h;
+      }
+      else {
+        logo_canvas.width = _w;
+        logo_canvas.height = _w * 9 / 16;
+      }
+    }
+
+
+    document.body.appendChild(script);
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyB9PyuikZQXQghAJe0U8301o8ydKc2MOeE",
+      authDomain: "subway-santa.firebaseapp.com",
+      projectId: "subway-santa",
+      storageBucket: "subway-santa.appspot.com",
+      messagingSenderId: "496380322024",
+      appId: "1:496380322024:web:9d83f914ebf3577cf1a95d",
+      measurementId: "G-71JLR7GJ2E"
+    };
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); }
+
+    window.gtag("config", firebaseConfig.measurementId, {
+      cookie_domain: window.location.hostname,
+      cookie_flags: "SameSite=None;Secure",
+    });
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  </script>
+</body>
+
+</html>

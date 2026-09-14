@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Temple Run 2</title>
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="TemplateData/style.css">
+
+  <style>
+    @font-face {
+      font-family: BRLNSDB;
+      src: url('BRLNSDB.TTF');
+    }
+
+    .font1 {
+      font-family: BRLNSDB;
+      position: absolute;
+      left: -10000px;
+      visibility: hidden;
+    }
+  </style>
+<script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>
+
+<body class="dark">
+  <div class="font1">.</div>
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="loading-cover" style="display:none;">
+    <div id="unity-loading-bar">
+      <canvas id="logo-canvas" style="position: absolute; background-color: transparent;">
+        <img src="loading.png?v=1" id="ld_bg">
+        <img src="loading_fill.png" id="ld_fill">
+      </canvas>
+    </div>
+  </div>
+  <img id="azlogo" class="az" src="az_logo.png">
+
+  <script>
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/temple-run-publish.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/temple-run-publish.data.unityweb",
+      frameworkUrl: buildUrl + "/temple-run-publish.framework.js.unityweb",
+      codeUrl: buildUrl + "/temple-run-publish.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "azgames.io",
+      productName: "Temple Run 2",
+      productVersion: "",
+    };
+
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    }
+
+    function delay(ms) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve();
+        }, ms);
+      });
+    }
+
+    async function load() {
+      var az_logo = document.getElementById('azlogo');
+      <!-- az_logo.style.opacity = 0; -->
+      <!-- logo_loaded = true; -->
+      <!-- var t = new Date().getTime(); -->
+      <!-- while (az_logo.style.opacity < 1) { -->
+        <!-- var delta = new Date().getTime() - t; -->
+        <!-- az_logo.style.opacity = delta / 1000; -->
+        <!-- await delay(20); -->
+      <!-- } -->
+
+      <!-- await delay(1000); -->
+      az_logo.style.display = 'none';
+      logo_loaded = false;
+      createUnityInstance(canvas, config, (progress) => {
+        drawCanvas(progress);
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        setTimeout(() => {
+          loadingCover.style.display = "none";
+          logo_loaded = true;
+        }, 2000);
+      }).catch((message) => {
+        alert(message);
+      });
+    }
+
+    loadingCover.style.display = "";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      load();
+    };
+    var logo_loaded = false;
+    var logo_loading_percent = 0;
+
+    window.onresize = () => {
+      drawCanvas(logo_loading_percent);
+    }
+    window.onload = () => {
+      drawCanvas(logo_loading_percent);
+    }
+
+    var logo_canvas = document.getElementById("logo-canvas");
+    function drawCanvas(_percent = 0) {
+      if (logo_loaded) {
+        return;
+      }
+      resizeLogoCanvas();
+      var ctx = logo_canvas.getContext("2d");
+      var ld_bg = document.getElementById("ld_bg");
+      var ld_fill = document.getElementById("ld_fill");
+      var _sw = logo_canvas.width / 1920;
+      var _sh = logo_canvas.height / 1080;
+
+      if (_percent > 1) {
+        _percent = 1;
+      }
+
+      var pl = 890 * _percent;
+      var pw = 900 - pl;
+      pl = pl + 510;
+
+      ctx.drawImage(ld_bg, 0, 0, logo_canvas.width, logo_canvas.height);
+      ctx.drawImage(ld_fill, pl * _sw, logo_canvas.height - (115 * _sh), pw * _sw, 35 * _sh);
+
+      //text
+      //PERCENT
+      var _fontSize = 40 * _sw;
+      ctx.font = _fontSize.toString() + "px BRLNSDB";
+      ctx.fillStyle = "#ffffff";
+      ctx.textAligh = "center";
+      ctx.lineWidth = 6;
+      ctx.strokeStyle = '#000000';
+      let _txt = (Math.floor(_percent * 100)).toString() + '%';
+      let _tx = logo_canvas.width * 0.5 - ctx.measureText(_txt).width * 0.5 * _sw - 20 * _sw;
+      let _ty = logo_canvas.height * 0.5 + 455 * _sh;
+      ctx.strokeText(_txt, _tx, _ty);
+      ctx.fillText(_txt, _tx, _ty);
+    }
+    function resizeLogoCanvas() {
+      var _w = window.innerWidth;
+      var _h = window.innerHeight;
+      var _nw = _h * 16 / 9;
+      if (_nw <= _w) {
+        logo_canvas.width = _nw;
+        logo_canvas.height = _h;
+      }
+      else {
+        logo_canvas.width = _w;
+        logo_canvas.height = _w * 9 / 16;
+      }
+
+    }
+
+
+    document.body.appendChild(script);
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+	  apiKey: "AIzaSyAAwA2zzvoVMVNIRQz-RsR-XUkXUxkDEXk",
+	  authDomain: "temple-run-2-60365.firebaseapp.com",
+	  projectId: "temple-run-2-60365",
+	  storageBucket: "temple-run-2-60365.appspot.com",
+	  messagingSenderId: "136005553280",
+	  appId: "1:136005553280:web:0c0656244776d6987c2a65",
+	  measurementId: "G-K90YE9B3X3"
+	};
+	window.dataLayer = window.dataLayer || [];
+	window.gtag = function(){dataLayer.push(arguments);}
+
+	window.gtag("config", firebaseConfig.measurementId, {
+		cookie_domain: location.hostname,
+		cookie_flags: "SameSite=None;Secure",
+	});
+	
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  </script>
+
+</body>
+
+</html>
