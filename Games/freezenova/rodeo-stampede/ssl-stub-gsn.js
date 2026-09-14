@@ -1,0 +1,1 @@
+(function(){ if (typeof window === 'undefined') return; window.GameSnacksAd = window.GameSnacksAd || function(){}; })();
