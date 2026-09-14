@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Run 3D</title>
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="TemplateData/style.css">
+<script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>
+
+<body class="dark">
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="loading-cover" style="display:none;">
+    <div id="unity-loading-bar">
+      <canvas id="logo-canvas" style="position: absolute; background-color: black;">
+        <img src="loading.png?v=1" id="ld_bg">
+        <img src="loading_bg.png" id="ld_bar">
+        <img src="loading_fill.png" id="ld_fill">
+        <img src="rocket.png" id="ld_rocket">
+      </canvas>
+    </div>
+  </div>
+  <script>
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/240926.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/a8b25fcdb4a891f8d77c6b235a4a630f.data.unityweb",
+      frameworkUrl: buildUrl + "/1c856ac037bded34fc9692ff97563fd3.js.unityweb",
+      codeUrl: buildUrl + "/f9246057bedd2c4a1ff10a171299d496.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "GoodMedia",
+      productName: "Run 3D",
+      productVersion: "0.1",
+    };
+
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    }
+
+    loadingCover.style.display = "";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        drawCanvas(progress);
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        setTimeout(() => {
+          loadingCover.style.display = "none";
+          logo_loaded = true;
+        }, 2000);
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    var logo_loaded = false;
+    var logo_loading_percent = 0;
+
+    window.onresize = () => {
+      drawCanvas(logo_loading_percent);
+    }
+    window.onload = () => {
+      drawCanvas(logo_loading_percent);
+    }
+
+    var logo_canvas = document.getElementById("logo-canvas");
+    function drawCanvas(_percent = 0) {
+      if (logo_loaded) {
+        return;
+      }
+      resizeLogoCanvas();
+      var ctx = logo_canvas.getContext("2d");
+      var ld_bg = document.getElementById("ld_bg");
+      var ld_bar = document.getElementById("ld_bar");
+      var ld_fill = document.getElementById("ld_fill");
+      var ld_rocket = document.getElementById("ld_rocket");
+      var _sw = logo_canvas.width / 1920;
+      var _sh = logo_canvas.height / 1080;
+
+      if (_percent > 1) {
+        _percent = 1;
+      }
+      var pl = 931 * (1 - _percent);
+      var pw = 931 - pl;
+
+      ctx.drawImage(ld_bg, 0, 0, logo_canvas.width, logo_canvas.height);
+      ctx.drawImage(ld_bar, 495 * _sw, logo_canvas.height - (98 * _sh), 930 * _sw, 9 * _sh);
+      ctx.drawImage(ld_fill, 494.5 * _sw, logo_canvas.height - (103 * _sh), pw * _sw, 21 * _sh);
+      ctx.drawImage(ld_rocket, (495 + 760 - (760 * (1 - _percent))) * _sw + ((90 * _percent) * _sw), logo_canvas.height - (122 * _sh), 90 * _sw, 60 * _sh);
+    }
+    function resizeLogoCanvas() {
+      var _w = window.innerWidth;
+      var _h = window.innerHeight;
+      var _nw = _h * 16 / 9;
+      if (_nw <= _w) {
+        logo_canvas.width = _nw;
+        logo_canvas.height = _h;
+      }
+      else {
+        logo_canvas.width = _w;
+        logo_canvas.height = _w * 9 / 16;
+      }
+    }
+
+
+    document.body.appendChild(script);
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD1O6R874I4_sUnWNP3hOfhoxvcTEAiLjM",
+      authDomain: "run-3d-546a1.firebaseapp.com",
+      projectId: "run-3d-546a1",
+      storageBucket: "run-3d-546a1.appspot.com",
+      messagingSenderId: "464957637225",
+      appId: "1:464957637225:web:2373dd6c681e20c71598f8",
+      measurementId: "G-37L2XNVWHK"
+    };
+	window.dataLayer = window.dataLayer || [];
+	window.gtag = function(){dataLayer.push(arguments);}
+
+	window.gtag("config", firebaseConfig.measurementId, {
+    cookie_domain: location.hostname,
+    cookie_flags: "SameSite=None;Secure",
+	});
+    // Initialize Firebase
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  </script>
+</body>
+
+</html>
