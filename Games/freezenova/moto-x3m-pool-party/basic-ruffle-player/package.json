@@ -1,0 +1,17 @@
+{
+  "name": "base-href-processor",
+  "version": "1.0.0",
+  "description": "Script to add base href tags to HTML files",
+  "main": "base_and_index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/base_and_index.js",
+    "dev": "ts-node --esm base_and_index.ts",
+    "run-script": "npx ts-node base_and_index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}

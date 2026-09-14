@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kawai Run 2 Offline</title>
+  </head>
+  <body>
+    <div>
+      loading... if you are getting this and you did not expect this, please
+      contact support
+    </div>
+    <div id="root"></div>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script src="../../ruffle-functions.js"></script>
+    <script>
+      embedSWF(
+        "../../html/kawai_run_2_offline/kawai_run_2_offline.swf",
+        "root"
+      );
+    </script>
+  </body>
+</html>

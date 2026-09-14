@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  
+  
+<style type="text/css">
+	body {
+	  overflow: hidden;
+	}
+</style>
+
+	<link rel="canonical" href="https://unblocked-games.s3.amazonaws.com/library.html" />
+	
+	<script src="/assets/scripts/game.js"></script>
+
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GXS04HS5MX"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-GXS04HS5MX');
+	</script>
+	
+
+	<script src="/assets/promo/promo.js" async></script>
+	<script type="text/javascript" async>
+		!function(e, t) {
+			var a = e.createElement("script"),
+				m = e.getElementsByTagName("script")[0];
+
+			a.async = 1;
+			a.src = t;
+
+			a.onload = function() {
+				console.log("Dynamic script loaded wg");
+				if (typeof window.syncPromoManager === "function") window.syncPromoManager(false);
+				window.wgLoaded = 1;
+			};
+
+			a.onerror = function() {
+				console.error("Failed to load wg");
+				if (typeof window.syncPromoManager === "function") window.syncPromoManager(true);
+				window.wgLoaded = 2;
+			};
+
+			m.parentNode.insertBefore(a, m);
+		}(document, "https://universal.wgplayer.com/tag/?lh=" + window.location.hostname + "&wp=" + window.location.pathname + "&ws=" + window.location.search);
+	</script>
+	
+
+	<script>
+	
+	function SubmitLeaderboardScore(newScore)
+	{
+		
+	}
+	
+	function GetLeaderboardEntries()
+	{
+		
+	}
+	
+	function InitApi(_appId) 
+    {
+		var dateNow = new Date();
+		var secondsSinceEpoch = Math.round(dateNow.getTime() / 1000);
+		
+		console.log('InitApi');
+		
+		window.callTime = secondsSinceEpoch - 181;
+    }
+	
+	function InitExternEval(_appId) 
+    {
+		console.log("InitExternEval");
+		
+		ExternEval();
+    }
+    
+    function ExternEval() 
+    {
+		console.log("ExternEval");
+		
+		var dateNow = new Date();
+		var secondsSinceEpoch = Math.round(dateNow.getTime() / 1000);
+		
+		if (window.callTime != undefined && 
+			secondsSinceEpoch - window.callTime > 180)
+		{
+			console.log('ExternEval 2');
+			
+			window.callTime = secondsSinceEpoch;
+			
+			if (typeof preroll !== 'undefined')
+			{
+				if (window[preroll.config.loaderObjectName] != undefined)
+				{
+					gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen');
+				
+					try {
+						window[preroll.config.loaderObjectName].refetchAd(ExternEvalResumeGame);
+					}
+					catch(err) {
+						console.log(err.message);
+						gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+					}
+				}
+			}
+		}
+		
+    }
+	
+	function ExternEvalResumeGame()
+	{
+		console.log("ExternEvalResumeGame");
+	
+		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+	}
+	
+	function PreloadRewarded() 
+	{
+		console.log("PreloadRewarded");
+	
+		if (window.rewardedCallbacks == undefined)
+		{
+			window.rewardedCallbacks = true;
+			
+			try {
+				window[window.preroll.config.loaderObjectName].registerRewardCallbacks({
+					onReady:RewardedReady, 
+					onSuccess:RewardedSuccess, 
+					onFail:RewardedFail,
+					onClose:RewardedClose
+				});
+			}
+			catch(err) {
+				console.log(err.message);
+			}
+		}
+	}
+		
+	function ShowRewarded() 
+	{
+		console.log("ShowRewarded");
+	
+		if (typeof preroll !== 'undefined')
+		{
+			if (window.rewardedCallbacks == undefined)
+			{
+				PreloadRewarded();
+			}
+		
+			if (window[preroll.config.loaderObjectName] != undefined)
+			{
+				gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onOpen');
+			
+				try {
+					window[preroll.config.loaderObjectName].showRewardAd();
+				}
+				catch(err) {
+					console.log(err.message);
+					gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+				}
+			}
+		}
+	
+	}
+	
+	function RewardedReady()
+	{
+		console.log("RewardedReady");
+		
+		if (window.rewardedCount == undefined)
+		{
+			window.rewardedCount = 1;
+			window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady');
+		}
+		else{
+			window.rewardedCount = window.rewardedCount + 1;
+			//setTimeout(function(){ window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady'); }, 30000);
+			window.gameInstance.SendMessage('FreezeNovaAPI', 'RewardedReady');
+		}
+		
+	}
+	
+	function RewardedSuccess()
+	{
+		console.log("RewardedSuccess");
+		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'RewardedOnRewarded');
+		//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+	}
+	
+	function RewardedFail()
+	{
+		console.log("RewardedFail");
+		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'RewardedOnFail');
+		//gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+	}
+	
+	function RewardedClose()
+	{
+		console.log("RewardedClose");
+		gameInstance.SendMessage('FreezeNovaAPI', 'AdMessage', 'onClose');
+	}
+	
+	InitApi(0);
+	
+	
+	</script>
+
+  
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      height:100%; overflow:hidden;
+      font-family:'Segoe UI', system-ui, sans-serif;
+      background:#f3eede; color:#2a2a2a;
+    }
+    /* Parent shell sets scrolling="no" on the iframe, so content overflowing
+       the iframe height is clipped. Wrap everything in a scroll container
+       that owns the only scrollbar inside this document. */
+    .scroll-container {
+      height:100%;
+      overflow-y:auto;
+      overflow-x:hidden;
+      padding:24px;
+    }
+    /* "Game" scrollbar — chunky, with depth, hover glow, and a warm wood-leather
+       palette to match a library feel. Designed to look like part of the UI,
+       not generic browser chrome. */
+    .scroll-container::-webkit-scrollbar {
+      width:16px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background:linear-gradient(90deg, #d8cdaa 0%, #ece5d3 50%, #d8cdaa 100%);
+      border-left:1px solid rgba(0,0,0,.08);
+      box-shadow:inset 1px 0 0 rgba(255,255,255,.4);
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background:linear-gradient(180deg, #b8985a 0%, #8b6f3a 50%, #b8985a 100%);
+      border-radius:10px;
+      border:3px solid #ece5d3;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.4),
+        inset 0 -1px 0 rgba(0,0,0,.2),
+        0 1px 3px rgba(0,0,0,.25);
+      min-height:60px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+      background:linear-gradient(180deg, #d4b56a 0%, #a08148 50%, #d4b56a 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.5),
+        inset 0 -1px 0 rgba(0,0,0,.2),
+        0 0 10px rgba(184,152,90,.6),
+        0 1px 3px rgba(0,0,0,.25);
+    }
+    .scroll-container::-webkit-scrollbar-thumb:active {
+      background:linear-gradient(180deg, #8b6f3a 0%, #6b5328 50%, #8b6f3a 100%);
+    }
+    /* Firefox fallback (no gradients available, just colour). */
+    .scroll-container { scrollbar-color:#8b6f3a #d8cdaa; scrollbar-width:auto; }
+
+    header {
+      display:flex; align-items:center; justify-content:space-between;
+      max-width:980px; margin:0 auto 20px; gap:16px; flex-wrap:wrap;
+    }
+    h1 { font-size:28px; }
+    .login-status {
+      font-size:14px; padding:6px 14px; border-radius:18px;
+      background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.08);
+    }
+    .login-status.in  { color:#0a7a3b; }
+    .login-status.out { color:#a06400; }
+
+    /* Persistent save-status banner. Sits across the page below the header so
+       a save failure can't be missed (toasts auto-dismiss; this doesn't).
+       Hidden by default, shown only when save state changes. */
+    .save-status {
+      max-width:980px; margin:0 auto 16px;
+      padding:10px 16px; border-radius:10px;
+      font-size:14px; font-weight:500;
+      display:none; align-items:center; gap:10px;
+    }
+    .save-status.show { display:flex; }
+    .save-status.ok    { background:#dcfce7; color:#15803d; border:1px solid #86efac; }
+    .save-status.warn  { background:#fef3c7; color:#a16207; border:1px solid #fde68a; }
+    .save-status.err   { background:#fee2e2; color:#b91c1c; border:1px solid #fca5a5; }
+    .save-status .icon { font-size:18px; }
+    .save-status .msg  { flex:1; }
+    .save-status .dismiss {
+      background:transparent; border:none; cursor:pointer; font-size:18px;
+      padding:0 6px; color:inherit; opacity:.6;
+    }
+    .save-status .dismiss:hover { opacity:1; }
+
+    .unlock-bar {
+      max-width:980px; margin:0 auto 24px; display:flex; gap:8px;
+      background:#fff; padding:12px; border-radius:14px;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
+    .unlock-bar input {
+      flex:1; padding:10px 14px; border:1px solid #ddd; border-radius:10px;
+      font-size:15px; letter-spacing:1px; text-transform:uppercase;
+    }
+    .unlock-bar button {
+      padding:10px 20px; background:#3b82f6; color:#fff; border:0;
+      border-radius:10px; cursor:pointer; font-weight:600; font-size:15px;
+    }
+    .unlock-bar button:hover { background:#2563eb; }
+
+    .grid {
+      max-width:980px; margin:0 auto;
+      display:grid; gap:16px;
+      grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .card {
+      background:#fff; padding:20px; border-radius:14px;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      cursor:pointer; transition:transform .12s, box-shadow .12s;
+      display:flex; flex-direction:column; gap:8px; min-height:140px;
+    }
+    .card:hover  { transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.1); }
+    .card.locked { background:#ece5d3; cursor:default; }
+    .card.locked:hover { transform:none; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+    .card .icon  { font-size:36px; }
+    .card .name  { font-weight:700; font-size:17px; }
+    .card .hint  { font-size:13px; color:#888; }
+
+    .modal-wrap {
+      position:fixed; inset:0; background:transparent;
+      display:none; align-items:center; justify-content:center; z-index:100; padding:20px;
+    }
+    .modal-wrap.show { display:flex; }
+    .modal {
+      background:#fff; max-width:560px; width:100%;
+      padding:28px; border-radius:18px; box-shadow:0 12px 40px rgba(0,0,0,.25);
+      display:flex; flex-direction:column;
+      max-height:85vh;
+    }
+    .modal h2 { margin-bottom:14px; flex:0 0 auto; }
+    .modal .story {
+      white-space:pre-wrap; line-height:1.6; color:#444;
+      margin:0 -8px 20px 0;
+      padding-right:12px;
+      flex:1 1 auto;
+      overflow-y:auto;
+      scrollbar-width:thin;
+    }
+    .modal .story::-webkit-scrollbar { width:8px; }
+    .modal .story::-webkit-scrollbar-thumb { background:#d4cdb8; border-radius:4px; }
+    .modal .story::-webkit-scrollbar-thumb:hover { background:#b8b09a; }
+    .modal .actions { display:flex; gap:10px; justify-content:flex-end; flex:0 0 auto; }
+    .btn { padding:10px 18px; border:0; border-radius:10px; cursor:pointer; font-weight:600; }
+    .btn-primary   { background:#16a34a; color:#fff; }
+    .btn-primary:hover { background:#15803d; }
+    .btn-secondary { background:#e5e7eb; color:#374151; }
+    .btn-secondary:hover { background:#d1d5db; }
+
+    .toast {
+      position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+      background:#1f2937; color:#fff; padding:12px 20px; border-radius:10px;
+      font-size:14px; opacity:0; transition:opacity .25s; pointer-events:none;
+      max-width:90vw; text-align:center; z-index:200;
+    }
+    .toast.show  { opacity:1; }
+    .toast.ok    { background:#15803d; }
+    .toast.err   { background:#b91c1c; }
+    .toast.warn  { background:#a16207; }
+  </style>
+</head>
+<body>
+  <div class="scroll-container">
+    <header>
+      <h1>📚 Library</h1>
+      <span id="loginStatus" class="login-status out">Loading…</span>
+    </header>
+
+    <div class="unlock-bar">
+      <input id="keyInput" placeholder="Enter a book key (e.g. QUACK)" maxlength="32" autocomplete="off">
+      <button id="unlockBtn">Unlock</button>
+    </div>
+
+    <!-- Persistent status banner. Hidden until JS sets a save state. -->
+    <div class="save-status" id="saveStatus">
+      <span class="icon" id="saveStatusIcon"></span>
+      <span class="msg"  id="saveStatusMsg"></span>
+      <button class="dismiss" id="saveStatusDismiss" title="Dismiss">×</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <!-- Modal & toast are siblings of the scroll-container so they overlay
+       the whole iframe (not constrained to the scrolling region). -->
+  <div class="modal-wrap" id="modalWrap">
+    <div class="modal">
+      <h2 id="modalTitle"></h2>
+      <p class="story" id="modalStory"></p>
+      <div class="actions">
+        <button class="btn btn-secondary" id="modalClose">Close</button>
+        <button class="btn btn-primary"   id="modalStart">Start ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- In source mode these load separately so you can edit & refresh.
+       The build replaces all three with one <script src="library.js"> -->
+  <script src="library.js"></script>
+</body>
+</html>
