@@ -1,0 +1,1 @@
+(window.adsbygoogle = window.adsbygoogle || []).push = function () {}; window.adConfig = function () {}; window.googletag = window.googletag || {}; window.googletag.cmd = window.googletag.cmd || []; window.googletag.cmd.push = function () {};

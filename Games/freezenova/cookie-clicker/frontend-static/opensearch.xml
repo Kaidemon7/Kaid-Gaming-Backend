@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Redbubble</os:ShortName>
+<os:Description>Search for Images and Artists on Redbubble</os:Description>
+<os:InputEncoding>ISO-8859-1</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAALdSURBVHjaVFM7aBVBFD0zO/t5m933yZeIKTQofrAQTGxsgqAQtREVwUaxErSwsRCL1FaihZ1gp1gbbS0MCMYPEtAY8fOIxOTpy3v79u3bt7sz3tl8jAOX2R3uPfecM3eYUgpb1+zF61NGPToja8EoVgIbBRdi787UObi77o3vm982Mf6C0m5t5LMNgDdXb06oT9U7Pa8WDlS4w7xSBU6pD/B9dFwHLcHQcDjEybHGwPGxGX/78OQmQF78duHh9pn5kQG3DF4qA5VeigrQS1H0AbcAyTlWwlU0D++Ih08feeltGzoqNIrurIuHuIOmKdG2Y8hCC8ITsIsW7LIN4XvgwsVQpUh0F+3lyvtx78IxGKe+NaZ6ns+eG0zBfhptLLkpMs+EKHqwSj7MchGi7MEo2mCeASU4XFHA7w+fLTnSe5arxdppN+qyKppYZCEk08I4GGNghrEWQoDZFvj+nYCdQJkRfMUQvP8ywrMfS6MBIixTgPzMTVUy31WWrUWaQsVdyLkv+Z6lLdi8i/DdfI9Y/l61El1MS8oMkpKzJEEax0g7HYh2G5llrV0ZMdFgWRACcQOt6jcmalkofWptaDOl/FccRUhbIZL1YqPbzeVoRhmBxs0mwuCPEqGhqs1UjlbA88SMErtUbFgtcl1sngkn3ATQzP40VhFbsi5I0Mwq1KgLBvKZfolBRB0MY00WURZaim3nxmpv4jjCUtCAGu77IAzOpwMkZ0LwgqQCh0ASkpAXa7q6e9uGYZr57XTJ4DCJsdwJ4squkaf5JN5l/Q988Es0g7AIwKTQ5C1hkRQ6MYmNMJHSFWuAWtJB4NiPL/+au5yLpILbq5CD9HmiRCBdrD+wtJMHpxFm3Mgl1FWKBuQz0WxMUUa4+Zjus4E9NCI3KO08+VHQUjQbvTRgh6INFdFUPNINr6iVj/+9xo11j/WfpZPJDDhEnuzQZ3Q/X0nEa4KbvqZqT7bm/xVgAHO1aAf1rHyaAAAAAElFTkSuQmCC</os:Image>
+<SearchForm>http://www.redbubble.com/shop/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://www.redbubble.com/shop/{searchTerms}">
+</os:Url>
+</SearchPlugin>
