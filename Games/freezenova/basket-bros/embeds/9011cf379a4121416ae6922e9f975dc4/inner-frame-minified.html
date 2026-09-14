@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>body,html,iframe{margin:0;padding:0;height:100%;width:100%;overflow:hidden}.forceIosScrolling{overflow:scroll;-webkit-overflow-scrolling:touch}.ProseMirror{display:inherit;outline:none!important;white-space:pre-wrap;cursor:text!important}.ProseMirror p{margin:0;padding:0}.ProseMirror:focus,.editable-text,.editable-text:focus,.editable-text:active{outline:none!important}</style>
+</head>
+
+<body>
+<iframe id='userHtmlFrame' frameborder='0' scrolling='yes'>
+</iframe>
+
+<script>
+  const MessageAction = {
+    GENAI_TEXT_EDIT: 'ATARI_GENAI_TEXT_EDIT'
+  };
+  let policy;
+  if (window.trustedTypes && window.trustedTypes.createPolicy) {
+    policy = window.trustedTypes.createPolicy('atari-gapi-loader', {
+      createScriptURL: (url) => {
+        if (url === 'https://apis.google.com/js/api.js?checkCookie=1') {
+          return url;
+        }
+        throw new Error('Attempted to load unexpected script URL');
+      },
+      createHTML: (html) => html
+    });
+  }
+
+  function loadGapi() {
+    var loaderScript = document.createElement('script');
+    var url = 'https://apis.google.com/js/api.js?checkCookie=1';
+    if (policy) {
+      loaderScript.src = policy.createScriptURL(url);
+    } else {
+      loaderScript.setAttribute('src', url);
+    }
+    loaderScript.onload = function() {
+      this.onload = function() {};
+      loadGapiClient();
+    };
+    loaderScript.onreadystatechange = function() {
+      if (this.readyState === 'complete') {
+        this.onload();
+      }
+    };
+    (document.head || document.body || document.documentElement).appendChild(loaderScript);
+  }
+
+  function updateUserHtmlFrame(userHtml, enableInteraction, forceIosScrolling, enableHtmlSitesGenAi, isLiquidArtifact) {
+    if (isLiquidArtifact) {
+      window.__atariSourcePayloadDom = new DOMParser().parseFromString(policy ? policy.createHTML(userHtml) : userHtml, 'text/html');
+    }
+    var frame = document.getElementById('userHtmlFrame');
+    if (enableInteraction) {
+      if (forceIosScrolling) {
+        var iframeParent = frame.parentElement;
+        iframeParent.classList.add('forceIosScrolling');
+      } else {
+        frame.style.overflow = 'auto';
+      }
+    } else {
+      // TODO(tianm): Figure out a better way to do this, esp if the scrolling attribute stops being
+      // supported in browsers. Even though the scrolling attribute is deprecated, we need it for
+      // the innermost frame because we can't set "overflow:hidden" on its body and html without
+      // manually inserting a style tag into the frame, which we want to avoid (because it could
+      // interfere/conflict with the user code).
+      frame.setAttribute('scrolling', 'no');
+      frame.style.pointerEvents = 'none';
+    }
+    clearCookies();
+    clearStorage();
+    frame.contentWindow.document.open();
+    const hoverClass = 'atari-ai-hover-' + Math.random().toString(36).substring(2, 9);
+    const selectedClass = 'atari-ai-selected-' + Math.random().toString(36).substring(2, 9);
+    const bootstrapStyle = isLiquidArtifact ? '<link rel="stylesheet" href="bootstrap.min.css">' : '';
+    const prosemirrorBundle = isLiquidArtifact ? '<script src="prosemirror_bundle.js"><\/script>' : '';
+
+    const textEditorPayload = isLiquidArtifact ? `
+      <style>
+        .${hoverClass} {
+          box-shadow: inset 0 0 0 2.36px #3b7dee !important;
+          cursor: pointer !important;
+        }
+        .${selectedClass} {
+          box-shadow: inset 0 0 0 2.36px #3b7dee !important;
+          cursor: text !important;
+        }
+        .ProseMirror { outline: none !important; white-space: pre-wrap; cursor: text !important; }
+        .ProseMirror p { margin: 0; padding: 0; display: inline; }
+        .ProseMirror:focus, .editable-text, .editable-text:focus, .editable-text:active { outline: none !important; }
+      </style>
+      <script>
+        (function() {
+          function initEditor() {
+
+            var hoveredEl = null;
+            var activeEditor = null;
+            var activeEditorEl = null;
+            var activeEditorOriginalHtml = null;
+            var activeEditorOriginalDoc = null;
+
+            function maybeSaveEditorAndBroadcast() {
+              if (!activeEditor || !activeEditorEl) return;
+              var serializer = window.ProseMirror.DOMSerializer.fromSchema(activeEditor.state.schema);
+              var fragment = serializer.serializeFragment(activeEditor.state.doc.content);
+
+              // ProseMirror wraps text nodes in <p> tags, so we get rid of that here
+              var originalIsP = activeEditorOriginalHtml && /^\\s*<p[\\s>]/i.test(activeEditorOriginalHtml);
+              if (fragment.childNodes.length === 1 && fragment.firstChild.nodeName === 'P' && !originalIsP) {
+                activeEditorEl.replaceChildren(...Array.from(fragment.firstChild.childNodes));
+              } else {
+                activeEditorEl.replaceChildren(fragment);
+              }
+
+              var hasChanges = !activeEditor.state.doc.eq(activeEditorOriginalDoc);
+              if (activeEditor.destroy) activeEditor.destroy();
+
+              var ttPolicy = null;
+              if (window.trustedTypes && window.trustedTypes.createPolicy) {
+                 if (!window._atariTtPolicy) {
+                    try { window._atariTtPolicy = window.trustedTypes.createPolicy('atari-prosemirror-editor', { createHTML: function(s) { return s; } }); } catch(e) {}
+                 }
+                 ttPolicy = window._atariTtPolicy;
+              }
+
+              if (!hasChanges) {
+                 var htmlStr = activeEditorOriginalHtml;
+                 activeEditorEl.innerHTML = ttPolicy ? ttPolicy.createHTML(htmlStr) : htmlStr;
+              } else {
+                 var bindingId = activeEditorEl.id;
+                 var sourcePayloadDom = window.parent.__atariSourcePayloadDom;
+                 var mappedSourceElement = (sourcePayloadDom && bindingId) ? sourcePayloadDom.querySelector('#' + bindingId) : null;
+
+                 if (mappedSourceElement) {
+                     var editedHtmlString = activeEditorEl.innerHTML;
+
+                     mappedSourceElement.innerHTML = ttPolicy ? ttPolicy.createHTML(editedHtmlString) : editedHtmlString;
+                     activeEditorEl.innerHTML = ttPolicy ? ttPolicy.createHTML(editedHtmlString) : editedHtmlString;
+                 } else {
+                     var fallbackHtml = activeEditorOriginalHtml;
+                     activeEditorEl.innerHTML = ttPolicy ? ttPolicy.createHTML(fallbackHtml) : fallbackHtml;
+                     hasChanges = false;
+                 }
+              }
+
+              activeEditorEl.classList.remove('${selectedClass}');
+              if (hoveredEl) hoveredEl.classList.remove('${hoverClass}');
+              var previousHover = hoveredEl;
+              hoveredEl = null;
+              if (!hasChanges) {
+                  activeEditor = null;
+                  activeEditorEl = null;
+                  activeEditorOriginalHtml = null;
+                  activeEditorOriginalDoc = null;
+                  hoveredEl = previousHover;
+                  if (hoveredEl) hoveredEl.classList.add('${hoverClass}');
+                  return;
+              }
+
+              var cleanSourcePayloadDom = window.parent.__atariSourcePayloadDom.cloneNode(true);
+              var doctypeStr = cleanSourcePayloadDom.doctype ? new window.XMLSerializer().serializeToString(cleanSourcePayloadDom.doctype) : '';
+
+              window.parent.postMessage({
+                type: '${MessageAction.GENAI_TEXT_EDIT}',
+                html: doctypeStr + cleanSourcePayloadDom.documentElement.outerHTML
+              }, '*');
+
+
+
+              activeEditor = null;
+              activeEditorEl = null;
+              activeEditorOriginalHtml = null;
+              activeEditorOriginalDoc = null;
+              hoveredEl = previousHover;
+              if (hoveredEl) hoveredEl.classList.add('${hoverClass}');
+            }
+
+            document.addEventListener('mouseover', function(e) {
+              var targetEl = e.target.closest && e.target.closest('.editable-text[id]');
+              if (!targetEl) return;
+
+              if (hoveredEl && hoveredEl !== targetEl) hoveredEl.classList.remove('${hoverClass}');
+              hoveredEl = targetEl;
+              hoveredEl.classList.add('${hoverClass}');
+            }, true);
+
+            document.addEventListener('mouseout', function(e) {
+              if (!hoveredEl) return;
+              if (!hoveredEl.contains(e.relatedTarget)) {
+                hoveredEl.classList.remove('${hoverClass}');
+                hoveredEl = null;
+              }
+            }, true);
+
+            document.addEventListener('mousedown', function(e) {
+              var targetEl = e.target.closest && e.target.closest('.editable-text[id]');
+              if (!targetEl) {
+                maybeSaveEditorAndBroadcast();
+                return;
+              }
+
+              var sourcePayloadDom = window.parent.__atariSourcePayloadDom;
+              var mappedSourceElement = sourcePayloadDom ? sourcePayloadDom.querySelector('#' + targetEl.id) : null;
+              if (!mappedSourceElement) return;
+
+              if (activeEditorEl === targetEl) return;
+
+              // Clicked on a new editable element
+              if (e.target.closest('a, button')) {
+                 e.preventDefault();
+              }
+              e.stopPropagation();
+              maybeSaveEditorAndBroadcast();
+
+              activeEditorEl = targetEl;
+              activeEditorOriginalHtml = activeEditorEl.innerHTML;
+              activeEditorEl.classList.add('${selectedClass}');
+
+              // Extract known ProseMirror nodes and marks. Nodes are block elements, marks are inline.
+              var nodes = {};
+              window.ProseMirror.basicSchema.spec.nodes.forEach(function(k, v) { nodes[k] = Object.assign({}, v); });
+              var marks = {};
+              window.ProseMirror.basicSchema.spec.marks.forEach(function(k, v) { marks[k] = Object.assign({}, v); });
+
+              // Overrides default parsing to prevent ProseMirror from deleting unrecognized attributes.
+              function patchObj(obj) {
+                 obj.attrs = Object.assign({}, obj.attrs || {}, { _allAttrs: { default: {} } });
+                 var oldParse = obj.parseDOM;
+                 if (oldParse) {
+                   obj.parseDOM = oldParse.map(function(rule) {
+                     var newRule = Object.assign({}, rule);
+                     if (newRule.tag) {
+                       var prevGetAttrs = newRule.getAttrs;
+                       var staticAttrs = newRule.attrs || {};
+                       var ALLOWED_ATTRIBUTES = [
+                           'class', 'style', 'id', 'title',
+                           'align', 'valign', 'colspan', 'rowspan',
+                           'target', 'rel', 'href'
+                       ];
+                       newRule.getAttrs = function(dom) {
+                         var attrs = prevGetAttrs ? prevGetAttrs(dom) : Object.assign({}, staticAttrs);
+                         if (attrs === false) return false;
+                         attrs = attrs || {};
+                         var _allAttrs = {};
+                         for (var index = 0; index < dom.attributes.length; index++) {
+                             var attrName = dom.attributes[index].name.toLowerCase();
+                             var attrVal = dom.attributes[index].value;
+
+                             var isAllowed = ALLOWED_ATTRIBUTES.includes(attrName) ||
+                                             attrName.startsWith('aria-') ||
+                                             attrName.startsWith('data-bs-');
+                             if (isAllowed) {
+                                 if (attrName === 'href') {
+                                     // Strip invisible control sequences and whitespaces.
+                                     var cleanUrl = attrVal.replace(/[\\s\\x00-\\x1F]/g, '');
+                                     var protoMatch = cleanUrl.match(/^([a-z0-9+.-]+):/i);
+                                     if (protoMatch) {
+                                         var proto = protoMatch[1].toLowerCase();
+                                          // Restrict to absolute paths (blocks 'mailto:' and 'tel:').
+                                         if (['http', 'https'].indexOf(proto) === -1) {
+                                             continue;
+                                         }
+                                     }
+                                 }
+                                 _allAttrs[attrName] = attrVal;
+                             }
+                         }
+                         attrs._allAttrs = _allAttrs;
+                         return attrs;
+                       };
+                     }
+                     return newRule;
+                   });
+                 }
+                 var oldToDOM = obj.toDOM;
+                 if (oldToDOM) {
+                   obj.toDOM = function(node) {
+                     var renderedNodeResult = oldToDOM(node);
+                     var attrs = node.attrs && node.attrs._allAttrs ? node.attrs._allAttrs : null;
+                     // If there are no custom layout attributes for this node, we can skip the
+                     // manual mapping below and just let ProseMirror serialize it natively.
+                     if (!attrs || Object.keys(attrs).length === 0) return renderedNodeResult;
+
+                     // If ProseMirror returned a physical HTML element instead of a layout array,
+                     // set our custom attributes onto it.
+                     if (renderedNodeResult && renderedNodeResult.dom) {
+                        for (var attrName in attrs) {
+                          if (attrName !== 'contenteditable' && (typeof attrs[attrName] === 'string' || typeof attrs[attrName] === 'number')) {
+                             try { renderedNodeResult.dom.setAttribute(attrName, String(attrs[attrName])); } catch(e){}
+                          }
+                        }
+                        return renderedNodeResult;
+                     }
+                     // If ProseMirror returned a HTML element, set our custom attributes onto it.
+                     else if (renderedNodeResult && renderedNodeResult.nodeType) {
+                        for (var attrName in attrs) {
+                          if (attrName !== 'contenteditable' && (typeof attrs[attrName] === 'string' || typeof attrs[attrName] === 'number')) {
+                             try { renderedNodeResult.setAttribute(attrName, String(attrs[attrName])); } catch(e){}
+                          }
+                        }
+                        return renderedNodeResult;
+                     }
+                     // If ProseMirror returns a layout Array, parse and construct a HTML element
+                     // with the custom attributes.
+                     else if (Array.isArray(renderedNodeResult) && typeof renderedNodeResult[0] === 'string') {
+                       var rendered = window.ProseMirror.DOMSerializer.renderSpec(document, renderedNodeResult);
+                       var dom = rendered.dom;
+                       for (var attrName in attrs) {
+                         if (attrName !== 'contenteditable' && (typeof attrs[attrName] === 'string' || typeof attrs[attrName] === 'number')) {
+                            try { dom.setAttribute(attrName, String(attrs[attrName])); } catch(e){}
+                         }
+                       }
+                       if (rendered.contentDOM) return rendered;
+                       return dom;
+                     }
+                     return renderedNodeResult;
+                   };
+                 }
+              }
+
+              // Wire up every element to support our custom layout attributes.
+              for (var nodeName in nodes) { if (nodeName !== 'text') patchObj(nodes[nodeName]); }
+              for (var markName in marks) patchObj(marks[markName]);
+
+              // Check for unrecognized layout tags and inject appropriate Schema rules
+              var allDescendantElements = activeEditorEl.querySelectorAll('*');
+              for (var elementIndex = 0; elementIndex < allDescendantElements.length; elementIndex++) {
+                var currentElement = allDescendantElements[elementIndex];
+                var tagName = currentElement.tagName.toLowerCase();
+                var isMatched = false;
+                for (var nodeName in nodes) {
+                   if (isMatched) break;
+                   var rules = nodes[nodeName].parseDOM || [];
+                   for (var index = 0; index < rules.length; index++) {
+                     if (rules[index].tag && currentElement.matches(rules[index].tag)) { isMatched = true; break; }
+                   }
+                }
+                for (var markName in marks) {
+                   if (isMatched) break;
+                   var rules = marks[markName].parseDOM || [];
+                   for (var index = 0; index < rules.length; index++) {
+                     if (rules[index].tag && currentElement.matches(rules[index].tag)) { isMatched = true; break; }
+                   }
+                }
+
+                if (!isMatched && !nodes[tagName] && !marks[tagName]) {
+                   var display = window.getComputedStyle(currentElement).display;
+                   var isInline = display === 'inline' || display === 'inline-block';
+                   var isAtom = ['svg', 'img', 'video', 'iframe', 'canvas', 'form', 'input', 'button', 'select'].indexOf(tagName) !== -1;
+
+                   if (isAtom) {
+                     nodes[tagName] = {
+                       group: 'inline',
+                       inline: true,
+                       atom: true,
+                       attrs: { _html: { default: '' } },
+                       parseDOM: [{ tag: tagName, getAttrs: function(dom) { return { _html: dom.outerHTML }; } }],
+                       toDOM: function(node) {
+                         var wrapper = document.createElement('span');
+                         var htmlStr = node.attrs._html;
+                         if (window.trustedTypes && window.trustedTypes.createPolicy) {
+                            if (!window._atariTtPolicy) {
+                               try { window._atariTtPolicy = window.trustedTypes.createPolicy('atari-prosemirror-editor', { createHTML: function(s) { return s; } }); } catch(e) {}
+                            }
+                            if (window._atariTtPolicy) htmlStr = window._atariTtPolicy.createHTML(htmlStr);
+                         }
+                         wrapper.innerHTML = htmlStr;
+                         return wrapper.firstChild || wrapper;
+                       }
+                     };
+                   } else if (isInline) {
+                     marks[tagName] = {
+                       parseDOM: [{ tag: tagName }],
+                       toDOM: function() { return [tagName, 0]; }
+                     };
+                     patchObj(marks[tagName]);
+                   } else {
+                     // Treat all unrecognized structural tags as standard Block Containers
+                     nodes[tagName] = {
+                       group: 'block',
+                       content: 'block*',
+                       parseDOM: [{ tag: tagName }],
+                       toDOM: function() { return [tagName, 0]; }
+                     };
+                     patchObj(nodes[tagName]);
+                   }
+                }
+              }
+              var dynSchema = new window.ProseMirror.Schema({ nodes: nodes, marks: marks });
+              var doc = window.ProseMirror.DOMParser.fromSchema(dynSchema).parse(activeEditorEl);
+              activeEditorOriginalDoc = doc;
+              activeEditorEl.replaceChildren();
+              activeEditor = new window.ProseMirror.EditorView(activeEditorEl, {
+                state: window.ProseMirror.EditorState.create({
+                  doc: doc,
+                  schema: dynSchema,
+                  plugins: [
+                    window.ProseMirror.history(),
+                    window.ProseMirror.keymap({
+                      "Shift-Enter": function(state, dispatch) {
+                        if (dynSchema.nodes.hard_break) {
+                          if (dispatch) dispatch(state.tr.replaceSelectionWith(dynSchema.nodes.hard_break.create()).scrollIntoView());
+                          return true;
+                        }
+                        return false;
+                      },
+                      "Mod-z": window.ProseMirror.undo,
+                      "Shift-Mod-z": window.ProseMirror.redo,
+                      "Mod-y": window.ProseMirror.redo
+                    }),
+                    window.ProseMirror.keymap(window.ProseMirror.baseKeymap)
+                  ]
+                })
+              });
+
+              // Browser loses the text cursor when clicking nested tags (like a span inside an h1).
+              // So we manually set the cursor position ourselves.
+              if (activeEditor) {
+                 var resolveCursor = function() {
+                     try {
+                        var cursorPosition = activeEditor.posAtCoords({left: e.clientX, top: e.clientY});
+                        if (cursorPosition && cursorPosition.pos != null) {
+                           var prosemirrorTransaction = activeEditor.state.tr.setSelection(window.ProseMirror.TextSelection.create(activeEditor.state.doc, cursorPosition.pos));
+                           if (prosemirrorTransaction) {
+                               activeEditor.dispatch(prosemirrorTransaction);
+                           }
+                        }
+                        // Sync the native browser caret to the newly dispatched ProseMirror state.
+                        activeEditor.focus();
+                     } catch(e) {}
+                 };
+
+                 // Defer coordinate mapping by 1 animation frame to allow layout bounds to stabilize.
+                 requestAnimationFrame(resolveCursor);
+              }
+            }, true);
+
+            document.addEventListener('keydown', function(e) {
+              if (e.key === 'Escape' || (e.key === 'Enter' && !e.shiftKey)) {
+                if (activeEditor) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  maybeSaveEditorAndBroadcast();
+                }
+              }
+            }, true);
+          }
+
+          var waitForProsemirrorToInitialize = function() {
+              if (window.ProseMirror && window.ProseMirror.basicSchema) initEditor();
+              else setTimeout(waitForProsemirrorToInitialize, 10);
+          };
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', waitForProsemirrorToInitialize);
+          } else {
+            waitForProsemirrorToInitialize();
+          }
+        })();
+      <\/script>
+    ` : '';
+    const content = '<base href="' + window.location.href + '" target="_blank">' + bootstrapStyle + prosemirrorBundle + userHtml + textEditorPayload;
+    frame.contentWindow.document.write(policy ? policy.createHTML(content) : content);
+    frame.contentWindow.document.close();
+  }
+
+  function onGapiInitialized() {
+    // Inform the parent frame that GAPI has been initialized.
+    gapi.rpc.call('..', 'innerFrameGapiInitialized');
+    gapi.rpc.register('updateUserHtmlFrame', updateUserHtmlFrame);
+  }
+
+  function loadGapiClient() {
+    gapi.load('gapi.rpc', onGapiInitialized);
+  }
+
+  if (document.readyState == 'complete') {
+    loadGapi();
+  } else {
+    self.addEventListener('load', loadGapi);
+  }
+
+  function clearCookies() {
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var equalPosition = cookie.indexOf("=");
+        var name = equalPosition > -1 ? cookie.substr(0, equalPosition) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        // Try deleting any cookies set on the googleusercontent domain.
+        document.cookie =
+          name + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT ;domain=.googleusercontent.com";
+    }
+  }
+
+  function clearStorage() {
+    try {
+      localStorage.clear();
+      sessionStorage.clear();
+    } catch (e) {}
+  }
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === MessageAction.GENAI_TEXT_EDIT) {
+      var innerIframe = document.getElementById('userHtmlFrame');
+      if (innerIframe && e.source !== innerIframe.contentWindow) return;
+      window.parent.postMessage(e.data, '*');
+    }
+  });
+</script>
+</body>
+</html>

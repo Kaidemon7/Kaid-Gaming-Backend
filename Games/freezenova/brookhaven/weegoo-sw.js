@@ -1,0 +1,1 @@
+self.importScripts('https://st.wgplayer.com/sw.js' + self.location.search );

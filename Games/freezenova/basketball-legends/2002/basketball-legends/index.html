@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Legends</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+      #container > * {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+
+      (function () {
+        const NativeFunction = window.Function;
+        const fHref = "https://www.y8.com/games/basketball_legends";
+        function shimmedFunction(...args) {
+          const code = args[args.length - 1];
+          if (typeof code === "string") {
+            const m = code.match(/^return \((.+)\)\(\.\.\.arguments\);?$/);
+            if (m) {
+              const expr = m[1];
+              if (/location\s*\.\s*href|\.referrer/.test(expr)) {
+                return function () { return fHref; };
+              }
+              if (/window\s*\.\s*self\s*!==?\s*window\s*\.\s*top/.test(expr)) {
+                return function () { return false; };
+              }
+            }
+          }
+          return new NativeFunction(...args);
+        }
+        shimmedFunction.prototype = NativeFunction.prototype;
+        window.Function = shimmedFunction;
+      })();
+    </script>
+    <script src="ruffle/ruffle.js"></script>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", () => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        document.getElementById("container").appendChild(player);
+        player.load({
+          url: "basketball_legends.swf",
+          autoplay: "on",
+          unmuteOverlay: "hidden",
+        }).catch((e) => {
+          console.error("Ruffle failed to load the SWF:", e);
+        });
+      });
+    </script>
+  </body>
+</html>

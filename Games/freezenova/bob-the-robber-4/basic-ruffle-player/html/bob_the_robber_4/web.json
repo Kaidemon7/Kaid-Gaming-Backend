@@ -1,0 +1,9 @@
+{
+  "TOTAL_MEMORY": 536870912,
+  "dataUrl": "https://pub-2d868f15a1824cc8a2ec51069ed41c6f.r2.dev/bob_rob_4_web.data.unityweb",
+  "asmCodeUrl": "web.asm.code.unityweb",
+  "asmMemoryUrl": "web.asm.memory.unityweb",
+  "asmFrameworkUrl": "web.asm.framework.unityweb",
+  "splashScreenStyle": "Dark",
+  "backgroundColor": "black"
+}
