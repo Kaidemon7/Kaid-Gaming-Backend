@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>2048 Italian Brainrot</title>
+  <link rel="shortcut icon" href="25051605/favicon.ico">
+  <link rel="apple-touch-icon" href="25051605/meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="25051605/meta/apple-touch-startup-image-640x1096.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+  <link rel="apple-touch-startup-image" href="25051605/meta/apple-touch-startup-image-640x920.png"
+    media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport"
+    content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="25051605/style/main.css" rel="stylesheet" type="text/css">
+  <link rel="preload" href="25051605//image/2.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/4.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/8.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/16.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/32.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/64.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/128.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/256.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/512.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/1024.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/2048.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/4096.jpg" as="image" type="image/jpg" />
+  <link rel="preload" href="25051605/image/8192.jpg" as="image" type="image/jpg" />
+  <style>
+    .audio-button {
+      display: inline-block;
+      /* background: #8f7a66; */
+      border-radius: 3px;
+      padding: 15px 10px;
+      text-decoration: none;
+      color: #f9f6f2;
+      height: 25px;
+      line-height: 25px;
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      cursor: pointer;
+      min-width: 30px;
+      background-size: 30px 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .audio-button.unmute {
+      background-image: url("25051605/image/unmute.png");
+    }
+
+    .audio-button.mute {
+      background-image: url("25051605/image/mute.png");
+    }
+
+    .restart-button {
+      margin-left: 10px;
+    }
+
+    @media (max-width:520px) {
+      h1.title img {
+        height: 60px !important
+      }
+
+      .restart-button {
+        margin-left: 0;
+      }
+
+      .audio-button {
+        /*width: 100%;
+        margin-left: 0;
+        margin-top: 10px;*/
+        padding: 8px;
+      }
+      body{
+        align-items: flex-end;
+      }
+    }
+  </style>
+<script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="heading">
+      <!--<h1 class="title">2048 Italian Brainrot</h1>-->
+      <h1 class="title" style="margin-bottom: 10px;">
+        <img style="height: auto; max-width: 260px;" src="25051605/logo_mini.png" title="2048 Italian Brainrot" alt="logo_mini.png" />
+        <div style="visibility: hidden;width: 0;height: 0;color: transparent;opacity: 0;">2048 Italian Brainrot</div>
+      </h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+        <a class="audio-button unmute">
+        </a>
+        <a class="restart-button">New Game</a>
+      </div>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container"></div>
+    </div>
+  </div>
+  <script>
+
+    var GAME;
+    let audioStatus = true;
+
+    document.querySelector(".audio-button").addEventListener('click', function () {
+      let status = this.classList.contains("mute");
+      if (status) {
+        this.classList.remove("mute");
+        this.classList.add("unmute");
+        audioStatus = true;
+      } else {
+        this.classList.remove("unmute");
+        this.classList.add("mute");
+        audioStatus = false;
+      }
+      if (typeof (GAME) == "object") {
+
+        if (audioStatus) {
+          GAME.playBgAudio();
+        } else {
+          GAME.stopBgAudio();
+        }
+      }
+    })
+
+
+  </script>
+  <script src="25051605/js/bind_polyfill.js"></script>
+  <script src="25051605/js/classlist_polyfill.js"></script>
+  <script src="25051605/js/animframe_polyfill.js"></script>
+  <script src="25051605/js/keyboard_input_manager.js"></script>
+  <script src="25051605/js/html_actuator.js"></script>
+  <script src="25051605/js/grid.js"></script>
+  <script src="25051605/js/tile.js"></script>
+  <script src="25051605/js/local_storage_manager.js"></script>
+  <script src="25051605/js/game_manager.js?v1"></script>
+  <script src="25051605/js/application.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+  <script type="module">
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAI9ltM1bYEuJWV7wjG_8QVLaf-Ivf_6Dg",
+      authDomain: "g2048-italian-brainrot.firebaseapp.com",
+      projectId: "g2048-italian-brainrot",
+      storageBucket: "g2048-italian-brainrot.firebasestorage.app",
+      messagingSenderId: "1090597913353",
+      appId: "1:1090597913353:web:d4c49144df6f0bd3c909d8",
+      measurementId: "G-VH4MQWQT8Y"
+    };
+    if (firebaseConfig) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); }
+
+      window.gtag("config", firebaseConfig.measurementId, {
+        cookie_domain: window.location.hostname,
+        cookie_flags: "SameSite=None;Secure",
+      });
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      //const auth = getAuth(app);
+    }
+    let counter = 1;
+    setInterval(() => {
+      const eventName = `time_counter_${counter}`;
+      firebase.analytics().logEvent(eventName, {
+        counter_value: counter,
+        timestamp: Date.now()
+      });
+      console.log(`Event fired: ${eventName}`);
+      counter++;
+    }, 30000);
+  </script>
+</body>
+
+</html>

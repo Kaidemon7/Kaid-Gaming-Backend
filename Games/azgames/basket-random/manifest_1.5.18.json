@@ -1,0 +1,23 @@
+{
+  "short_name": "Basket Random",
+  "name": "Basket Random",
+  "icons": [
+    {
+      "src": "https://img.gamedistribution.com/bf1268dccb5d43e7970bb3edaa54afc8-512x512.jpeg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "https://img.gamedistribution.com/bf1268dccb5d43e7970bb3edaa54afc8-512x512.jpeg",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/bf1268dccb5d43e7970bb3edaa54afc8/index.html",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/bf1268dccb5d43e7970bb3edaa54afc8/",
+  "theme_color": "#3367D6"
+}
