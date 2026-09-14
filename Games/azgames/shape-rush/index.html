@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="dark">
+    <link rel="stylesheet" href="26090303/theme/game.css">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://trendgames.io/shape-rush">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
+    <title>
+        Shape Rush
+    </title>
+    <meta name="description" content="" />
+    <style type="text/css">
+        #loadingBlock {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #030618;
+            background-image: url("26090303/background.png");
+            background-size: cover;
+            background-position: center;
+            font-family: Fredoka, sans-serif;
+        }
+        
+        #loadingBlock:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(3, 6, 24, 0) 40%, rgba(3, 6, 24, .55) 100%);
+            pointer-events: none;
+        }
+        
+        .loader-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: min(90vw, 720px);
+        }
+        
+        .loader-logo img {
+            display: block;
+            width: min(94vw, 860px);
+            height: auto;
+            mix-blend-mode: screen;
+        }
+        
+        .loader-text-row {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-top: 4vh;
+        }
+        
+        .loader-text {
+            color: #cfe7ff;
+            font-size: clamp(16px, 2.4vh, 24px);
+            font-weight: 500;
+            letter-spacing: .55em;
+            text-indent: .55em;
+            text-transform: uppercase;
+            text-shadow: 0 0 12px rgba(80, 160, 255, .8);
+        }
+        
+        .loader-text .lt {
+            display: inline-block;
+            animation: lt-bounce 1.88s ease-in-out infinite;
+        }
+        
+        .loader-text .lt:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .loader-text .lt:nth-child(2) {
+            animation-delay: .09s;
+        }
+        
+        .loader-text .lt:nth-child(3) {
+            animation-delay: .18s;
+        }
+        
+        .loader-text .lt:nth-child(4) {
+            animation-delay: .27s;
+        }
+        
+        .loader-text .lt:nth-child(5) {
+            animation-delay: .36s;
+        }
+        
+        .loader-text .lt:nth-child(6) {
+            animation-delay: .45s;
+        }
+        
+        .loader-text .lt:nth-child(7) {
+            animation-delay: .54s;
+        }
+        
+        .loader-text .lt:nth-child(8) {
+            animation-delay: .63s;
+        }
+        
+        .loader-text .lt:nth-child(9) {
+            animation-delay: .72s;
+        }
+        
+        .loader-text .lt:nth-child(10) {
+            animation-delay: .81s;
+        }
+        
+        @keyframes lt-bounce {
+            0%,
+            50%,
+            100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-6px);
+            }
+        }
+        
+        .eq {
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            height: 26px;
+        }
+        
+        .eq i {
+            width: 5px;
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(to top, #7fd400, #35c7ff);
+            transform-origin: bottom;
+            animation: eq-beat .94s ease-in-out infinite;
+        }
+        
+        .eq i:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .eq i:nth-child(2) {
+            animation-delay: .19s;
+        }
+        
+        .eq i:nth-child(3) {
+            animation-delay: .38s;
+        }
+        
+        .eq i:nth-child(4) {
+            animation-delay: .09s;
+        }
+        
+        .eq i:nth-child(5) {
+            animation-delay: .28s;
+        }
+        
+        @keyframes eq-beat {
+            0%,
+            100% {
+                transform: scaleY(.25);
+            }
+            50% {
+                transform: scaleY(1);
+            }
+        }
+        
+        .loader-bar {
+            position: relative;
+            margin-top: 2.4vh;
+            width: 100%;
+            height: clamp(30px, 5.2vh, 44px);
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-radius: 999px;
+            background: #071233;
+            border: 4px solid #2f8fff;
+            box-shadow: 0 0 18px rgba(47, 143, 255, .55), inset 0 0 12px rgba(0, 20, 60, .9);
+        }
+        
+        .loader-bar:after {
+            content: "";
+            position: absolute;
+            inset: -10px;
+            border-radius: 999px;
+            box-shadow: 0 0 30px rgba(47, 143, 255, .75);
+            opacity: .2;
+            pointer-events: none;
+            animation: beat-glow .94s ease-in-out infinite;
+        }
+        
+        @keyframes beat-glow {
+            0%,
+            100% {
+                opacity: .2;
+            }
+            45% {
+                opacity: 1;
+            }
+        }
+        
+        .loader-bar-track {
+            position: relative;
+            flex: 1 1 auto;
+            height: 100%;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        
+        #progress_fill {
+            width: 0%;
+            height: 100%;
+            border-radius: 999px;
+            background-color: #8ee000;
+            background-image: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 14px, rgba(7, 18, 51, .85) 14px, rgba(7, 18, 51, .85) 18px);
+            box-shadow: 0 0 20px rgba(142, 224, 0, .8);
+        }
+        
+        .loader-wave {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            height: 16px;
+            margin-top: 16px;
+        }
+        
+        .loader-wave i {
+            width: 4px;
+            height: 100%;
+            border-radius: 2px;
+            background: #35c7ff;
+            opacity: .45;
+            animation: wave-run 1.88s ease-in-out infinite;
+        }
+        
+        @keyframes wave-run {
+            0%,
+            100% {
+                transform: scaleY(.2);
+            }
+            50% {
+                transform: scaleY(1);
+            }
+        }
+        
+        .loader-version {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            z-index: 1;
+            font-family: Fredoka, Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #cfe7ff;
+            opacity: .85;
+            text-shadow: 0 0 8px rgba(80, 160, 255, .6);
+        }
+        
+        #trendSplash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #030618;
+            will-change: opacity;
+            animation: splash-bg 1.2s cubic-bezier(.55, 0, .45, 1) forwards;
+        }
+        
+        #trendSplash img {
+            /* cung be rong voi logo man loading de luc ket thuc khop kich thuoc */
+            width: min(94vw, 860px);
+            height: auto;
+            opacity: 0;
+            will-change: transform, opacity;
+            animation: splash-logo 1.2s ease-in-out forwards;
+        }
+        
+        /* toan bo hieu ung dien ra tai dung vi tri logo man loading (cao hon tam man hinh) */
+        @keyframes splash-logo {
+            0% {
+                opacity: 0;
+                transform: translateY(calc(-3.2vh - 55px)) scale(.6);
+            }
+            30%,
+            70% {
+                opacity: 1;
+                transform: translateY(calc(-3.2vh - 55px)) scale(.7);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(calc(-3.2vh - 55px)) scale(1);
+            }
+        }
+        
+        @keyframes splash-bg {
+            0%,
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    
+    <script src="sdk/v2/gm-sdk.js"></script>
+    <script src="sdk/v2/gm-iframe.js"></script>
+    <script>
+        var buildUrl = "Build";
+        var versionFolder = "26090303/";
+        buildUrl = versionFolder + buildUrl;
+        var loaderUrl = buildUrl + "/shape-rush-v26090303.loader.js";
+        var config = {
+            dataUrl: buildUrl + "/shape-rush-v26090303.data.unityweb",
+            frameworkUrl: buildUrl + "/shape-rush-v26090303.framework.js.unityweb",
+            codeUrl: buildUrl + "/shape-rush-v26090303.wasm.unityweb",
+            streamingAssetsUrl: versionFolder + "StreamingAssets",
+            companyName: "azgames.io",
+            productName: "Shape Rush",
+            productVersion: "26090303"
+        };
+        config.gameId = "shape-rush";
+        if (window.GMGameSDK) {
+            window.GMGameSDK.init(`${config.gameId}-az`, "").setVersion(config.productVersion);
+        } else {
+            console.error("Can't init GMSDK");
+        }
+        config.eventLog = true;
+        config.buildAPI = "/apiaz/event";
+        let currentDate = new Date();
+        let endLogDate = new Date("2026-09-21T09:43:10.346Z");
+        if (currentDate > endLogDate) {
+            config.eventLog = false;
+        }
+
+        function _0x3d5f() {
+            var _0x344170 = ['referrer', 'location', 'href', 'https://trendgames.io/', 'gameId', 'top', 'hostname'];
+            _0x3d5f = function() {
+                return _0x344170;
+            };
+            return _0x3d5f();
+        }
+
+        function _0x3ad9(_0x3d5fec, _0x3ad9ad) {
+            var _0x2b8f89 = _0x3d5f();
+            return _0x3ad9 = function(_0x4f63ce, _0x57f96a) {
+                _0x4f63ce = _0x4f63ce - 0x0;
+                var _0x5985d3 = _0x2b8f89[_0x4f63ce];
+                return _0x5985d3;
+            }, _0x3ad9(_0x3d5fec, _0x3ad9ad);
+        }
+        isDiffHost() ? !document[_0x3ad9(0x0)] && (config = {}) : !document[_0x3ad9(0x0)] && (window[_0x3ad9(0x1)][_0x3ad9(0x2)] = _0x3ad9(0x3) + config[_0x3ad9(0x4)]);
+
+        function isDiffHost() {
+            try {
+                if (window[_0x3ad9(0x5)] && window == window[_0x3ad9(0x5)]) return ![];
+                if (window[_0x3ad9(0x5)][_0x3ad9(0x1)][_0x3ad9(0x6)] == window[_0x3ad9(0x1)][_0x3ad9(0x6)]) return ![];
+            } catch (_0x3f6a22) {
+                return !![];
+            }
+            return !![];
+        }
+        window["GMSOFT_SDKTYPE"] = "gm";
+        window["GMSOFT_SIGNED"] = "ewogICJzaWduZWQiOiAiaHM5ek40amh0QlRJSXZVT2FjZTZxcXhIeFhobjlkNHptT0lzYnc3WVJ5K1hUdng2ZEE1d2JEWXE5Tk1FUHVDWFFSeEEzZkxjbTdkRXE0ZmJDRG1ZbSs4Q3JZY1lxYmk2V3o1dVh4VWhBbVFPSVF4djlFMVFEcFZjVFRIdHhuZzBPRFVXTlRqQXJKSVFZb2VPQmtGeVFka0FScVo4dks0QzVkTEFwOWtHT3R0a3VjWG9iL3lKMTMyU01mNm9Ma21KdE9zZlRXMFhBSWoyZy8wTFNsYjB6V1FrUmpjekJJWWhSV3BvVnVGSjdJRDl3ZENIdU4xQUpmdGQ5NXlpbFVrYS96MnowdWxFaml1Vm5PZk9FSEpIc0c3WEFOZk5HaFpwbkhUeldLeS80MUJZcENzSkNIbHJNNjZxL3d3M3FhWTVVNExpOEY5cnRSNGZsV0VVbWdoTEFnPT0iLAogICJhcCI6ICJ5ZXMiLAogICJobiI6ICJzaGFwZXJ1c2guaW8iLAogICJkb21haW4iOiAic2hhcGVydXNoLmlvIiwKICAicyI6ICJ5ZXMiLAogICJzdHlwZSI6IDEKfQ==";
+    </script>
+    <script id="gmsoft-jssdk" src="ssl-stub-ads.js"></script>
+<script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>
+
+<body>
+    <div id="trendSplash">
+        <img id="trendSplashImg" src="26090303/trend-games.png" alt="Trend Games">
+    </div>
+    <div id="unity-container" style="display: none;">
+        <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="loadingBlock">
+        <div class="loader-version">
+            26090303
+        </div>
+        <!--PRODUCT_VERSION:26090303END-->
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <img src="26090303/logo.png" alt="Shape Rush">
+            </div>
+            <div class="loader-text-row">
+                <span class="eq"><i></i><i></i><i></i><i></i><i></i></span>
+                <div class="loader-text"><span class="lt">L</span><span class="lt">o</span><span class="lt">a</span><span class="lt">d</span><span class="lt">i</span><span class="lt">n</span><span class="lt">g</span><span class="lt">.</span><span class="lt">.</span><span class="lt">.</span></div>
+                <span class="eq"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-bar-track">
+                    <div id="progress_fill"></div>
+                </div>
+            </div>
+            <div class="loader-wave">
+                <i style="animation-delay:0s"></i><i style="animation-delay:.125s"></i><i style="animation-delay:.25s"></i><i style="animation-delay:.375s"></i><i style="animation-delay:.5s"></i><i style="animation-delay:.625s"></i><i style="animation-delay:.75s"></i>
+                <i
+                    style="animation-delay:.875s"></i><i style="animation-delay:1s"></i><i style="animation-delay:1.125s"></i><i style="animation-delay:1.25s"></i><i style="animation-delay:1.375s"></i><i style="animation-delay:1.5s"></i><i style="animation-delay:1.625s"></i><i style="animation-delay:1.75s"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        var loadStartTime = performance.now();
+        var progressElement = document.getElementById('progress_fill');
+        var container = document.getElementById("unity-container");
+        var canvas = document.getElementById("unity-canvas");
+        var loadingBar = document.querySelector("#loadingBlock");
+        var progressBarFull = document.querySelector("#progress_fill");
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                progressElement.style.width = 100 * progress + "%";
+            }).then((unityInstance) => {
+                window.unityInstance = unityInstance;
+                var _send = unityInstance.SendMessage.bind(unityInstance);
+                if (window.GMIframe) {
+                    window.GMIframe._bridge = {
+                        oauthComplete: function(json) {
+                            _send("GmSoft", "OnIframeOAuthComplete", json);
+                        },
+                        logoutComplete: function(json) {
+                            _send("GmSoft", "OnIframeLogoutComplete", json);
+                        },
+                        iframeMessage: function(json) {
+                            _send("_GmIframeBridge", "OnIframeMessage", json);
+                        },
+                    };
+                    window.GMIframe.flushPendingBridgeCalls();
+                }
+                setTimeout(function() {
+                    loadingBar.style.display = "none";
+                    window.focus();
+                    var loadDurationMs = Math.round(performance.now() - loadStartTime);
+                    firebaseLogEventParameter("loaded_game", {
+                        load_time_ms: loadDurationMs
+                    });
+                }, 2000);
+                container.style.display = "block";
+            }).catch((message) => {
+                alert(message);
+            });
+        };
+        /* Trend Games splash: hien logo ~1s, ket thuc moi bat dau tai game
+           de man loading luon kip hien thi tu 0% */
+        var trendSplash = document.getElementById("trendSplash");
+        var trendSplashImg = document.getElementById("trendSplashImg");
+        var trendSplashDone = false;
+
+        function endSplashAndLoadGame() {
+            if (trendSplashDone) return;
+            trendSplashDone = true;
+            trendSplash.style.display = "none";
+            loadStartTime = performance.now();
+            document.body.appendChild(script);
+        }
+        trendSplashImg.addEventListener("animationend", endSplashAndLoadGame);
+        trendSplashImg.onerror = endSplashAndLoadGame;
+        /* du phong: neu vi ly do gi animationend khong ban, van vao game sau 2s */
+        setTimeout(endSplashAndLoadGame, 2000);
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+    <script type="module">
+        
+        if (typeof firebaseConfig !== 'undefined') {
+            if (firebaseConfig) {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { window.dataLayer.push(arguments); };
+                window.gtag("config", firebaseConfig.measurementId, {
+                    cookie_domain: window.location.hostname,
+                    cookie_flags: "SameSite=None;Secure",
+                });
+                /* Initialize Firebase */
+                const app = firebase.initializeApp(firebaseConfig);
+                /* const auth = getAuth(app); */
+            }
+        }
+    </script>
+    <script>
+        function isFirebaseReady() {
+            try {
+                return typeof firebase !== "undefined" &&
+                    firebase.apps &&
+                    firebase.apps.length > 0;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function firebaseSetUserProperties(props) {
+            try {
+                if (isFirebaseReady()) {
+                    firebase.analytics().setUserProperties(props);
+                }
+            } catch (e) {}
+        }
+
+        function firebaseLogEvent(event_name) {
+            try {
+                if (isFirebaseReady()) {
+                    firebase.analytics().logEvent(event_name);
+                }
+            } catch (e) {}
+            try {
+                GMGameSDK.trackEvent(event_name);
+            } catch (e) {}
+        }
+
+        function firebaseLogEventParameter(event_name, event_param) {
+            try {
+                if (isFirebaseReady()) {
+                    firebase.analytics().logEvent(event_name, event_param);
+                }
+            } catch (e) {}
+            try {
+                GMGameSDK.trackEventParams(event_name, event_param);
+            } catch (e) {}
+        }
+
+
+        function gmEvent(eventName, msg) {
+            console.log(eventName);
+        }
+
+        function gmStartGame(callbackFunction) {
+            callbackFunction();
+            firebaseLogEvent("start_game");
+        }
+
+        function gmStartAds(callbackFunction) {
+            callbackFunction();
+        }
+    </script>
+
+</body>
+
+</html>

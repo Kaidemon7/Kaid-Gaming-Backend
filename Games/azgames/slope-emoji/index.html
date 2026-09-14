@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Slope Emoji</title>
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link rel="stylesheet" href="TemplateData/style.css">
+<script data-adstub src="stub-hook.js"></script>
+<script data-adstub2 src="stub-rm.js"></script>
+</head>
+
+<body class="dark">
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="loading-cover" style="display:none;">
+    <div id="unity-loading-bar">
+      <img src="img/loading.png?v=1" id="bg" style="width: 100%; height: 100%;object-fit: cover;">
+      <canvas id="logo-canvas" style="position: absolute; background-color: transparent;">
+        <img src="img/barbg.png" id="barbg">
+        <img src="img/bar1.png" id="bar1">
+        <img src="img/bar2.png" id="bar2">
+        <img src="img/bar3.png" id="bar3">
+        <img src="img/logo.png" id="logo">
+        <img src="img/loading_text.png" id="loading_text">
+      </canvas>
+    </div>
+  </div>
+  <script>
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/241009.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/3ab051f607ac4f31f16b5a3f9811d1fb.data.unityweb",
+      frameworkUrl: buildUrl + "/47f7263744b0772b7f759169fda5d102.js.unityweb",
+      codeUrl: buildUrl + "/574d22d20fa4d2f33c4b32ae1c7467a3.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "GM",
+      productName: "Slope Emoji",
+      productVersion: "1.0",
+    };
+
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    }
+
+    loadingCover.style.display = "";
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        drawCanvas(progress);
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        setTimeout(() => {
+          loadingCover.style.display = "none";
+          logo_loaded = true;
+        }, 2000);
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+
+    var logo_loaded = false;
+    var logo_loading_percent = 0;
+
+    window.onresize = () => {
+      drawCanvas(logo_loading_percent);
+    }
+    window.onload = () => {
+      drawCanvas(logo_loading_percent);
+    }
+
+    var logo_canvas = document.getElementById("logo-canvas");
+    function drawCanvas(_percent = 0) {
+      if (logo_loaded) {
+        return;
+      }
+      resizeLogoCanvas();
+      var ctx = logo_canvas.getContext("2d");
+      var barbg = document.getElementById("barbg");
+      var bar1 = document.getElementById("bar1");
+      var bar2 = document.getElementById("bar2");
+      var bar3 = document.getElementById("bar3");
+      var logo = document.getElementById("logo");
+      var loading_text = document.getElementById("loading_text");
+      var _sw = logo_canvas.width / 1920;
+      var _sh = logo_canvas.height / 1080;
+
+      if (_percent > 1) {
+        _percent = 1;
+      }
+      ctx.drawImage(barbg, 298 * _sw, 980 * _sh, 1324 * _sw, 73 * _sh);
+      ctx.drawImage(loading_text, 823 * _sw, 900 * _sh, 273 * _sw, 63 * _sh);
+      if (1314 * _percent > 65) {
+        ctx.drawImage(bar3, 340 * _sw, 986 * _sh, 1240 * _sw * _percent, 61 * _sh);
+      }
+      ctx.drawImage(bar1, 305 * _sw, 986 * _sh, 38 * _sw, 61 * _sh);
+
+      let _bar2x = 1277 * _percent;
+      let xOffset;
+
+      if (_bar2x > 996) {
+        xOffset = 300 + _bar2x;
+      } else if (_bar2x > 890) {
+        xOffset = 310 + _bar2x;
+      } else if (_bar2x > 500) {
+        xOffset = 315 + _bar2x;
+      } else if (_bar2x > 330) {
+        xOffset = 320 + _bar2x;
+      } else if (_bar2x > 63) {
+        xOffset = 330 + _bar2x;
+      } else {
+        xOffset = 305 + 32;
+      }
+
+      ctx.drawImage(bar2, xOffset * _sw, 986 * _sh, (_bar2x > 996 ? 38 : 34) * _sw, 61 * _sh);
+      ctx.drawImage(logo, 740 * _sw, 35 * _sh, 409 * _sw, 222 * _sh);
+    }
+    function resizeLogoCanvas() {
+      var _w = window.innerWidth;
+      var _h = window.innerHeight;
+      var _nw = _h * 16 / 9;
+      if (_nw <= _w) {
+        logo_canvas.width = _nw;
+        logo_canvas.height = _h;
+      }
+      else {
+        logo_canvas.width = _w;
+        logo_canvas.height = _w * 9 / 16;
+      }
+
+    }
+
+
+    document.body.appendChild(script);
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyB1VmHPype0hsrvTNyTixKYbe_Uv8XOJ_8",
+      authDomain: "slope-emoji.firebaseapp.com",
+      projectId: "slope-emoji",
+      storageBucket: "slope-emoji.appspot.com",
+      messagingSenderId: "942847429597",
+      appId: "1:942847429597:web:242444416dd9ce771fc434",
+      measurementId: "G-Y1QNZP691W"
+    };
+window.dataLayer = window.dataLayer || [];
+window.gtag = function(){dataLayer.push(arguments);}
+
+window.gtag("config", firebaseConfig.measurementId, {
+    cookie_domain: location.hostname,
+    cookie_flags: "SameSite=None;Secure",
+});
+    // Initialize Firebase
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+  </script>
+</body>
+
+</html>

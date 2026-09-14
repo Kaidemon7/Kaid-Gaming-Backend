@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Slope Emoji 2</title>
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <style>
+    @font-face { font-family: BRLNSDB; src: url('BRLNSDB.TTF'); } 
+    
+  </style>
+</head>
+
+<body class="dark">
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+  </div>
+  <div id="loading-cover" style="display:none;">
+    <div id="unity-loading-bar", style="overflow: hidden;">
+      <img src="loading.png?v=1" id="bg" style="width: 100%; height: 100%;">
+      <canvas id="logo-canvas" style="position: absolute; background-color: transparent;">
+        <img src="loading_fill.png" id="ld_fill">
+      </canvas>
+    </div>
+  </div>
+  </div>
+  <script>
+    const container = document.querySelector("#unity-container");
+    const canvas = document.querySelector("#unity-canvas");
+    const loadingCover = document.querySelector("#loading-cover");
+    const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+
+
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/240828.loader.js";
+    const config = {
+      dataUrl: buildUrl + "/d619e8c1899ece20e2d8581abc9089dd.data.unityweb",
+      frameworkUrl: buildUrl + "/7ac0b8607d7c96fb6d4564fcfc978fc7.js.unityweb",
+      codeUrl: buildUrl + "/ca9a7cdd0e9a7eba15803263636552c7.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "GoodMedia",
+      productName: "Slope Emoji 2",
+      productVersion: "2.2",
+    };
+
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+    }
+
+    loadingCover.style.display = "";
+
+    var logo_loaded = false;
+    var logo_loading_percent = 0;
+
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      logo_loading_percent = 0;
+      drawCanvas(logo_loading_percent);
+      createUnityInstance(canvas, config, (progress) => {
+		//console.log(progress);
+        logo_loading_percent = progress * 3;
+        drawCanvas(logo_loading_percent);
+      }).then((unityInstance) => {
+        window.unityInstance = unityInstance;
+        setTimeout(() => {
+          loadingCover.style.display = "none";
+          logo_loaded = true;
+        }, 2000);
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+
+    // setTimeout(() => {
+    //     var progress = 0.5;
+    //     logo_loading_percent = progress;
+    //     drawCanvas(progress);
+    //   }, 1000);
+
+    // var progress = 0;
+    // setInterval(() => {
+    //   logo_loading_percent = progress;
+    //   drawCanvas(progress);
+    //   progress += 0.01;
+    // }, 30);
+
+
+   
+
+    window.onresize = () => {
+      // console.log('onresize');
+      drawCanvas(logo_loading_percent);
+    }
+    window.onload = () => {
+      // console.log('onload');
+      drawCanvas(logo_loading_percent);
+    }
+
+    var logo_canvas = document.getElementById("logo-canvas");
+    function drawCanvas(_percent = 0) {
+      if (logo_loaded) {
+        return;
+      }
+      resizeLogoCanvas();
+      var ctx = logo_canvas.getContext("2d");
+      var ld_fill = document.getElementById("ld_fill");
+      var _sw = logo_canvas.width / 1920;
+      var _sh = logo_canvas.height / 1080;
+
+      if (_percent > 1) {
+        _percent = 1;
+      }
+
+      ctx.drawImage(ld_fill, 392 * _sw, logo_canvas.height - (172 * _sh), 1135 * _sw, 54 * _sh);
+
+      //fill
+      var _fill_w = 1144;
+      var _border_r = 36;
+      var _fw = _fill_w * (1 - _percent);
+      var _br = _border_r * _sw;
+      var _fwm = _fill_w - _border_r;
+      if (_fw > _fwm) {
+        _fw = _fwm;
+      }
+      if (_fw > 0 && _fw < _border_r) {
+        _fw = _border_r;
+      }
+      var _fx = 388 + _fill_w - _fw;
+      ctx.fillStyle = "#16163d"
+      ctx.beginPath();
+      ctx.roundRect(_fx * _sw, logo_canvas.height - (176 * _sh), _fw * _sw, 62 * _sh, [0, _br, _br, 0]);
+      ctx.fill();
+
+      //border
+      ctx.strokeStyle = "#16163d";
+      ctx.lineWidth = 8 * _sw;
+      ctx.beginPath();
+      ctx.roundRect(388 * _sw, logo_canvas.height - (176 * _sh), 1144 * _sw, 62 * _sh, _br);
+      ctx.stroke();
+	  
+	    //text
+      //PERCENT
+      var _fontSize = 48 * _sw;
+      ctx.font = _fontSize.toString() + "px BRLNSDB";
+      ctx.fillStyle = "#ffffff";
+      ctx.textAligh = "center";
+      ctx.lineWidth = 6;
+      ctx.strokeStyle = '#16163d';
+      let _txt = (Math.floor(_percent * 100)).toString() + '%';
+      let _tx = logo_canvas.width * 0.5 - ctx.measureText(_txt).width * 0.5 * _sw - 20 * _sw;
+      let _ty = logo_canvas.height * 0.5 + 410 * _sh;
+      ctx.strokeText(_txt, _tx, _ty);
+	    ctx.fillText(_txt, _tx, _ty);
+    }
+    
+    function resizeLogoCanvas() {
+      var _w = window.innerWidth;
+      var _h = window.innerHeight;
+      var _nw = _h * 16 / 9;
+      // console.log(`${_w} ${_h} ${_nw}`);
+      if (_nw <= _w) {
+        logo_canvas.width = _nw;
+        logo_canvas.height = _h;
+      }
+      else {
+        logo_canvas.width = _w;
+        logo_canvas.height = _w * 9 / 16;
+      }
+
+    }
+
+
+    document.body.appendChild(script);
+  </script>
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics-compat.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+  import { getAuth  } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBE5zPKIvFW-ozlBznHqmfMrpwBcW27A7A",
+  authDomain: "slope-emoji-2.firebaseapp.com",
+  projectId: "slope-emoji-2",
+  storageBucket: "slope-emoji-2.appspot.com",
+  messagingSenderId: "774928408583",
+  appId: "1:774928408583:web:ecd46f4e376e36c8064aa2",
+  measurementId: "G-R7ZKT5KH7S"
+};
+	  window.dataLayer = window.dataLayer || [];
+		window.gtag = function(){window.dataLayer.push(arguments);}
+
+		window.gtag("config", firebaseConfig.measurementId, {
+			cookie_domain: window.location.hostname,
+			cookie_flags: "SameSite=None;Secure",
+		});
+  // Initialize Firebase
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+</script>
+</body>
+
+</html>
