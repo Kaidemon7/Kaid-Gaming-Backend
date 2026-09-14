@@ -1,0 +1,23 @@
+{
+  "short_name": "Moto X3M Bike Race Game",
+  "name": "Moto X3M Bike Race Game",
+  "icons": [
+    {
+      "src": "https://img.gamedistribution.com/5b0abd4c0faa4f5eb190a9a16d5a1b4c-512x512.jpeg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "https://img.gamedistribution.com/5b0abd4c0faa4f5eb190a9a16d5a1b4c-512x512.jpeg",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/5b0abd4c0faa4f5eb190a9a16d5a1b4c/index.html",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/5b0abd4c0faa4f5eb190a9a16d5a1b4c/",
+  "theme_color": "#3367D6"
+}
