@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Changes made to bug 1670675">
+<meta property="og:url" content="https://bugzilla.mozilla.org/show_bug.cgi?id=1670675">
+<meta property="og:description"
+      content="RESOLVED (valentin.gosu) in Core - DOM: Networking. Last updated 2020-10-22.">
+<meta name="twitter:label1" value="Type">
+<meta name="twitter:data1" value="defect">
+<meta name="twitter:label2" value="Priority">
+<meta name="twitter:data2" value="P3">
+
+    
+
+    <meta name="viewport"
+          content="width=1024">
+    <meta name="color-scheme" content="dark light">
+    <meta name="generator" content="Bugzilla 20260908.1">
+    <meta name="bugzilla-global" content="dummy"
+        id="bugzilla-global" data-bugzilla="{&quot;api_token&quot;:&quot;&quot;,&quot;config&quot;:{&quot;basepath&quot;:&quot;\/&quot;,&quot;cookie_consent_enabled&quot;:true,&quot;cookie_consent_required&quot;:false,&quot;essential_cookies&quot;:[&quot;bugzilla&quot;,&quot;Bugzilla_login&quot;,&quot;Bugzilla_logincookie&quot;,&quot;Bugzilla_login_request_cookie&quot;,&quot;github_state&quot;,&quot;github_token&quot;,&quot;mfa_verification_token&quot;,&quot;moz-consent-pref&quot;,&quot;sudo&quot;],&quot;urlbase&quot;:&quot;https:\/\/bugzilla.mozilla.org\/&quot;},&quot;constant&quot;:{&quot;CGI_URI_LIMIT&quot;:8000,&quot;COMMENT_COLS&quot;:80},&quot;param&quot;:{&quot;allow_attachment_display&quot;:true,&quot;maxattachmentsize&quot;:&quot;10240&quot;,&quot;maxusermatches&quot;:&quot;50&quot;,&quot;splinter_base&quot;:&quot;\/page.cgi?id=splinter.html&amp;ignore=\/&quot;,&quot;use_markdown&quot;:true},&quot;string&quot;:{&quot;bug&quot;:&quot;bug&quot;,&quot;bug_type_required&quot;:&quot;You must select a Type for this bug&quot;,&quot;component_required&quot;:&quot;You must select a Component for this bug&quot;,&quot;description_required&quot;:&quot;You must enter a Description for this bug&quot;,&quot;short_desc_required&quot;:&quot;You must enter a Summary for this bug&quot;,&quot;version_required&quot;:&quot;You must select a Version for this bug&quot;},&quot;user&quot;:{&quot;cookie_consent&quot;:&quot;&quot;,&quot;is_new&quot;:true,&quot;login&quot;:&quot;&quot;}}">
+    <meta name="google-site-verification" content="JYXIuR9cAlV7fLmglSrc_4UaJS6Wzh5Mdxiorqu5AQc" />
+    <title>Changes made to bug 1670675</title>
+
+<link rel="Top" href="/">
+
+  
+
+
+  
+    <link rel="Show" title="Dependency Tree"
+          href="/showdependencytree.cgi?id=1670675&amp;hide_resolved=1">
+    <link rel="Show" title="Dependency Graph"
+          href="/showdependencygraph.cgi?id=1670675">
+    <link rel="Show" title="Bug Activity"
+          href="/show_activity.cgi?id=1670675">
+
+<link href="/static/v20260908.1/skins/standard/global.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/js/jquery/ui/jquery-ui-min.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/js/jquery/ui/jquery-ui-structure-min.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/js/jquery/ui/jquery-ui-theme-min.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/skins/lib/prism.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/skins/standard/consent.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/extensions/Review/web/styles/badge.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/jquery/jquery-min.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/jquery/ui/jquery-ui-min.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/jquery/plugins/devbridgeAutocomplete/devbridgeAutocomplete-min.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/global.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/util.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/widgets.js"></script>
+
+      <script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH">BUGZILLA.value_descs = JSON.parse('{\"bug_status\":{},\"resolution\":{\"\":\"---\"}}');
+
+      </script>
+<script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/lib/prism.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/consent.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/cookie-helper.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/js/lib/md5.min.js"></script><script nonce="QdPzynEjUGQvbIhxCw3uhzOK1UBMEWcjO30Oa1ABocg3pZrH" src="/static/v20260908.1/extensions/Review/web/js/badge.js"></script>
+
+    
+
+    
+    <link href="/static/v20260908.1/skins/lib/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/v20260908.1/skins/lib/fontawesome-brands.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/v20260908.1/skins/lib/fontawesome-solid.min.css" rel="stylesheet" type="text/css">
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla@Mozilla" href="/search_plugin.cgi"><link rel="shortcut icon" href="/extensions/BMO/web/images/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/extensions/BMO/web/images/favicon.svg">
+<link rel="canonical" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1670675">
+<link rel="shorturl" href="https://bugzilla.mozilla.org/1670675"><meta name="robots" content="noarchive">
+  </head>
+
+
+
+  <body
+        class="bugzilla-mozilla-org
+               skin-standard">
+
+
+
+<div id="wrapper">
+
+<header id="header" role="banner" aria-label="Global Header">
+  <div class="inner" role="none">
+    <button type="button" class="iconic ghost" id="open-menu-drawer" aria-label="Open Site Menu">
+      <span class="icon" aria-hidden="true" data-icon="menu"></span>
+    </button><div id="header-external-links" class="dropdown" role="none">
+  <button type="button" id="header-external-menu-button" class="dropdown-button minor"
+          aria-label="Show Mozilla Menu" aria-expanded="false" aria-haspopup="true"
+          aria-controls="header-external-menu">
+    <img src="/static/v20260908.1/extensions/BMO/web/images/moz-fav-one-color-white-rgb.svg"
+         width="32" height="32" alt="">
+  </button>
+  <ul class="dropdown-content right" id="header-external-menu" role="menu" aria-label="Mozilla Menu"
+      style="display:none;">
+    <li role="none">
+      <a href="https://www.mozilla.org/" role="menuitem">
+        <span class="label" role="none">Mozilla Home</span>
+      </a>
+    </li>
+    <li role="separator"></li>
+    <li role="none">
+      <a href="https://www.mozilla.org/privacy/websites/" role="menuitem">
+        <span class="label" role="none">Privacy</span>
+      </a>
+    </li>
+    <li role="none">
+      <a href="https://www.mozilla.org/privacy/websites/#cookies" role="menuitem">
+        <span class="label" role="none">Cookies</span>
+      </a>
+    </li>
+    <li role="none">
+      <a href="https://www.mozilla.org/about/legal/" role="menuitem">
+        <span class="label" role="none">Legal</span>
+      </a>
+    </li>
+  </ul>
+</div>
+    <h1 id="header-title" class="title" role="none">
+      <a class="header-button" href="https://bugzilla.mozilla.org/home" title="Go to home page">
+        <span aria-label="Go to Bugzilla Home Page">Bugzilla</span>
+      </a>
+    </h1>
+    <form id="header-search" class="quicksearch" action="/buglist.cgi"
+          data-no-csrf role="search" aria-label="Search Bugs">
+      <button type="button" class="iconic ghost" id="show-searchbox"
+              aria-label="Search Bugs">
+        <span class="icon" aria-hidden="true" data-icon="search"></span>
+      </button>
+      <div class="searchbox-outer dropdown" role="combobox" aria-label="Quick Search"
+           aria-haspopup="listbox" aria-owns="header-search-dropdown" aria-expanded="false">
+        <span class="icon" aria-hidden="true" data-icon="search"></span>
+        <input id="quicksearch_top" class="dropdown-button" name="quicksearch" autocomplete="off"
+               value="" accesskey="s"
+               placeholder="Search Bugs"
+               title="Enter a bug number or some search terms"
+               role="searchbox" aria-controls="header-search-dropdown" aria-label="Search Terms"><div id="header-search-dropdown" class="dropdown-content dropdown-panel right" role="listbox"
+     style="display: none;">
+  <div id="header-search-dropdown-wrapper" role="none">
+    <section id="header-search-dropdown-help" role="group" aria-label="Help">
+      <footer role="none">
+        <a href="/page.cgi?id=quicksearch.html">Quick Search Tips</a>
+        <a href="/query.cgi?format=advanced">Advanced Search</a>
+      </footer>
+    </section>
+  </div>
+</div>
+      </div>
+    </form>
+    <nav id="header-nav" role="menubar" aria-label="Site Links">
+      <ul class="links" role="none"><li role="none">
+    <a class="header-button" href="/describecomponents.cgi"
+       title="Browse bugs by component" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="category"></span>
+      <span class="label" role="none">Browse</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/query.cgi?format=advanced"
+       title="Search bugs using various criteria" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="pageview"></span>
+      <span class="label" role="none">Advanced Search</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/enter_bug.cgi"
+       title="File a new bug" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="add_box"></span>
+      <span class="label" role="none">New Bug</span>
+    </a>
+  </li>
+      </ul>
+      <div class="dropdown" role="none">
+        <button type="button" id="header-tools-menu-button"
+                class="header-button dropdown-button minor" title="More tools…"
+                role="menuitem" aria-label="Show More Tools Menu" aria-expanded="false"
+                aria-haspopup="true" aria-controls="header-tools-menu">
+          <span class="icon" aria-hidden="true" data-icon="more_horiz"></span>
+        </button>
+        <ul class="dropdown-content left" id="header-tools-menu" role="menu"
+            aria-label="More Tools Menu" style="display:none;"><li role="none">
+    <a href="/report.cgi" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="analytics"></span>
+      <span class="label" role="none">Reports</span>
+    </a>
+  </li>
+    <li role="separator"></li>
+    <li role="none">
+      <a href="https://bmo.readthedocs.io/en/latest/" target="_blank" role="menuitem">
+        <span class="icon" aria-hidden="true" data-icon="help"></span>
+        <span class="label" role="none">Documentation</span>
+      </a>
+    </li>
+        </ul>
+      </div>
+    </nav>
+      <ul id="header-login" class="links" role="none"><li id="mini_login_container_top" role="none">
+  <a id="login_link_top" href="/index.cgi?GoAheadAndLogIn=1"
+     class='show_mini_login_form header-button' data-qs-suffix="_top"
+     role="button">
+    <span class="icon" aria-hidden="true" data-icon="login"></span>
+    <span class="label" role="none">Log In</span>
+  </a>
+
+  <div id="mini_login_top" class="mini-popup mini_login bz_default_hidden">
+
+<form method="post" action="/github.cgi">
+    <input type="hidden" name="github_token" value="gtKjPGCw6KPj9eFFNZHVazMAJ3ZLCWUfdgB8k3AvTYYwXGyRP02Is43UEipiKOQKzWAVVQSHG7PEllALYnTeTYEHZ1MYvnQjhDMWqClMkSjW7eEwKfqEHcrrh7VrEs7nfuFIspMSTeUjQvZEcHwUEVNpaM3qR2aclaPvqDyvEiOia7p0nG57TCWaQyosFdQ4BweOOgUrWMmeGnKAZvZDvK6u0TPEO6NIa4fBSC81VaA9OCMnHWGlP59NVTABGbc9">
+    <input type="hidden" name="target_uri" value="https://bugzilla.mozilla.org/show_activity.cgi">
+    <button type="submit">
+      <i class="fab fa-github"></i> Log In with GitHub
+    </button>
+  </form>
+
+    <div class="method-separator">or</div>
+
+  <form action="/show_activity.cgi?id=1670675" method="POST"
+        data-qs-suffix="_top">
+
+    <input id="Bugzilla_login_top"
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           placeholder="Email"
+           aria-label="Email"
+           type="email"
+           required
+    >
+    <input class="bz_password"
+           id="Bugzilla_password_top"
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+           placeholder="Password"
+           aria-label="Password"
+           required
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text"
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+    >
+      <span class="remember-outer">
+        <input type="checkbox" id="Bugzilla_remember_top"
+               name="Bugzilla_remember" value="on" class="bz_remember"
+               checked>
+        <label for="Bugzilla_remember_top">Remember me</label>
+      </span>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="1789094992-_XVXwEsd_RhDr0JqSXOCcOjDkumEJEJ6Tf_fMjiIa5U">
+    <input type="submit" name="GoAheadAndLogIn" value="Log In" id="log_in_top"
+           class="check_mini_login_fields" data-qs-suffix="_top">
+    <a href="#" id="hide_mini_login_top" aria-label="Close"
+       class="close-button hide_mini_login_form" data-qs-suffix="_top">
+      <span class="icon" aria-hidden="true"></span>
+    </a>
+  </form>
+  <div class="footer">
+      <a href="/createaccount.cgi">Create an Account</a>
+    &middot;
+    <a id="forgot_link_top" href="/index.cgi?GoAheadAndLogIn=1#forgot"
+       class='show_forgot_form'
+       data-qs-suffix="_top">Forgot Password</a>
+  </div>
+  </div>
+
+  <div id="forgot_form_top" class="mini-popup mini_forgot bz_default_hidden">
+  <form action="/token.cgi" method="post">
+    <input type="email" name="loginname" size="20" placeholder="Email" aria-label="Email" required>
+    <input id="forgot_button_top" value="Reset Password"
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1789094992-tpNZGNo8yPF-PshiHPLH2KVVNvMUib8g7hO7eqObTxo">
+    <a href="#" class="close-button hide_forgot_form" aria-label="Close" data-qs-suffix="_top">
+      <span class="icon" aria-hidden="true"></span>
+    </a>
+  </form>
+  </div>
+</li>
+      </ul>
+  </div>
+  <dialog id="menu-drawer" inert aria-label="Site Menu">
+    <div class="drawer-inner" role="none">
+      <div class="header" role="none">
+        <button type="button" class="iconic ghost" id="close-menu-drawer"
+                aria-label="Close Site Menu">
+          <span class="icon" aria-hidden="true" data-icon="close"></span>
+        </button>
+      </div>
+      <ul role="menu" aria-label="Site Links"><li role="none">
+    <a class="header-button" href="/describecomponents.cgi"
+       title="Browse bugs by component" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="category"></span>
+      <span class="label" role="none">Browse</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/query.cgi?format=advanced"
+       title="Search bugs using various criteria" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="pageview"></span>
+      <span class="label" role="none">Advanced Search</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/enter_bug.cgi"
+       title="File a new bug" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="add_box"></span>
+      <span class="label" role="none">New Bug</span>
+    </a>
+  </li><li role="none">
+    <a href="/report.cgi" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="analytics"></span>
+      <span class="label" role="none">Reports</span>
+    </a>
+  </li>
+    <li role="separator"></li>
+    <li role="none">
+      <a href="https://bmo.readthedocs.io/en/latest/" target="_blank" role="menuitem">
+        <span class="icon" aria-hidden="true" data-icon="help"></span>
+        <span class="label" role="none">Documentation</span>
+      </a>
+    </li>
+      </ul>
+    </div>
+  </dialog>
+</header> 
+
+
+<main id="bugzilla-body" tabindex="-1">
+
+<aside id="message-container" role="complementary">
+  <noscript>
+    <div class="noscript">
+      <div class="inner">
+        <p>Please enable JavaScript in your browser to use all the features on this site.</p>
+      </div>
+    </div>
+  </noscript>
+  
+</aside>
+
+<div id="main-inner">
+
+<p><a class="bz_bug_link
+          bz_status_RESOLVED bz_closed"
+   title="RESOLVED FIXED - Brotli compression does not work (at least on http://localhost/ ?)"
+   href="/show_bug.cgi?id=1670675">Back to bug 1670675</a>
+</p>
+<table class="standard">
+    <tr>
+      <th>Who</th>
+      <th>When</th>
+      <th>What</th>
+      <th>Removed</th>
+      <th>Added</th>
+    </tr>
+
+      <tr>
+        <td rowspan="1" valign="top">valentin.gosu
+        </td>
+        <td rowspan="1" valign="top">2020-10-12 11:01:56 PDT
+        </td>
+            <td>
+                CC
+            </td><td>
+  </td><td>valentin.gosu
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="2" valign="top">phab-bot
+        </td>
+        <td rowspan="2" valign="top">2020-10-19 02:39:35 PDT
+        </td>
+            <td>
+                Status
+            </td><td>NEW
+  </td><td>ASSIGNED
+  </td></tr><tr>
+            <td>
+                Assignee
+            </td><td>nobody
+  </td><td>valentin.gosu
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="3" valign="top">valentin.gosu
+        </td>
+        <td rowspan="3" valign="top">2020-10-19 02:41:09 PDT
+        </td>
+            <td>
+                Whiteboard
+            </td><td>
+  </td><td>[necko-triaged]
+  </td></tr><tr>
+            <td>
+                Priority
+            </td><td>--
+  </td><td>P3
+  </td></tr><tr>
+            <td>
+                Severity
+            </td><td>--
+  </td><td>S4
+  </td>
+      </tr>
+      <tr>
+        <td rowspan="6" valign="top">apavel
+        </td>
+        <td rowspan="6" valign="top">2020-10-22 08:02:58 PDT
+        </td>
+            <td>
+                Resolution
+            </td><td>---
+  </td><td>FIXED
+  </td></tr><tr>
+            <td>
+                Target Milestone
+            </td><td>---
+  </td><td>84 Branch
+  </td></tr><tr>
+            <td>
+                Status
+            </td><td>ASSIGNED
+  </td><td>RESOLVED
+  </td></tr><tr>
+            <td>
+                Closed
+            </td><td>
+  </td><td>2020-10-22 15:02:58
+  </td></tr><tr>
+            <td>
+                status-firefox84
+            </td><td>---
+  </td><td>fixed
+  </td></tr><tr>
+            <td><a class="bz_bug_link
+          bz_status_RESOLVED bz_closed"
+   title="RESOLVED FIXED - Brotli compression does not work (at least on http://localhost/ ?)"
+   href="/show_bug.cgi?id=1670675#c5">Comment 5</a> Tag
+            </td><td>
+  </td><td>bugherder
+  </td>
+      </tr>
+  </table>
+
+  <p><a class="bz_bug_link
+          bz_status_RESOLVED bz_closed"
+   title="RESOLVED FIXED - Brotli compression does not work (at least on http://localhost/ ?)"
+   href="/show_bug.cgi?id=1670675">Back to bug 1670675</a>
+  </p>
+</div> 
+</main> 
+</div> 
+
+
+</body>
+</html>
