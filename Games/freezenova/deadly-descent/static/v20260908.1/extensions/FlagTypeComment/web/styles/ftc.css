@@ -1,0 +1,114 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * This Source Code Form is "Incompatible With Secondary Licenses", as
+ * defined by the Mozilla Public License, v. 2.0. */
+
+#approval-request-fieldset-wrapper {
+  margin: 0 0 0 16px;
+}
+
+#approval-request-fieldset-wrapper:empty {
+  display: none;
+}
+
+section.approval-request {
+  overflow: hidden;
+  margin: 0 0 8px;
+  border: 1px solid var(--primary-region-border-color);
+  border-radius: var(--primary-region-border-radius);
+  padding: 0 8px 8px;
+  background-color: var(--primary-region-background-color);
+  box-shadow: var(--primary-region-box-shadow);
+}
+
+section.approval-request:last-child {
+  margin: 0;
+}
+
+section.approval-request > header {
+  display: flex;
+  align-items: center;
+  margin: 0 -8px 8px;
+  border-bottom: 1px solid var(--primary-region-border-color);
+  padding: 4px;
+  background-color: var(--primary-region-header-background-color);
+}
+
+section.approval-request h3 {
+  flex: auto;
+  margin: 0;
+  padding: 4px 8px;
+  font-size: var(--font-size-x-large);
+}
+
+section.approval-request button.dismiss {
+  flex: none;
+  border: 0;
+  border-radius: 0;
+  padding: 4px;
+  color: var(--control-foreground-color);
+  background: none transparent;
+}
+
+section.approval-request button.dismiss .icon {
+  display: block;
+  font-size: var(--icon-size-small);
+  line-height: 100%;
+  font-family: var(--icon-font-family);
+  font-style: normal;
+}
+
+section.approval-request button.dismiss .icon::before {
+  content: "\E5C9";
+}
+
+section.approval-request table {
+  width: 100%;
+}
+
+section.approval-request th {
+  padding: 12px 4px;
+  width: 20em;
+  font-weight: normal;
+  text-align: right;
+  vertical-align: top;
+  white-space: normal !important;
+}
+
+section.approval-request td {
+  padding: 4px;
+  vertical-align: middle;
+}
+
+section.approval-request label {
+  font-weight: normal !important;
+}
+
+section.approval-request input[type="text"] {
+  width: 10em;
+}
+
+section.approval-request input.long[type="text"] {
+  width: 100%;
+}
+
+section.approval-request textarea {
+  width: 100%;
+  min-height: 6em;
+}
+
+section.approval-request div {
+  padding: 0 !important;
+}
+
+section.approval-request > footer {
+  text-align: right;
+}
+
+@media screen and (max-width: 1023px) {
+  #approval-request-fieldset-wrapper {
+    margin: 16px 0 0 0;
+  }
+}

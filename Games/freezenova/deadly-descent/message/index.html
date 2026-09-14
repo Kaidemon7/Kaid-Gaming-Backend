@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Gamedistribution.com SDK Messsage Frame</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.addEventListener(
+        "message",
+        (event) => {
+          if (event.origin === "https://static.gamedistribution.com") return;
+
+          const msg_ = {
+            gameId: event.data.gameId,
+            event_name: event.data.event_name,
+            token: event.data.token,
+            timestamp: event.data.timestamp,
+          };
+           window.top.postMessage(event.data, "*");
+
+        //   window.top.postMessage(event.data, event.data.target);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

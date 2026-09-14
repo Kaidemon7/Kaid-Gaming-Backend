@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="refresh"
+        content="0;URL='https://bugzilla.mozilla.org/home'">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bugzilla Main Page">
+<meta property="og:image" content="https://bugzilla.mozilla.org/extensions/OpenGraph/web/moz-social-bw-rgb-1200x1200.png">
+
+    
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="generator" content="Bugzilla 20260908.1">
+    <meta name="bugzilla-global" content="dummy"
+        id="bugzilla-global" data-bugzilla="{&quot;api_token&quot;:&quot;&quot;,&quot;config&quot;:{&quot;basepath&quot;:&quot;\/&quot;,&quot;cookie_consent_enabled&quot;:true,&quot;cookie_consent_required&quot;:false,&quot;essential_cookies&quot;:[&quot;bugzilla&quot;,&quot;Bugzilla_login&quot;,&quot;Bugzilla_logincookie&quot;,&quot;Bugzilla_login_request_cookie&quot;,&quot;github_state&quot;,&quot;github_token&quot;,&quot;mfa_verification_token&quot;,&quot;moz-consent-pref&quot;,&quot;sudo&quot;],&quot;urlbase&quot;:&quot;https:\/\/bugzilla.mozilla.org\/&quot;},&quot;constant&quot;:{&quot;CGI_URI_LIMIT&quot;:8000,&quot;COMMENT_COLS&quot;:80},&quot;param&quot;:{&quot;allow_attachment_display&quot;:true,&quot;maxattachmentsize&quot;:&quot;10240&quot;,&quot;maxusermatches&quot;:&quot;50&quot;,&quot;splinter_base&quot;:&quot;\/page.cgi?id=splinter.html&amp;ignore=\/&quot;,&quot;use_markdown&quot;:true},&quot;string&quot;:{&quot;bug&quot;:&quot;bug&quot;,&quot;bug_type_required&quot;:&quot;You must select a Type for this bug&quot;,&quot;component_required&quot;:&quot;You must select a Component for this bug&quot;,&quot;description_required&quot;:&quot;You must enter a Description for this bug&quot;,&quot;short_desc_required&quot;:&quot;You must enter a Summary for this bug&quot;,&quot;version_required&quot;:&quot;You must select a Version for this bug&quot;},&quot;user&quot;:{&quot;cookie_consent&quot;:&quot;&quot;,&quot;is_new&quot;:true,&quot;login&quot;:&quot;&quot;}}">
+    <meta name="google-site-verification" content="JYXIuR9cAlV7fLmglSrc_4UaJS6Wzh5Mdxiorqu5AQc" />
+    <title>Bugzilla Main Page</title>
+
+<link rel="Top" href="/">
+
+<link href="/static/v20260908.1/skins/standard/global.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/skins/standard/index.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/js/jquery/ui/jquery-ui-min.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/js/jquery/ui/jquery-ui-structure-min.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/js/jquery/ui/jquery-ui-theme-min.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/skins/lib/prism.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/skins/standard/consent.css" rel="stylesheet" type="text/css"><link href="/static/v20260908.1/extensions/Review/web/styles/badge.css" rel="stylesheet" type="text/css">
+
+
+
+    
+<script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/jquery/jquery-min.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/jquery/ui/jquery-ui-min.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/jquery/plugins/devbridgeAutocomplete/devbridgeAutocomplete-min.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/global.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/util.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/widgets.js"></script>
+
+      <script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O">BUGZILLA.value_descs = JSON.parse('{\"bug_status\":{},\"resolution\":{\"\":\"---\"}}');
+<script></script>
+      </script>
+<script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/extensions/BMO/web/js/home.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/lib/prism.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/consent.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/cookie-helper.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/js/lib/md5.min.js"></script><script nonce="WEjyIYQMGH6t72uCAZYiA6kqq7AVIPQKDWARAE7AYihjaQ6O" src="/static/v20260908.1/extensions/Review/web/js/badge.js"></script>
+
+    
+
+    
+    <link href="/static/v20260908.1/skins/lib/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/v20260908.1/skins/lib/fontawesome-brands.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/v20260908.1/skins/lib/fontawesome-solid.min.css" rel="stylesheet" type="text/css">
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla@Mozilla" href="/search_plugin.cgi"><link rel="shortcut icon" href="/extensions/BMO/web/images/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/extensions/BMO/web/images/favicon.svg"><meta name="robots" content="noarchive">
+  </head>
+
+
+
+  <body
+        class="bugzilla-mozilla-org
+               skin-standard">
+
+
+
+<div id="wrapper">
+
+<header id="header" role="banner" aria-label="Global Header">
+  <div class="inner" role="none">
+    <button type="button" class="iconic ghost" id="open-menu-drawer" aria-label="Open Site Menu">
+      <span class="icon" aria-hidden="true" data-icon="menu"></span>
+    </button><div id="header-external-links" class="dropdown" role="none">
+  <button type="button" id="header-external-menu-button" class="dropdown-button minor"
+          aria-label="Show Mozilla Menu" aria-expanded="false" aria-haspopup="true"
+          aria-controls="header-external-menu">
+    <img src="/static/v20260908.1/extensions/BMO/web/images/moz-fav-one-color-white-rgb.svg"
+         width="32" height="32" alt="">
+  </button>
+  <ul class="dropdown-content right" id="header-external-menu" role="menu" aria-label="Mozilla Menu"
+      style="display:none;">
+    <li role="none">
+      <a href="https://www.mozilla.org/" role="menuitem">
+        <span class="label" role="none">Mozilla Home</span>
+      </a>
+    </li>
+    <li role="separator"></li>
+    <li role="none">
+      <a href="https://www.mozilla.org/privacy/websites/" role="menuitem">
+        <span class="label" role="none">Privacy</span>
+      </a>
+    </li>
+    <li role="none">
+      <a href="https://www.mozilla.org/privacy/websites/#cookies" role="menuitem">
+        <span class="label" role="none">Cookies</span>
+      </a>
+    </li>
+    <li role="none">
+      <a href="https://www.mozilla.org/about/legal/" role="menuitem">
+        <span class="label" role="none">Legal</span>
+      </a>
+    </li>
+  </ul>
+</div>
+    <h1 id="header-title" class="title" role="none">
+      <a class="header-button" href="https://bugzilla.mozilla.org/home" title="Go to home page">
+        <span aria-label="Go to Bugzilla Home Page">Bugzilla</span>
+      </a>
+    </h1>
+    <form id="header-search" class="quicksearch" action="/buglist.cgi"
+          data-no-csrf role="search" aria-label="Search Bugs">
+      <button type="button" class="iconic ghost" id="show-searchbox"
+              aria-label="Search Bugs">
+        <span class="icon" aria-hidden="true" data-icon="search"></span>
+      </button>
+      <div class="searchbox-outer dropdown" role="combobox" aria-label="Quick Search"
+           aria-haspopup="listbox" aria-owns="header-search-dropdown" aria-expanded="false">
+        <span class="icon" aria-hidden="true" data-icon="search"></span>
+        <input id="quicksearch_top" class="dropdown-button" name="quicksearch" autocomplete="off"
+               value="" accesskey="s"
+               placeholder="Search Bugs"
+               title="Enter a bug number or some search terms"
+               role="searchbox" aria-controls="header-search-dropdown" aria-label="Search Terms"><div id="header-search-dropdown" class="dropdown-content dropdown-panel right" role="listbox"
+     style="display: none;">
+  <div id="header-search-dropdown-wrapper" role="none">
+    <section id="header-search-dropdown-help" role="group" aria-label="Help">
+      <footer role="none">
+        <a href="/page.cgi?id=quicksearch.html">Quick Search Tips</a>
+        <a href="/query.cgi?format=advanced">Advanced Search</a>
+      </footer>
+    </section>
+  </div>
+</div>
+      </div>
+    </form>
+    <nav id="header-nav" role="menubar" aria-label="Site Links">
+      <ul class="links" role="none"><li role="none">
+    <a class="header-button" href="/describecomponents.cgi"
+       title="Browse bugs by component" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="category"></span>
+      <span class="label" role="none">Browse</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/query.cgi?format=advanced"
+       title="Search bugs using various criteria" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="pageview"></span>
+      <span class="label" role="none">Advanced Search</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/enter_bug.cgi"
+       title="File a new bug" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="add_box"></span>
+      <span class="label" role="none">New Bug</span>
+    </a>
+  </li>
+      </ul>
+      <div class="dropdown" role="none">
+        <button type="button" id="header-tools-menu-button"
+                class="header-button dropdown-button minor" title="More tools…"
+                role="menuitem" aria-label="Show More Tools Menu" aria-expanded="false"
+                aria-haspopup="true" aria-controls="header-tools-menu">
+          <span class="icon" aria-hidden="true" data-icon="more_horiz"></span>
+        </button>
+        <ul class="dropdown-content left" id="header-tools-menu" role="menu"
+            aria-label="More Tools Menu" style="display:none;"><li role="none">
+    <a href="/report.cgi" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="analytics"></span>
+      <span class="label" role="none">Reports</span>
+    </a>
+  </li>
+    <li role="separator"></li>
+    <li role="none">
+      <a href="https://bmo.readthedocs.io/en/latest/" target="_blank" role="menuitem">
+        <span class="icon" aria-hidden="true" data-icon="help"></span>
+        <span class="label" role="none">Documentation</span>
+      </a>
+    </li>
+        </ul>
+      </div>
+    </nav>
+      <ul id="header-login" class="links" role="none"><li id="mini_login_container_top" role="none">
+  <a id="login_link_top" href="/index.cgi?GoAheadAndLogIn=1"
+     class='show_mini_login_form header-button' data-qs-suffix="_top"
+     role="button">
+    <span class="icon" aria-hidden="true" data-icon="login"></span>
+    <span class="label" role="none">Log In</span>
+  </a>
+
+  <div id="mini_login_top" class="mini-popup mini_login bz_default_hidden">
+
+<form method="post" action="/github.cgi">
+    <input type="hidden" name="github_token" value="8kujB7ORCipi1G9EHvyeAIktQ8O1jiLFYRGZntiuWKPGkcaR8bdXMx3ac8VAq5HIushGeZptd9IESSYlpowMzzwx5ZxKF3W24bCfXjiscYoLjdvI5V9wepceKoOt44QEDbr3Hox8SWf8VD6y7eppj6CHcjzFL04qfPbe5ZLH8QxZmE1COgYXuziigqgtQrLq5Eq8Sv2133aI8ItXVFcPFUew6fo3xmts7qY3twxTetzLjA5vrKFy5yzaq0RCKWoZ">
+    <input type="hidden" name="target_uri" value="https://bugzilla.mozilla.org/index.cgi">
+    <button type="submit">
+      <i class="fab fa-github"></i> Log In with GitHub
+    </button>
+  </form>
+
+    <div class="method-separator">or</div>
+
+  <form action="/index.cgi" method="POST"
+        data-qs-suffix="_top">
+
+    <input id="Bugzilla_login_top"
+           class="bz_login"
+           name="Bugzilla_login"
+           title="Login"
+           placeholder="Email"
+           aria-label="Email"
+           type="email"
+           required
+    >
+    <input class="bz_password"
+           id="Bugzilla_password_top"
+           name="Bugzilla_password"
+           type="password"
+           title="Password"
+           placeholder="Password"
+           aria-label="Password"
+           required
+    >
+    <input class="bz_password bz_default_hidden bz_mini_login_help" type="text"
+           id="Bugzilla_password_dummy_top" value="password"
+           title="Password"
+    >
+      <span class="remember-outer">
+        <input type="checkbox" id="Bugzilla_remember_top"
+               name="Bugzilla_remember" value="on" class="bz_remember"
+               checked>
+        <label for="Bugzilla_remember_top">Remember me</label>
+      </span>
+    <input type="hidden" name="Bugzilla_login_token"
+           value="">
+    <input type="submit" name="GoAheadAndLogIn" value="Log In" id="log_in_top"
+           class="check_mini_login_fields" data-qs-suffix="_top">
+    <a href="#" id="hide_mini_login_top" aria-label="Close"
+       class="close-button hide_mini_login_form" data-qs-suffix="_top">
+      <span class="icon" aria-hidden="true"></span>
+    </a>
+  </form>
+  <div class="footer">
+      <a href="/createaccount.cgi">Create an Account</a>
+    &middot;
+    <a id="forgot_link_top" href="/index.cgi?GoAheadAndLogIn=1#forgot"
+       class='show_forgot_form'
+       data-qs-suffix="_top">Forgot Password</a>
+  </div>
+  </div>
+
+  <div id="forgot_form_top" class="mini-popup mini_forgot bz_default_hidden">
+  <form action="/token.cgi" method="post">
+    <input type="email" name="loginname" size="20" placeholder="Email" aria-label="Email" required>
+    <input id="forgot_button_top" value="Reset Password"
+           type="submit">
+    <input type="hidden" name="a" value="reqpw">
+    <input type="hidden" id="token_top" name="token" value="1789178705-U4l29KMZRnzXYBF1A7i6lxlQs_xBxuyGtpVwIdR1ZYA">
+    <a href="#" class="close-button hide_forgot_form" aria-label="Close" data-qs-suffix="_top">
+      <span class="icon" aria-hidden="true"></span>
+    </a>
+  </form>
+  </div>
+</li>
+      </ul>
+  </div>
+  <dialog id="menu-drawer" inert aria-label="Site Menu">
+    <div class="drawer-inner" role="none">
+      <div class="header" role="none">
+        <button type="button" class="iconic ghost" id="close-menu-drawer"
+                aria-label="Close Site Menu">
+          <span class="icon" aria-hidden="true" data-icon="close"></span>
+        </button>
+      </div>
+      <ul role="menu" aria-label="Site Links"><li role="none">
+    <a class="header-button" href="/describecomponents.cgi"
+       title="Browse bugs by component" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="category"></span>
+      <span class="label" role="none">Browse</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/query.cgi?format=advanced"
+       title="Search bugs using various criteria" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="pageview"></span>
+      <span class="label" role="none">Advanced Search</span>
+    </a>
+  </li>
+  <li role="none">
+    <a class="header-button" href="/enter_bug.cgi"
+       title="File a new bug" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="add_box"></span>
+      <span class="label" role="none">New Bug</span>
+    </a>
+  </li><li role="none">
+    <a href="/report.cgi" role="menuitem">
+      <span class="icon" aria-hidden="true" data-icon="analytics"></span>
+      <span class="label" role="none">Reports</span>
+    </a>
+  </li>
+    <li role="separator"></li>
+    <li role="none">
+      <a href="https://bmo.readthedocs.io/en/latest/" target="_blank" role="menuitem">
+        <span class="icon" aria-hidden="true" data-icon="help"></span>
+        <span class="label" role="none">Documentation</span>
+      </a>
+    </li>
+      </ul>
+    </div>
+  </dialog>
+</header> 
+
+
+<main id="bugzilla-body" tabindex="-1">
+
+<aside id="message-container" role="complementary">
+  <noscript>
+    <div class="noscript">
+      <div class="inner">
+        <p>Please enable JavaScript in your browser to use all the features on this site.</p>
+      </div>
+    </div>
+  </noscript>
+  
+</aside>
+
+<div id="main-inner">
+
+<div id="home">
+  <header id="welcome">
+    <h1>Welcome to Bugzilla</h1>
+    <p>The issue tracker for Firefox and other Mozilla products.</p>
+  </header>
+  <div id="content">
+    <div class="options community">
+      <section>
+        <h2>
+          <a href="https://support.mozilla.org/">
+            <!-- Material Symbols: Contact Support -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" aria-hidden="true">
+              <path
+                d="m25.75 44-.5-5.5h-2q-7.15 0-12.2-5.05Q6 28.4 6 21.25q0-7.15 5.075-12.2Q16.15 4 23.35 4q3.55 0 6.575 1.275Q32.95 6.55 35.2 8.85q2.25 2.3 3.525 5.425T40 21.1q0 3.3-.975 6.6T36.2 34q-1.85 3-4.5 5.55T25.75 44Zm-2.4-11.15q.8 0 1.35-.55t.55-1.35q0-.8-.55-1.35t-1.35-.55q-.8 0-1.35.55t-.55 1.35q0 .8.55 1.35t1.35.55ZM22 26.05h2.5q0-1.25.425-2.075.425-.825 1.775-2.175 1.35-1.35 1.9-2.475.55-1.125.55-2.425 0-2.25-1.525-3.7-1.525-1.45-4.075-1.45-2.1 0-3.75 1.1t-2.45 3l2.3.95q.55-1.3 1.525-1.925.975-.625 2.225-.625 1.5 0 2.35.725.85.725.85 1.925 0 .95-.55 1.925-.55.975-1.95 2.425-1.35 1.4-1.725 2.25-.375.85-.375 2.55Z"
+              />
+            </svg>
+            I need technical support
+          </a>
+        </h2>
+        <p>Technical support for Firefox and other Mozilla products.</p>
+      </section>
+      <section>
+        <h2>
+          <a href="https://webcompat.com/issues/new">
+            <!-- Material Symbols: Language -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" aria-hidden="true">
+              <path
+                d="M24 44q-4.2 0-7.85-1.575Q12.5 40.85 9.8 38.15q-2.7-2.7-4.25-6.375Q4 28.1 4 23.9t1.55-7.825Q7.1 12.45 9.8 9.75t6.35-4.225Q19.8 4 24 4q4.2 0 7.85 1.525Q35.5 7.05 38.2 9.75q2.7 2.7 4.25 6.325Q44 19.7 44 23.9t-1.55 7.875Q40.9 35.45 38.2 38.15t-6.35 4.275Q28.2 44 24 44Zm0-2.9q1.75-1.8 2.925-4.125Q28.1 34.65 28.85 31.45H19.2q.7 3 1.875 5.4Q22.25 39.25 24 41.1Zm-4.25-.6q-1.25-1.9-2.15-4.1-.9-2.2-1.5-4.95H8.6Q10.5 35 13 37.025q2.5 2.025 6.75 3.475Zm8.55-.05q3.6-1.15 6.475-3.45 2.875-2.3 4.625-5.55h-7.45q-.65 2.7-1.525 4.9-.875 2.2-2.125 4.1Zm-20.7-12h7.95q-.15-1.35-.175-2.425-.025-1.075-.025-2.125 0-1.25.05-2.225.05-.975.2-2.175h-8q-.35 1.2-.475 2.15T7 23.9q0 1.3.125 2.325.125 1.025.475 2.225Zm11.05 0H29.4q.2-1.55.25-2.525.05-.975.05-2.025 0-1-.05-1.925T29.4 19.5H18.65q-.2 1.55-.25 2.475-.05.925-.05 1.925 0 1.05.05 2.025.05.975.25 2.525Zm13.75 0h8q.35-1.2.475-2.225Q41 25.2 41 23.9q0-1.3-.125-2.25T40.4 19.5h-7.95q.15 1.75.2 2.675.05.925.05 1.725 0 1.1-.075 2.075-.075.975-.225 2.475Zm-.5-11.95h7.5q-1.65-3.45-4.525-5.75Q32 8.45 28.25 7.5q1.25 1.85 2.125 4t1.525 5Zm-12.7 0h9.7q-.55-2.65-1.85-5.125T24 7q-1.6 1.35-2.7 3.55-1.1 2.2-2.1 5.95Zm-10.6 0h7.55q.55-2.7 1.4-4.825.85-2.125 2.15-4.125-3.75.95-6.55 3.2T8.6 16.5Z"
+              />
+            </svg>
+            Report an issue with a website that I use
+          </a>
+        </h2>
+        <p>File a web compatibility issue.</p>
+      </section>
+      <section>
+        <h2>
+          <a href="/enter_bug.cgi">
+            <!-- Material Symbols: Note Add -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" aria-hidden="true">
+              <path
+                d="M22.5 36.7h3v-6.45H32v-3h-6.5v-6.5h-3v6.5H16v3h6.5Zm-11.05 8.55q-1.95 0-3.325-1.375Q6.75 42.5 6.75 40.55V7.45q0-1.95 1.375-3.35Q9.5 2.7 11.45 2.7H29.6l11.7 11.7v26.15q0 1.95-1.4 3.325-1.4 1.375-3.35 1.375Zm15.65-28.5h9.45l-9.45-9.3Z"
+              />
+            </svg>
+            Report a new bug in a Mozilla product
+          </a>
+        </h2>
+        <p>Requires a Bugzilla account</p>
+        <p>
+          <a href="/page.cgi?id=etiquette.html">Bugzilla Etiquette</a>
+          |
+          <a href="https://support.mozilla.org/kb/contributors-guide-writing-good-bug">
+            Tips for filing a bug
+          </a>
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="/createaccount.cgi">
+            <!-- Material Symbols: Account Circle -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" aria-hidden="true">
+              <path
+                d="M11.3 34.7q3.1-1.95 6.125-2.9T24 30.85q3.55 0 6.65 1 3.1 1 6.1 2.85 2.1-2.75 2.95-5.275.85-2.525.85-5.425 0-7-4.775-11.775T24 7.45q-7 0-11.775 4.775T7.45 24q0 2.9.85 5.4.85 2.5 3 5.3ZM24 25.85q-3.05 0-5.1-2.05t-2.05-5.1q0-3 2.05-5.075T24 11.55q3.05 0 5.1 2.075t2.05 5.125q0 3-2.05 5.05T24 25.85Zm0 19.4q-4.4 0-8.275-1.675T8.95 39q-2.9-2.9-4.55-6.75T2.75 24q0-4.4 1.675-8.275T9 8.975Q11.9 6.1 15.75 4.4q3.85-1.7 8.3-1.7 4.4 0 8.25 1.7 3.85 1.7 6.725 4.575 2.875 2.875 4.575 6.75Q45.3 19.6 45.3 24t-1.7 8.25Q41.9 36.1 39.025 39t-6.75 4.575Q28.4 45.25 24 45.25Z"
+              />
+            </svg>
+            Create a new Bugzilla account
+          </a>
+        </h2>
+        <p>
+          Required before you can
+          <strong>report a bug in Firefox or other Mozilla products</strong>.
+          <br>
+          You can also <a href="?GoAheadAndLogIn=1">log in to an existing account</a>.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="https://connect.mozilla.org/">
+            <!-- Material Symbols: Lightbulb -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" aria-hidden="true">
+              <path
+                d="M24 44q-1.7 0-2.875-1.175T19.95 39.95h8.1q0 1.7-1.175 2.875T24 44Zm-8.1-7.15v-3h16.2v3Zm.25-6.05q-3.3-2.15-5.225-5.375Q9 22.2 9 18.15q0-6.1 4.45-10.55Q17.9 3.15 24 3.15q6.1 0 10.55 4.45Q39 12.05 39 18.15q0 4.05-1.9 7.275-1.9 3.225-5.25 5.375Z"
+              />
+            </svg>
+            Provide feedback at Mozilla Connect
+          </a>
+        </h2>
+        <p>
+          Mozilla Connect is a collaborative space for ideas, feedback, and discussions that will
+          help shape future product releases.
+        </p>
+      </section>
+    </div>
+    <div class="options downloads">
+      <div id="downloads-firefox-desktop" class="downloads-group">
+        <section>
+          <h2>
+            <a href="https://www.firefox.com/channel/desktop/#beta">
+              <img src="/images/index/firefox-beta.svg" alt="" aria-hidden="true" />
+              <span>Download</span> Firefox Beta
+            </a>
+          </h2>
+          <p>Test about-to-be-released features in the most stable pre-release build.</p>
+        </section>
+        <section>
+          <h2>
+            <a href="https://www.firefox.com/channel/desktop/#nightly">
+              <img src="/images/index/firefox-nightly.svg" alt="" aria-hidden="true" />
+              <span>Download</span> Firefox Nightly
+            </a>
+          </h2>
+          <p>
+            Get a sneak peek at our next generation web browser, and help us make it the best browser
+            it can be: try Firefox Nightly.
+          </p>
+        </section>
+      </div>
+      <div id="downloads-firefox-android" class="downloads-group" hidden>
+        <section>
+          <h2>
+            <a href="https://www.firefox.com/channel/android/#beta">
+              <img src="/images/index/firefox-beta.svg" alt="" aria-hidden="true" />
+              <span>Download</span> Firefox Beta
+            </a>
+          </h2>
+          <p>Try the latest Android features, before they get released to the rest of the world.</p>
+        </section>
+        <section>
+          <h2>
+            <a href="https://www.firefox.com/channel/android/#nightly">
+              <img src="/images/index/firefox-nightly.svg" alt="" aria-hidden="true" />
+              <span>Download</span> Firefox Nightly
+            </a>
+          </h2>
+          <p>Check out new Android features in their earliest stages. Enjoy at your own risk.</p>
+        </section>
+      </div>
+      <div id="downloads-firefox-ios" class="downloads-group" hidden>
+        <section>
+          <h2>
+            <a href="https://www.firefox.com/channel/ios/#testflight">
+              <img src="/images/index/firefox-beta.svg" alt="" aria-hidden="true" />
+              <span>Download</span> Firefox TestFlight
+            </a>
+          </h2>
+          <p>Test beta versions of Firefox for iOS via Apple’s TestFlight program.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
+</main> 
+</div> 
+
+
+</body>
+</html>
