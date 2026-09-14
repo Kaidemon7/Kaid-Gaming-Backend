@@ -1,0 +1,68 @@
+/* === [IMPORTS] === */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap');
+
+/* === [GLOBAL] === */
+body {
+	margin: 0;
+	position: fixed;
+}
+
+canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+#footer {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	left: 50%;
+	transform: translateX(-50%);   /* bottom-centre, clear of the side panels */
+	bottom: 14px;
+	user-select: none;
+	z-index: 35;                    /* above the shop panels (z 30) */
+	pointer-events: none;
+}
+
+.footers {
+	font-weight: 600;
+	display: block;
+	color: #e4e5e6;
+	font-size: 14px;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 1.1px;
+	user-select: none;
+	margin: auto 5px;
+	z-index: 10;
+}
+
+a.footers {
+	pointer-events: all;
+	text-decoration: none;
+}
+
+.footers.brand {
+	color: #ffd24a;        /* duckling yellow */
+	font-size: 15px;
+}
+.footers.brand:hover {
+	color: #ffe07a;
+}
+
+.footers.credit {
+	color: #8a8c8e;
+	font-size: 11px;
+	letter-spacing: 0.6px;
+}
+.footers.credit a {
+	color: #a9abad;
+	pointer-events: all;
+	text-decoration: none;
+}
+.footers.credit a:hover {
+	color: #cfd0d2;
+}
