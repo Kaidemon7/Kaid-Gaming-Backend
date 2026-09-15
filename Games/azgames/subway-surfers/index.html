@@ -56,12 +56,13 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
+var buildUrl = "Build";
+      var rawBuild = "https://raw.githubusercontent.com/Kaidemon7/Kaid-Gaming-Backend/main/Games/azgames/subway-surfers/Build/";
       var loaderUrl = buildUrl + "/Subway Surfers.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Subway Surfers.data",
+        dataUrl: rawBuild + "Subway%20Surfers.data",
         frameworkUrl: buildUrl + "/Subway Surfers.framework.js",
-        codeUrl: buildUrl + "/Subway Surfers.wasm",
+        codeUrl: rawBuild + "Subway%20Surfers.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "appcode",
         productName: "Subway-surf",
